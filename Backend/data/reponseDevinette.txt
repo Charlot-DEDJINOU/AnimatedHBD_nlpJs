@@ -1,0 +1,48 @@
+1,C'est la lettre e
+1,La lettre e
+1,e
+1,la lettre est e
+1,C'est le cinquieme lettre de l'alphabet
+1,C'est le 5 lettre de l'aphabet
+1,C'est e
+1,Je suis la lettre e.
+1,La réponse est la lettre e.
+1,C'est la lettre e.
+1,Il s'agit de la lettre e.
+1,On parle de la lettre e.
+1,La solution est la lettre e.
+1,Je représente la lettre e.
+1,Au milieu du monde et au bout du monde, je suis la lettre e.
+1,La lettre e est la réponse à cette devinette.
+1,Je suis la voyelle e.
+1,La lettre e est la solution de cette énigme.
+1,La devinette parle de la lettre e.
+1,Je suis le caractère e.
+1,Au centre du monde et à l'extrémité du monde, je suis la lettre e.
+1,La lettre e correspond à cette énigme.
+1,La solution est représentée par la lettre e.
+1,Je suis l'élément central et extrême de cette énigme, la lettre e.
+1,La lettre e est la clé de cette devinette.
+1,Au milieu et à la fin du monde, je suis la lettre e.
+1,La réponse attendue est la lettre e.
+1,Ce n'est que la lettre e
+1,Ce n'est que la lettre e.
+1,Rien de plus que la lettre e.
+1,La simple lettre e.
+1,Juste la lettre e.
+1,Seulement la lettre e.
+1,Purement la lettre e.
+1,Unique et exclusivement la lettre e.
+1,Absolument la lettre e.
+1,Uniquement la lettre e, rien d'autre.
+1,Exclusivement la lettre e, sans conteste.
+1,Sans équivoque, la lettre e.
+1,Simplement la lettre e, point final.
+1,Rien d'autre que la lettre e, tout simplement.
+1,La réponse se résume à la lettre e.
+1,Il suffit de dire la lettre e.
+1,Tout ce qu'il y a à dire, c'est la lettre e.
+1,La réponse est purement et simplement la lettre e.
+1,On ne peut pas aller plus loin que la lettre e.
+1,Il n'y a rien d'autre à ajouter, c'est juste la lettre e.
+1,Il est clair que la réponse est la lettre e, rien de plus.
