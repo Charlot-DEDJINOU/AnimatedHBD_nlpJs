@@ -4,7 +4,8 @@ import Typewriter from 'typewriter-effect/dist/core'
 export default {
   setup() {
     const startAnimation = () => {
-      const name = document.getElementsById('nom')
+    
+      const name = document.getElementById('nom')
       const text = document.getElementsByClassName('bienvenue')[0]
 
       var typewriter = new Typewriter(name, {
@@ -66,6 +67,8 @@ export default {
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 800;
+  color: black;
+  border: 1px solid red;
 }
 .header_site .image {
   width: 200px;
