@@ -1,5 +1,5 @@
 <script setup>
-import firstSession from '../components/firstSession.vue';
+import firstSession from '../components/firstSession.vue'
 </script>
 
 <template>

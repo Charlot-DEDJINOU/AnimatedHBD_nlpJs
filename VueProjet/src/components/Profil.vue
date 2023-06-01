@@ -4,7 +4,6 @@ import Typewriter from 'typewriter-effect/dist/core'
 export default {
   setup() {
     const startAnimation = () => {
-    
       const name = document.getElementById('nom')
       const text = document.getElementsByClassName('bienvenue')[0]
 
