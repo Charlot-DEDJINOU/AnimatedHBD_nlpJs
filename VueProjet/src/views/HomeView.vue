@@ -1,9 +1,11 @@
 <script setup>
-import firstSession from '../components/firstSession.vue'
+import FirstSession from '../components/FirstSession.vue'
+import SecondSession from '../components/SecondSession.vue'
 </script>
 
 <template>
   <main>
-    <firstSession />
+    <FirstSession />
+    <SecondSession />
   </main>
 </template>

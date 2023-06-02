@@ -1,5 +1,6 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
+import { onMounted } from 'vue'
 
 export default {
   setup() {
@@ -9,7 +10,7 @@ export default {
 
       var typewriter = new Typewriter(name, {
         loop: false,
-        delay: 150,
+        delay: 200,
         cursorClassName: 'cursor_hearder'
       })
 
@@ -20,7 +21,7 @@ export default {
         .callFunction(() => {
           typewriter = new Typewriter(text, {
             loop: false,
-            delay: 75,
+            delay: 120,
             cursorClassName: 'cursor_hearder'
           })
 
@@ -35,11 +36,17 @@ export default {
             .pauseFor(2000)
             .typeString('Que cette journée soit festive,<br />')
             .pauseFor(500)
-            .typeString('Et remplie de douceur sur mesure.')
+            .typeString('Et remplie de douceur sur mesure.<br/>')
+            .pauseFor(500)
+            .typeString("Où l'on célèbre ta venue,<br />")
+            .pauseFor(500)
+            .typeString('Pour ton jour si spécial,<br />')
             .start()
         })
         .start()
     }
+
+    onMounted(startAnimation)
 
     return {
       startAnimation
@@ -48,8 +55,8 @@ export default {
 }
 </script>
 <template>
-  <div class="header_site" @mouseover="startAnimation">
-    <img src="../assets/charlot.jpg" class="image" />
+  <div class="header_site" @click="startAnimation">
+    <img src="../assets/open.jpg" class="image" />
     <div class="welcome">
       <h1 id="nom"></h1>
       <p class="bienvenue"></p>
@@ -59,19 +66,19 @@ export default {
 
 <style>
 .header_site {
-  width: 500px;
-  height: 250px;
+  width: 600px;
+  height: 290px;
   display: flex;
   justify-content: space-around;
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 800;
   color: black;
-  border: 1px solid red;
 }
 .header_site .image {
-  width: 200px;
+  width: 250px;
   height: 100%;
+  object-fit: cover;
   border-radius: 30px 0px 30px 0px;
   border: 10px solid #16c953;
 }

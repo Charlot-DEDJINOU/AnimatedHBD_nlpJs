@@ -14,7 +14,7 @@ export default {
 
       var typewriter = new Typewriter(targetElement, {
         loop: false,
-        delay: 75,
+        delay: 100,
         cursorClassName: 'cursor_bouquet'
       })
 
@@ -52,7 +52,7 @@ export default {
 
           typewriter = new Typewriter(destinateur, {
             loop: false,
-            delay: 75,
+            delay: 100,
             cursorClassName: 'cursor_bouquet'
           })
 
@@ -65,7 +65,7 @@ export default {
 
               typewriter = new Typewriter(recepteur, {
                 loop: false,
-                delay: 75,
+                delay: 200,
                 cursorClassName: 'cursor_bouquet'
               })
 
@@ -103,18 +103,17 @@ export default {
 </script>
 
 <template>
-  <div class="container_visuel_bouquet" @click="startAnimation" id="visuelRose">
-    <div class="text" id="target_rose"></div>
-    <div class="fin">
-      <img src="../assets/bouquet.png" class="bouquet" />
-      <div class="mot_de_fin">
-        <span class="destinateur_bouquet"></span>
-        <span class="recepteur_bouquet"></span>
+    <div class="container_visuel_bouquet" @click="startAnimation" id="visuelRose">
+      <div class="text" id="target_rose"></div>
+      <div class="fin">
+        <img src="../assets/bouquet.png" class="bouquet" />
+        <div class="mot_de_fin">
+          <span class="destinateur_bouquet"></span>
+          <span class="recepteur_bouquet"></span>
+        </div>
+        <img src="../assets/crayon_bouquet_oblique.png" class="crayon" v-show="showCrayon" />
       </div>
-      <img src="../assets/crayon_bouquet_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
-  </div>
-  <div @click="downloadImage('visuelRose')">Telecharger</div>
 </template>
 
 <style>
@@ -122,7 +121,7 @@ export default {
   background-image: url(../assets/whitepaper.png);
   background-size: cover;
   width: 469px;
-  height: 532px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;

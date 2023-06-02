@@ -22,6 +22,7 @@ export default {
     <div class="titre">
       <p><span>Devinette </span> avant de continuer</p>
       <img src="../assets/image1.png" />
+      <img src="../assets/image1.png" />
     </div>
     <form @submit.prevent="submit">
       <p class="devinette">
@@ -36,9 +37,8 @@ export default {
 </template>
 <style scoped>
 .container_devinette {
-  width: 90%;
-  height: 320px;
-  margin: 50px;
+  width: 940px;
+  height: 250px;
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 800;
@@ -48,15 +48,15 @@ export default {
 }
 .container_devinette .titre {
   width: 90%;
-  height: 70%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .container_devinette .titre img {
   object-fit: contain;
-  width: 300px;
-  height: 100%;
+  width: 200px;
+  height: 90%;
 }
 .container_devinette .titre p {
   margin-bottom: -50px;
@@ -66,7 +66,7 @@ export default {
   font-size: 50px;
 }
 .container_devinette form {
-  width: 95%;
+  width: 100%;
   height: 30%;
   display: flex;
   flex-direction: column;
