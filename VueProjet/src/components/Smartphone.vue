@@ -10,7 +10,7 @@ export default {
   components: {
     IconWifi,
     IconNetWork,
-    IconBaterry ,
+    IconBaterry,
     Download
   },
   setup() {

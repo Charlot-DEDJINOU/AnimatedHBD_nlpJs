@@ -23,7 +23,7 @@ export default {
     }
 
     const translateButton = () => {
-      const btn = document.getElementsByClassName('button')[0]
+      const btn = document.getElementsByClassName('button_translate')[0]
       const classes = btn.classList
 
       if (
@@ -39,7 +39,7 @@ export default {
     }
 
     const position_button = () => {
-      const btn = document.getElementsByClassName('button')[0]
+      const btn = document.getElementsByClassName('button_translate')[0]
       btn.classList.remove('button_right')
       btn.classList.add('button_left')
     }
@@ -117,7 +117,7 @@ export default {
     </div>
     <div class="after_email">
       <Crayon_email class="crayon-email" />
-      <button type="submit" class="button button_left" @mouseenter="translateButton">
+      <button type="submit" class="button_translate button_left" @mouseenter="translateButton">
         <span>Envoyer</span>
       </button>
     </div>
@@ -126,8 +126,8 @@ export default {
 
 <style scoped>
 .container_email {
-  width: 600px;
-  height: 550px;
+  width: 500px;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,8 +138,8 @@ export default {
   line-height: 18px;
 }
 .container_email .enveloppe_email {
-  width: 506px;
-  height: 100%;
+  width: 375px;
+  height: 86%;
   background-image: url(../assets/email.png);
   background-size: cover;
   display: flex;
@@ -147,7 +147,7 @@ export default {
 }
 .container_email .enveloppe_email .contenu_email {
   width: 62%;
-  height: 39%;
+  height: 35%;
   margin-top: 10px;
   margin-left: 15px;
 }
@@ -159,7 +159,7 @@ export default {
   align-items: center;
 }
 .container_email .enveloppe_email .contenu_email .form_input input {
-  width: 83%;
+  width: 80%;
   height: 100%;
   font-family: 'Marck Script';
   font-style: normal;
@@ -189,7 +189,7 @@ export default {
   outline: none;
 }
 .container_email .after_email {
-  width: 95px;
+  width: 80px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -197,11 +197,11 @@ export default {
 }
 .container_email .after_email .crayon-email {
   width: 52%;
-  height: 220px;
+  height: 200px;
 }
-.container_email .after_email .button {
+.container_email .after_email .button_translate {
   width: 50px;
-  height: 150px;
+  height: 120px;
   border-radius: 5px;
   border: none;
   background-color: #16c953;
@@ -219,7 +219,7 @@ export default {
   transition-property: all;
   transition-duration: 0.1ms;
 }
-.container_email .after_email .button span {
+.container_email .after_email .button_translate span {
   display: inline-block;
   transform: rotate(-90deg);
   color: white;

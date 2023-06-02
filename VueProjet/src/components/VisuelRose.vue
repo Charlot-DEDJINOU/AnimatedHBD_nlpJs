@@ -103,17 +103,17 @@ export default {
 </script>
 
 <template>
-    <div class="container_visuel_bouquet" @click="startAnimation" id="visuelRose">
-      <div class="text" id="target_rose"></div>
-      <div class="fin">
-        <img src="../assets/bouquet.png" class="bouquet" />
-        <div class="mot_de_fin">
-          <span class="destinateur_bouquet"></span>
-          <span class="recepteur_bouquet"></span>
-        </div>
-        <img src="../assets/crayon_bouquet_oblique.png" class="crayon" v-show="showCrayon" />
+  <div class="container_visuel_bouquet" @click="startAnimation" id="visuelRose">
+    <div class="text" id="target_rose"></div>
+    <div class="fin">
+      <img src="../assets/bouquet.png" class="bouquet" />
+      <div class="mot_de_fin">
+        <span class="destinateur_bouquet"></span>
+        <span class="recepteur_bouquet"></span>
       </div>
+      <img src="../assets/crayon_bouquet_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
+  </div>
 </template>
 
 <style>

@@ -1,6 +1,6 @@
 <template>
   <div class="download">
-      <svg
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       width="30"
       height="30"
@@ -19,20 +19,17 @@
   </div>
 </template>
 <style scoped>
-.download
-{
+.download {
   display: flex;
   align-items: flex-end;
   width: 130px;
   height: 30px;
   margin-top: 10px;
 }
-.download :hover
-{
+.download :hover {
   cursor: pointer;
 }
-.download .span
-{
+.download .span {
   display: inline-block;
   margin-left: 10px;
   font-size: 18px;

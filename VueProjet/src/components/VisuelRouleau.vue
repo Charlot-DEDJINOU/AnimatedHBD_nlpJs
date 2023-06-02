@@ -15,7 +15,7 @@ export default {
 
       var typewriter = new Typewriter(destinateur, {
         loop: false,
-        delay: 75,
+        delay: 150,
         cursorClassName: 'cursor_rouleau'
       })
 
@@ -28,7 +28,7 @@ export default {
 
           typewriter = new Typewriter(recepteur, {
             loop: false,
-            delay: 75,
+            delay: 250,
             cursorClassName: 'cursor_rouleau'
           })
 
@@ -40,7 +40,7 @@ export default {
 
               typewriter = new Typewriter(targetElement, {
                 loop: false,
-                delay: 2,
+                delay: 100,
                 cursorClassName: 'cursor_rouleau'
               })
 
@@ -128,21 +128,19 @@ export default {
       <img src="../assets/crayon_rouleau_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
   </div>
-  <div @click="downloadImage('visuelRouleau')">Telecharger</div>
 </template>
 
 <style>
 .container_visuel_rouleau {
-  margin-top: 100px;
-  width: 514.4px;
+  width: 450px;
   height: 507px;
   display: flex;
 }
 .container_visuel_rouleau .visuel_rouleau {
-  width: 428px;
-  height: 507px;
+  width: 400px;
+  height: 470px;
   background-image: url(../assets/rouleau.png);
-  background-size: cover;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,14 +151,14 @@ export default {
 .container_visuel_rouleau .content_image {
   width: 110px;
   height: 507px;
-  margin-left: -90px;
+  margin-left: -70px;
   display: flex;
   align-items: center;
 }
 .container_visuel_rouleau .content_image .crayon {
   width: 75%;
   height: 120px;
-  margin-bottom: -125px;
+  margin-bottom: -118px;
   object-fit: fill;
 }
 .container_visuel_rouleau .visuel_rouleau .destinateur_rouleau {
@@ -178,11 +176,12 @@ export default {
   font-size: 14px;
   line-height: 17px;
   margin-top: 20px;
-  margin-left: 70px;
+  margin-left: 50px;
 }
 .container_visuel_rouleau .visuel_rouleau .fin {
-  width: 55%;
+  width: 60%;
   height: 15%;
+  margin-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -196,7 +195,7 @@ export default {
   width: 57.66px;
   height: 87.49px;
   transform: scale(1.5);
-  margin-top: 15px;
+  margin-top: 0px;
   transition: transform 2s ease-in-out;
   object-fit: cover;
 }
@@ -233,6 +232,6 @@ export default {
   opacity: 0;
 }
 #scaled_rose {
-  transform: scale(1) matrix(0.83, -0.56, 0.55, 0.84, 0, 0) rotate(1800deg);
+  transform: scale(0.7) matrix(0.83, -0.56, 0.55, 0.84, 0, 0) rotate(1800deg);
 }
 </style>
