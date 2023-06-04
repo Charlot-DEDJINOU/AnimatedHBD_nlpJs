@@ -46,3 +46,101 @@
 1,On ne peut pas aller plus loin que la lettre e.
 1,Il n'y a rien d'autre à ajouter, c'est juste la lettre e.
 1,Il est clair que la réponse est la lettre e, rien de plus.
+2,La bouteille
+2,bouteille
+2,Une bouteille
+2,C'est une bouteille
+2,C'est la bouteille
+2,Bouteille est la réponse
+2,On parle de la bouteille
+2,La solution est la bouteille
+2,Il s'agit de la bouteille
+2,Réponse : la bouteille
+2,La bouteille est la bonne réponse
+2,Voici la réponse : la bouteille
+2,La solution de l'énigme est la bouteille
+2,Trouvez la réponse : la bouteille
+2,La bouteille est ce qui a un cou mais pas de tête
+2,La bouteille est la chose qui correspond à la description
+2,L'objet recherché est la bouteille
+2,La bouteille est la chose dont on parle
+2,La bouteille est ce que vous cherchez
+2,La bouteille répond à la question
+2,La bouteille est la solution
+2,La réponse attendue est la bouteille
+2,La bonne réponse est la bouteille
+2,C'est la bouteille qui a un cou mais pas de tête
+2,La bouteille convient à la description donnée
+2,Vous trouverez la réponse dans la bouteille
+2,La bouteille est ce qui correspond à la description donnée
+2,La bouteille est la seule chose qui a un cou mais pas de tête
+2,La bouteille est la réponse correcte
+2,Trouvez la bonne réponse : la bouteille
+2,La bouteille est le mot recherché
+2,La bouteille est ce qui remplit les critères demandés
+3,l'ombre
+3,ombre
+3,La réponse est l'ombre
+3,C'est l'ombre
+3,On parle de l'ombre
+3,La solution est l'ombre
+3,Il s'agit de l'ombre
+3,Réponse : l'ombre
+3,L'ombre est la bonne réponse
+3,Voici la réponse : l'ombre
+3,La solution de l'énigme est l'ombre
+3,Trouvez la réponse : l'ombre
+3,L'ombre est ce que tout le monde a mais ne peut perdre
+3,L'ombre est la chose recherchée
+3,L'ombre est ce dont on parle
+3,L'ombre est ce que vous cherchez
+3,L'ombre répond à la question
+3,L'ombre est la solution
+3,La réponse attendue est l'ombre
+3,La bonne réponse est l'ombre
+3,C'est l'ombre que tout le monde a mais ne peut perdre
+3,L'ombre convient à la description donnée
+3,La réponse se trouve dans l'ombre
+3,L'ombre est ce qui correspond à la description donnée
+3,L'ombre est la seule chose que tout le monde a mais ne peut perdre
+3,L'ombre est la réponse correcte
+3,Trouvez la bonne réponse : l'ombre
+3,L'ombre est le mot recherché
+3,La réponse est l'ombre, conformément aux règles
+3,L'ombre est ce qui remplit les critères demandés
+4,L'avenir
+4,avenir
+4,futur
+4,demain
+4,c'est l'avenir
+4,c'est demain
+4,c'est le futur
+4,Le futur
+4,Ce qui est à venir
+4,Le lendemain
+4,Ce qui nous attend
+4,Ce qui se profile
+4,Ce qui est devant nous
+4,Les jours à venir
+4,La suite des événements
+4,Ce qui est prévu
+4,Ce qui nous réserve le temps
+4,Les perspectives futures
+4,Les horizons à venir
+4,Les jours qui viennent
+4,Le cours du temps
+4,Les prochaines étapes
+4,Ce qui nous attend demain
+4,Les temps à venir
+4,Les moments qui suivent
+4,L'évolution à venir
+4,Les jours qui se succèdent
+4,Les instants qui s'en viennent
+4,Ce qui est en devenir
+4,L'échéance future
+4,Le devenir
+4,Les perspectives à venir
+4,Les temps futurs
+4,Les moments à venir
+4,Le chemin qui s'étend devant nous
+4,L'horizon à venir
