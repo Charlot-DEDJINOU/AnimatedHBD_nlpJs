@@ -62,7 +62,6 @@ function insertReponseDevinette(db, fileName) {
         } else {
           console.log("Données insérées avec succès.");
 
-          // Fermer la connexion ici
           db.close((err) => {
             if (err) {
               console.error(err);
