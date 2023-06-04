@@ -10,15 +10,20 @@ export default {
     } ,
     setup() {
     const showSession = ref(false)
+    const startAnimation = ref(false)
 
     const nextSession = (payload) => {
       if(payload.message){
         showSession.value = true
+        setTimeout(() => {
+          startAnimation.value = true
+        } , 2000)
       }
     }
     return {
       nextSession ,
-      showSession
+      showSession ,
+      startAnimation
     }
   }
 }
@@ -28,14 +33,13 @@ export default {
     <div class="session">
         <div class="LastSession">
             <Devinette @backAnswer="nextSession" devinette="Tout le monde en a une, mais personne ne peut la perdre , Qui suis je ?" numAnswer="3"/>
-            <VisuelLivre v-if="showSession"/>
+            <VisuelLivre v-if="showSession" :tigglerAnimation="startAnimation"/>
         </div>
     </div>
 </template>
 <style>
 .LastSession 
 {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;

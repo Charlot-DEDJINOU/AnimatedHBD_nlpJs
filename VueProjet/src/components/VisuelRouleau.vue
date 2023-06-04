@@ -1,14 +1,17 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref } from 'vue'
+import { ref , watch} from 'vue'
 
 export default {
-  setup() {
+  props : {
+    triggerAnimationRouleau : Boolean
+  } ,
+  setup(props) {
     const showCrayon = ref(false)
     const showRose = ref(false)
 
-    const startAnimation = () => {
+    const startAnimationRouleau = () => {
       const targetElement = document.getElementById('target_rouleau')
       const destinateur = document.getElementsByClassName('destinateur_rouleau')[0]
       const recepteur = document.getElementsByClassName('recepteur_rouleau')[0]
@@ -103,8 +106,10 @@ export default {
       n.stop()
     }
 
+    watch(() => props.triggerAnimationRouleau, startAnimationRouleau)
+
     return {
-      startAnimation,
+      startAnimationRouleau,
       stopAnimation,
       showCrayon,
       showRose,
@@ -115,7 +120,7 @@ export default {
 </script>
 
 <template>
-  <div class="container_visuel_rouleau" @click="startAnimation" id="visuelRouleau">
+  <div class="container_visuel_rouleau" id="visuelRouleau">
     <div class="visuel_rouleau">
       <div class="destinateur_rouleau"></div>
       <div class="text" id="target_rouleau"></div>

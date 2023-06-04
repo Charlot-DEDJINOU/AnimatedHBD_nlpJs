@@ -1,10 +1,14 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref } from 'vue'
+import { ref , watch } from 'vue'
 
 export default {
-  setup() {
+  props : {
+    triggerAnimation : Boolean 
+  } ,
+
+  setup(props) {
     const showCrayon = ref(false)
 
     const startAnimation = () => {
@@ -92,6 +96,8 @@ export default {
       n.stop()
     }
 
+    watch(() => props.triggerAnimation, startAnimation)
+
     return {
       startAnimation,
       stopAnimation,
@@ -103,7 +109,7 @@ export default {
 </script>
 
 <template>
-  <div class="container_visuel_bouquet" @click="startAnimation" id="visuelRose">
+  <div class="container_visuel_bouquet" id="visuelRose">
     <div class="text" id="target_rose"></div>
     <div class="fin">
       <img src="../assets/bouquet.png" class="bouquet" />

@@ -13,15 +13,21 @@ export default {
 
   setup() {
     const showSession = ref(false)
+    const starAnimation = ref(false)
 
     const nextSession = (payload) => {
       if(payload.message){
         showSession.value = true
+        setTimeout(() => {
+          starAnimation.value=true
+        }, 6000)
       }
     }
+
     return {
-      nextSession ,
-      showSession
+      nextSession,
+      showSession ,
+      starAnimation
     }
   }
 }
@@ -40,11 +46,11 @@ export default {
           <p>Ans</p>
           <img src="../assets/chiffre4.png" class="chiffre4 animated" />
         </div>
-        <div class="visuel1"><VisuelRose /></div>
+        <div class="visuel1"><VisuelRose :triggerAnimation="starAnimation" /></div>
         <div class="images_ballon">
-          <img src="../assets/image1.png" />
-          <img src="../assets/image1.png" />
-          <img src="../assets/image1.png" />
+          <img src="../assets/image1.png" class="ballon1"/>
+          <img src="../assets/image1.png" class="ballon2"/>
+          <img src="../assets/image1.png" class="ballon3"/>
         </div>
       </div>
       <Download v-if="showSession"/>
@@ -106,6 +112,21 @@ export default {
   width: 150px;
   object-fit: contain;
 }
+.secondSession .visuels .images_ballon .ballon1
+{
+  animation: balloonAnimation 6s infinite linear;
+  animation-delay: 2s;
+}
+.secondSession .visuels .images_ballon .ballon2
+{
+  animation: balloonAnimation 6s infinite linear;
+  animation-delay: 0s;
+}
+.secondSession .visuels .images_ballon .ballon3
+{
+  animation: balloonAnimation 6s infinite linear;
+  animation-delay: 4s;
+}
 .secondSession .images_download {
   width: 100%;
   height: 100px;
@@ -117,9 +138,25 @@ export default {
   object-fit: contain;
 }
 .animated {
-  animation: slideFadeIn 6s ease-in-out;
+  animation: slideFadeIn 10s ease-in-out;
 }
-
+@keyframes balloonAnimation {
+  0% {
+    transform: translateX(-60px) ;
+  }
+  20%{
+    transform: scale(1.2) translateX(0px);
+  }
+  50%{
+    transform: scale(1) translateX(60px);
+  }
+  70%{
+    transform: scale(0.7) translateX(0px);
+  }
+  100% {
+    transform: scale(0) translateX(-120px);
+  }
+}
 @keyframes slideFadeIn {
   0% {
     transform: translateX(-200px);

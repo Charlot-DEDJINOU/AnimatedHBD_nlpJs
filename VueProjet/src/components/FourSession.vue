@@ -13,15 +13,20 @@ export default {
 
   setup() {
     const showSession = ref(false)
+    const startAnimationImage = ref(false)
 
     const nextSession = (payload) => {
       if(payload.message){
         showSession.value = true
+        setTimeout(() => {
+          startAnimationImage.value = true
+        } , 2000)
       }
     }
     return {
       nextSession ,
-      showSession
+      showSession ,
+      startAnimationImage
     }
   }
 }
@@ -32,7 +37,7 @@ export default {
       <Devinette @backAnswer="nextSession" devinette="Je suis toujours devant tout le monde mais personne ne peut me voir. Qui suis-je" numAnswer="4"/>
       <div class="visuelimage_age" v-if="showSession">
         <EtoileAge />
-        <VisuelImage />
+        <VisuelImage :tigglerAnimation="startAnimationImage"/>
       </div>
     </div>
   </div>
@@ -40,6 +45,9 @@ export default {
 <style>
 .foursession {
   width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .foursession .visuelimage_age {
   display: flex;

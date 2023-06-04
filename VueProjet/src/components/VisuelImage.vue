@@ -1,22 +1,27 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref } from 'vue'
+import { ref , watch} from 'vue'
 import Download from './icons/Download.vue'
 import IconPaper from './icons/IconPaper.vue'
 
 export default {
-    setup() {
+  props : {
+    tigglerAnimation : Boolean
+  } ,
+    setup(props) {
         const showCrayon = ref(false);
-        const startAnimation = () => {
+
+        const startAnimationImage = () => {
             const targetElement = document.getElementById("target_image");
             const destinateur = document.getElementsByClassName("destinateur")[0];
             const recepteur = document.getElementsByClassName("samira")[0];
             const adore = document.getElementsByClassName("adore")[0];
             const salutation = document.getElementsByClassName("salutation")[0];
+
             var typewriter = new Typewriter(salutation, {
                 loop: false,
-                delay: 75,
+                delay: 150,
                 cursorClassName: "cursor_image"
             });
             typewriter
@@ -27,7 +32,7 @@ export default {
                 stopAnimation(typewriter);
                 typewriter = new Typewriter(recepteur, {
                     loop: false,
-                    delay: 75,
+                    delay: 200,
                     cursorClassName: "cursor_image"
                 });
                 typewriter
@@ -46,7 +51,7 @@ export default {
                     stopAnimation(typewriter);
                     typewriter = new Typewriter(targetElement, {
                         loop: false,
-                        delay: 75,
+                        delay: 150,
                         cursorClassName: "cursor_image"
                     });
                     typewriter
@@ -81,7 +86,7 @@ export default {
                         stopAnimation(typewriter);
                         typewriter = new Typewriter(adore, {
                             loop: false,
-                            delay: 75,
+                            delay: 200,
                             cursorClassName: "cursor_image"
                         });
                         typewriter
@@ -92,7 +97,7 @@ export default {
                             stopAnimation(typewriter);
                             typewriter = new Typewriter(destinateur, {
                                 loop: false,
-                                delay: 75,
+                                delay: 250,
                                 cursorClassName: "cursor_image"
                             });
                             typewriter
@@ -149,9 +154,12 @@ export default {
             else {
                 imageStyle.value = null;
             }
-        };
+        }
+
+        watch(() => props.tigglerAnimation , startAnimationImage) ;
+
         return {
-            startAnimation,
+            startAnimationImage,
             showCrayon,
             downloadImage,
             imageStyle,
@@ -165,7 +173,7 @@ export default {
 
 <template>
   <div class="container1_download">
-    <div class="container1" @click="startAnimation" id="visuelImage">
+    <div class="container1" id="visuelImage">
       <div class="content1" :style="imageStyle && { background: imageStyle }"></div>
       <div class="content2">
         <p class="salutation"></p>

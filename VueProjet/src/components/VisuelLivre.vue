@@ -1,11 +1,14 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref } from 'vue'
+import { ref , watch} from 'vue'
 import Download from './icons/Download.vue'
 
 export default {
-    setup() {
+  props : {
+    tigglerAnimation : Boolean
+  } ,
+    setup(props) {
         const showCrayon = ref(false);
         const startAnimation = () => {
             const page1 = document.getElementsByClassName("page1")[0];
@@ -56,7 +59,9 @@ export default {
             cursor.classList.remove("cursor_livre");
             cursor.classList.add("after_typed");
             n.stop();
-        };
+        }
+
+        watch(() => props.tigglerAnimation , startAnimation)
         return {
             startAnimation,
             stopAnimation,

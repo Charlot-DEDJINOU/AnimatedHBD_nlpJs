@@ -3,8 +3,6 @@ import Lune from './icons/Lune.vue'
 import Solar from './icons/Solar.vue'
 import SemiSolar from './icons/SemiSolar.vue'
 import IconPaper from './icons/IconPaper.vue'
-import Context from './Context.vue'
-import { toRefs } from 'vue'
 
 export default {
   components: {
@@ -15,7 +13,6 @@ export default {
   },
 
   setup() {
-    const { momo } = toRefs(Context)
 
     const fake = () => {
       momo.value()
