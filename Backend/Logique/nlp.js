@@ -31,12 +31,12 @@ async function getSentences(numDev) {
 }
 
 function findAnswer(possibleAnswers , answer){
-    return possibleAnswers.includes(answer.toLowerCase())
+    return possibleAnswers.includes(answer)
 }
 
 function cleanSentence(sentence){
     var newSentence = "" ;
-    var lastLetter = ""
+    var lastLetter = " "
 
     for(letter of sentence)
     {
@@ -46,7 +46,7 @@ function cleanSentence(sentence){
         lastLetter = letter
     }
 
-    return newSentence.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+    return newSentence.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").toLowerCase() ;
 }
 
 function findIntersection(phrase1, phrase2) {
@@ -55,18 +55,20 @@ function findIntersection(phrase1, phrase2) {
     const mots2 = new Set(phrase2.toLowerCase().split(' '));
   
     const intersection = [...mots1].filter(mot => mots2.has(mot));
-  
+    
     return intersection;
   }
 
 function findDifference(phrase1 , phrase2) {
 
-    const mots1 = new Set(phrase1);
-    const mots2 = new Set(phrase2);
-  
-    const difference = [...mots1].filter(mot => !mots2.has(mot));
-  
-    return difference;
+  for (const mot of phrase2) {
+    const index = phrase1.indexOf(mot);
+    if (index !== -1) {
+      phrase1.splice(index, 1);
+    }
+  }
+
+    return phrase1;
 }
 
 function disociateSentence(phrase1 , phrase2 , possibleAnswers) {
@@ -86,7 +88,7 @@ function disociateSentence(phrase1 , phrase2 , possibleAnswers) {
 function training(possibleAnswers , userAnswer) {
   var tmp = false , allIntersections = []
   for(let answer of possibleAnswers) {
-    answer = disociateSentence(cleanSentence(answer) , userAnswer , possibleAnswers)
+    answer = disociateSentence(answer , userAnswer , possibleAnswers)
     if(answer[0] == true) {
       tmp = true ;
       break ;
@@ -128,14 +130,12 @@ function pourcentage(difference , possibleAnswers) {
   var pourcentage = []
   for(var word of difference) {
     var count = 0
-    console.log(word)
     for(let answer of possibleAnswers) {
       if(answer.split(' ').includes(word))
           count ++ ;
     }
     pourcentage.push(count)
   }
-  console.log(pourcentage)
   return pourcentage ;
 }
 
@@ -147,7 +147,8 @@ function sum(tab) {
   return somme ;
 }
 
-async function main(userAnswer , numDev , callback) {
+async function main(userAnswer="" , numDev , callback) {
+  userAnswer = cleanSentence(userAnswer) ;
   const possibleAnswers = await getSentences(numDev);
   for(let i=0 ; i<possibleAnswers.length ; i++) 
       possibleAnswers[i] = cleanSentence(possibleAnswers[i])
@@ -155,7 +156,7 @@ async function main(userAnswer , numDev , callback) {
   if(findAnswer(possibleAnswers , userAnswer))
       callback(true)
   else
-      callback(training(possibleAnswers , cleanSentence(userAnswer)))
+      callback(training(possibleAnswers , userAnswer))
 }
 
 main().catch(error => console.error(error));
