@@ -219,6 +219,11 @@ export default {
   height: 20px;
   opacity: 0.5;
 }
+.container1_download .down .file .text
+{
+  display: inline-block;
+  font-weight: bold;
+}
 .container1 {
   width: 600px;
   height: 500px;

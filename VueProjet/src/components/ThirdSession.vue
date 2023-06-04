@@ -3,6 +3,7 @@ import VisuelRouleau from './VisuelRouleau.vue'
 import SendEmail from './SendEmail.vue'
 import Devinette from './Devinette.vue'
 import Download from './icons/Download.vue'
+import { ref } from 'vue'
 
 export default {
   components: {
@@ -10,14 +11,27 @@ export default {
     SendEmail,
     Devinette,
     Download
+  } ,
+  setup() {
+    const showSession = ref(false)
+
+    const nextSession = (payload) => {
+      if(payload.message){
+        showSession.value = true
+      }
+    }
+    return {
+      nextSession ,
+      showSession
+    }
   }
 }
 </script>
 <template>
   <div class="session">
     <div class="thirdsession">
-      <Devinette />
-      <div class="visuelrouleau_email">
+      <Devinette @backAnswer="nextSession" devinette="Qu'est-ce qui a un cou mais pas de tête ?" numAnswer="2"/>
+      <div class="visuelrouleau_email" v-if="showSession">
         <VisuelRouleau />
         <div class="images_rouleau">
           <img src="../assets/image1.png" />
@@ -27,7 +41,7 @@ export default {
         </div>
         <SendEmail />
       </div>
-      <div class="down">
+      <div class="down" v-if="showSession">
         <Download />
       </div>
     </div>

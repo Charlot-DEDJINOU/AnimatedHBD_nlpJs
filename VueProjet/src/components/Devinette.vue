@@ -2,12 +2,22 @@
 import { ref } from 'vue'
 
 export default {
-  setup() {
+  props : {
+    devinette : String ,
+    numAnswer : String
+  } ,
+  setup(props , ctx) {
     const reponse = ref('')
 
-    const submit = () => {
-      alert(reponse.value)
-      reponse.value = ''
+    async function submit() {
+      try {
+        const response = await fetch('http://localhost:3000/api/correctAnswer?numDev='+props.numAnswer+'&userAnswer='+reponse.value);
+        const data = await response.json();
+        reponse.value = ''
+        ctx.emit('backAnswer' , data)
+      } catch (error) {
+        alert(error);
+      }
     }
 
     return {
@@ -26,7 +36,7 @@ export default {
     </div>
     <form @submit.prevent="submit">
       <p class="devinette">
-        Qu'est-ce qui est toujours devant vous mais ne peut jamais être atteint , Qui suis je ?
+        {{ devinette }}
       </p>
       <div>
         <input type="text" placeholder="Votre réponse" v-model="reponse" />

@@ -14,13 +14,17 @@ export default {
   <div class="container_etoileAge">
     <Etoile class="etoile" />
     <Age class="age" />
+    <div class="images">
+        <img src="../assets/image1.png" />
+        <img src="../assets/image1.png" />
+    </div>
   </div>
 </template>
 
 <style>
 .container_etoileAge {
   width: 350px;
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +38,19 @@ export default {
 .age {
   display: inline-block;
 }
-
+.container_etoileAge .images
+{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container_etoileAge .images img 
+{
+  width: 140px;
+  object-fit: contain;
+}
 @keyframes rotateScale {
   0% {
     transform: rotate3d(0, 0, 1, 0deg) scale(0.5);

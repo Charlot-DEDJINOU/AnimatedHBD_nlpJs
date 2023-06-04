@@ -2,6 +2,7 @@
 import Devinette from './Devinette.vue'
 import VisuelRose from './VisuelRose.vue'
 import Download from './icons/Download.vue'
+import { ref } from 'vue'
 
 export default {
   components: {
@@ -11,12 +12,16 @@ export default {
   },
 
   setup() {
-    const animated = () => {
-      const elements = document.getElementsByClassName('animate1')
-      for (let ele of elements) ele.classList.add('animated')
+    const showSession = ref(false)
+
+    const nextSession = (payload) => {
+      if(payload.message){
+        showSession.value = true
+      }
     }
     return {
-      animated
+      nextSession ,
+      showSession
     }
   }
 }
@@ -25,15 +30,15 @@ export default {
 <template>
   <div class="session">
     <div class="secondSession">
-      <Devinette @click="animated" />
-      <div class="visuels">
+      <Devinette  @backAnswer="nextSession" devinette="Je suis au milieu de la mer et au bout du monde , Qui suis je ?" numAnswer="1"/>
+      <div class="visuels" v-if="showSession">
         <div class="art">
           <div class="age">
-            <img src="../assets/chiffre1.png" class="first animate1" />
-            <img src="../assets/chiffre9.png" class="animate1" />
+            <img src="../assets/chiffre1.png" class="first animated" />
+            <img src="../assets/chiffre9.png" class="animated" />
           </div>
           <p>Ans</p>
-          <img src="../assets/chiffre4.png" class="chiffre4 animate1" />
+          <img src="../assets/chiffre4.png" class="chiffre4 animated" />
         </div>
         <div class="visuel1"><VisuelRose /></div>
         <div class="images_ballon">
@@ -42,7 +47,7 @@ export default {
           <img src="../assets/image1.png" />
         </div>
       </div>
-      <Download />
+      <Download v-if="showSession"/>
     </div>
   </div>
 </template>

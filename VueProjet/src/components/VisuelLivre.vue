@@ -2,88 +2,69 @@
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
 import { ref } from 'vue'
+import Download from './icons/Download.vue'
 
 export default {
-  setup() {
-    const showCrayon = ref(false)
-
-    const startAnimation = () => {
-      const page1 = document.getElementsByClassName('page1')[0]
-      const page2 = document.getElementsByClassName('page2')[0]
-
-      var typewriter = new Typewriter(page1, {
-        loop: false,
-        delay: 75,
-        cursorClassName: 'cursor_livre'
-      })
-
-      typewriter
-        .pauseFor(1000)
-        .typeString('Ma chère amie,<br /><br />')
-        .pauseFor(500)
-        .typeString(
-          "Je suis absolument ému(e) et touché(e) par tout ce que tu as fait pour moi. Le temps et l'effort que tu as consacrés à chercher les affiches pour ton anniversaire montrent à quel point tu es une personne incroyablement attentionnée et aimante. Je suis tellement chanceux(se) de t'avoir dans ma vie et de pouvoir compter sur toi comme une amie si précieuse.<br /><br />"
-        )
-        .pauseFor(500)
-        .typeString(
-          "Je tiens à souligner que tout ce que nous avons échangé sur WhatsApp était entièrement vrai. Lorsque je t'ai dit que tes yeux brillent comme les étoiles, je le pensais vraiment. C'est pourquoi j'ai décidé de t'offrir une grande étoile sur le site - pour te rappeler à quel point tes yeux sont belles et brillantes à mes yeux.<br /><br />"
-        )
-        .pauseFor(500)
-        .typeString(
-          "Je suis également admiratif(ve) de ta persévérance et de ta réussite professionnelle. Tu es une travailleuse acharnée et une personne incroyablement talentueuse, et tu m'as inspiré(e) à poursuivre mes propres rêves et à ne jamais abandonner."
-        )
-        .pauseFor(1000)
-        .callFunction(() => {
-          stopAnimation(typewriter)
-
-          typewriter = new Typewriter(page2, {
-            loop: false,
-            delay: 75,
-            cursorClassName: 'cursor_livre'
-          })
-
-          typewriter
-            .pauseFor(1000)
-            .typeString(
-              "Grâce à toi, j'ai retrouvé la passion pour le design que j'avais perdue depuis longtemps. Tu as ressuscité en moi une étincelle de créativité et m'as encouragé(e) à explorer de nouveaux horizons. Je suis tellement reconnaissant(e) pour tout ce que tu as apporté dans ma vie.<br /><br />"
-            )
-            .pauseFor(500)
-            .typeString(
-              "Enfin, je veux te dire que ta présence dans ma vie est un vrai cadeau. Même si tu as déjà un copain, tu restes une amie très spéciale pour moi et je suis fier/fière de t'appeler ma confidente. Je suis impatient(e) de célébrer ton anniversaire avec toi et de partager de nombreux autres moments de bonheur et de rire ensemble.<br /><br />"
-            )
-            .pauseFor(500)
-            .typeString(
-              "Merci encore pour tout ce que tu as fait pour moi, ma chère amie. Tu es vraiment l'une des personnes les plus formidables que j'ai jamais rencontrées, et je suis tellement chanceux(se) de t'avoir dans ma vie.<br /><br />"
-            )
-            .pauseFor(500)
-            .typeString('Avec tout mon amour et toute mon amitié,<br />')
-            .typeString('Espoir Destiny')
-            .pauseFor(1000)
-            .callFunction(() => {
-              stopAnimation(typewriter)
-
-              showCrayon.value = true
+    setup() {
+        const showCrayon = ref(false);
+        const startAnimation = () => {
+            const page1 = document.getElementsByClassName("page1")[0];
+            const page2 = document.getElementsByClassName("page2")[0];
+            var typewriter = new Typewriter(page1, {
+                loop: false,
+                delay: 75,
+                cursorClassName: "cursor_livre"
+            });
+            typewriter
+                .pauseFor(1000)
+                .typeString("Ma chère amie Samira Bdl,<br /><br />")
+                .pauseFor(500)
+                .typeString("Je suis absolument ému(e) et touché(e) par tout ce que tu as fait pour moi. Le temps et l'effort que tu as consacrés à chercher les affiches pour ton anniversaire montrent à quel point tu es une personne incroyablement attentionnée et aimante. Je suis tellement chanceux(se) de t'avoir dans ma vie et de pouvoir compter sur toi comme une amie si précieuse.<br /><br />")
+                .pauseFor(500)
+                .typeString("Je tiens à souligner que tout ce que nous avons échangé sur WhatsApp était entièrement vrai. Lorsque je t'ai dit que tes yeux brillent comme les étoiles, je le pensais vraiment. C'est pourquoi j'ai décidé de t'offrir une grande étoile sur le site - pour te rappeler à quel point tes yeux sont belles et brillantes à mes yeux.<br /><br />")
+                .pauseFor(500)
+                .typeString("Je suis également admiratif(ve) de ta persévérance et de ta réussite professionnelle. Tu es une travailleuse acharnée et une personne incroyablement talentueuse, et tu m'as inspiré(e) à poursuivre mes propres rêves et à ne jamais abandonner.")
+                .pauseFor(1000)
+                .callFunction(() => {
+                stopAnimation(typewriter);
+                typewriter = new Typewriter(page2, {
+                    loop: false,
+                    delay: 75,
+                    cursorClassName: "cursor_livre"
+                });
+                typewriter
+                    .pauseFor(1000)
+                    .typeString("Grâce à toi, j'ai retrouvé la passion pour le design que j'avais perdue depuis longtemps. Tu as ressuscité en moi une étincelle de créativité et m'as encouragé(e) à explorer de nouveaux horizons. Je suis tellement reconnaissant(e) pour tout ce que tu as apporté dans ma vie.<br /><br />")
+                    .pauseFor(500)
+                    .typeString("Enfin, je veux te dire que ta présence dans ma vie est un vrai cadeau. Même si tu as déjà un copain, tu restes une amie très spéciale pour moi et je suis fier/fière de t'appeler ma confidente. Je suis impatient(e) de célébrer ton anniversaire avec toi et de partager de nombreux autres moments de bonheur et de rire ensemble.<br /><br />")
+                    .pauseFor(500)
+                    .typeString("Merci encore pour tout ce que tu as fait pour moi, ma chère amie. Tu es vraiment l'une des personnes les plus formidables que j'ai jamais rencontrées, et je suis tellement chanceux(se) de t'avoir dans ma vie.<br /><br />")
+                    .pauseFor(500)
+                    .typeString("Avec tout mon amour et toute mon amitié,<br />")
+                    .typeString("Espoir Destiny")
+                    .pauseFor(1000)
+                    .callFunction(() => {
+                    stopAnimation(typewriter);
+                    showCrayon.value = true;
+                })
+                    .start();
             })
-            .start()
-        })
-        .start()
-    }
-
-    const stopAnimation = (n) => {
-      const cursor = document.getElementsByClassName('cursor_livre')[0]
-      cursor.classList.remove('cursor_livre')
-      cursor.classList.add('after_typed')
-
-      n.stop()
-    }
-
-    return {
-      startAnimation,
-      stopAnimation,
-      showCrayon,
-      downloadImage
-    }
-  }
+                .start();
+        };
+        const stopAnimation = (n) => {
+            const cursor = document.getElementsByClassName("cursor_livre")[0];
+            cursor.classList.remove("cursor_livre");
+            cursor.classList.add("after_typed");
+            n.stop();
+        };
+        return {
+            startAnimation,
+            stopAnimation,
+            showCrayon,
+            downloadImage
+        };
+    },
+    components: { Download }
 }
 </script>
 
@@ -95,7 +76,7 @@ export default {
     </div>
     <img src="../assets/crayon_livre_oblique.png" class="crayon" v-show="showCrayon" />
   </div>
-  <button @click="downloadImage('visuelLivre')">Telecharger</button>
+  <Download @click="downloadImage('visuelLivre')" />
 </template>
 <style>
 .container_livre {
