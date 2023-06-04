@@ -1,8 +1,12 @@
-const express = require("express");
 const databaseConfig = require("./database/database");
 const nlp = require("./Logique/nlp");
 
+const express = require('express');
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors());
 
 function initializeDatabase() {
   const db = databaseConfig.createDb();
@@ -18,7 +22,7 @@ function initializeDatabase() {
   });
 }
 
-initializeDatabase();
+initializeDatabase() ;
 
 app.get("/", (req, res) => {
   res.send("Mon Backend !");
