@@ -25,6 +25,9 @@
   width: 130px;
   height: 30px;
   margin-top: 10px;
+  font-family: 'Marck Script';
+  font-style: normal;
+  font-weight: 500;
 }
 .download :hover {
   cursor: pointer;
@@ -33,6 +36,5 @@
   display: inline-block;
   margin-left: 10px;
   font-size: 18px;
-  font-weight: 600;
 }
 </style>

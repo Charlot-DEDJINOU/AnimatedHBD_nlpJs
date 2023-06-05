@@ -16,17 +16,17 @@ export default {
     const starAnimation = ref(false)
 
     const nextSession = (payload) => {
-      if(payload.message){
+      if (payload.message) {
         showSession.value = true
         setTimeout(() => {
-          starAnimation.value=true
+          starAnimation.value = true
         }, 6000)
       }
     }
 
     return {
       nextSession,
-      showSession ,
+      showSession,
       starAnimation
     }
   }
@@ -36,7 +36,11 @@ export default {
 <template>
   <div class="session">
     <div class="secondSession">
-      <Devinette  @backAnswer="nextSession" devinette="Je suis au milieu de la mer et au bout du monde , Qui suis je ?" numAnswer="1"/>
+      <Devinette
+        @backAnswer="nextSession"
+        devinette="Je suis au milieu de la mer et au bout du monde , Qui suis je ?"
+        numAnswer="1"
+      />
       <div class="visuels" v-if="showSession">
         <div class="art">
           <div class="age">
@@ -48,12 +52,12 @@ export default {
         </div>
         <div class="visuel1"><VisuelRose :triggerAnimation="starAnimation" /></div>
         <div class="images_ballon">
-          <img src="../assets/image1.png" class="ballon1"/>
-          <img src="../assets/image1.png" class="ballon2"/>
-          <img src="../assets/image1.png" class="ballon3"/>
+          <img src="../assets/image1.png" class="ballon1" />
+          <img src="../assets/image1.png" class="ballon2" />
+          <img src="../assets/image1.png" class="ballon3" />
         </div>
       </div>
-      <Download v-if="showSession"/>
+      <Download v-if="showSession" />
     </div>
   </div>
 </template>
@@ -112,18 +116,15 @@ export default {
   width: 150px;
   object-fit: contain;
 }
-.secondSession .visuels .images_ballon .ballon1
-{
+.secondSession .visuels .images_ballon .ballon1 {
   animation: balloonAnimation 6s infinite linear;
   animation-delay: 2s;
 }
-.secondSession .visuels .images_ballon .ballon2
-{
+.secondSession .visuels .images_ballon .ballon2 {
   animation: balloonAnimation 6s infinite linear;
   animation-delay: 0s;
 }
-.secondSession .visuels .images_ballon .ballon3
-{
+.secondSession .visuels .images_ballon .ballon3 {
   animation: balloonAnimation 6s infinite linear;
   animation-delay: 4s;
 }
@@ -142,15 +143,15 @@ export default {
 }
 @keyframes balloonAnimation {
   0% {
-    transform: translateX(-60px) ;
+    transform: translateX(-60px);
   }
-  20%{
+  20% {
     transform: scale(1.2) translateX(0px);
   }
-  50%{
+  50% {
     transform: scale(1) translateX(60px);
   }
-  70%{
+  70% {
     transform: scale(0.7) translateX(0px);
   }
   100% {

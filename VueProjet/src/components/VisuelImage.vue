@@ -1,173 +1,172 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref , watch} from 'vue'
+import { ref, watch } from 'vue'
 import Download from './icons/Download.vue'
 import IconPaper from './icons/IconPaper.vue'
 
 export default {
-  props : {
-    tigglerAnimation : Boolean
-  } ,
-    setup(props) {
-        const showCrayon = ref(false);
+  props: {
+    tigglerAnimation: Boolean
+  },
+  setup(props) {
+    const showCrayon = ref(false)
 
-        const startAnimationImage = () => {
-            const targetElement = document.getElementById("target_image");
-            const destinateur = document.getElementsByClassName("destinateur")[0];
-            const recepteur = document.getElementsByClassName("samira")[0];
-            const adore = document.getElementsByClassName("adore")[0];
-            const salutation = document.getElementsByClassName("salutation")[0];
+    const startAnimationImage = () => {
+      const targetElement = document.getElementById('target_image')
+      const destinateur = document.getElementsByClassName('destinateur')[0]
+      const recepteur = document.getElementsByClassName('samira')[0]
+      const adore = document.getElementsByClassName('adore')[0]
+      const salutation = document.getElementsByClassName('salutation')[0]
 
-            var typewriter = new Typewriter(salutation, {
+      var typewriter = new Typewriter(salutation, {
+        loop: false,
+        delay: 150,
+        cursorClassName: 'cursor_image'
+      })
+      typewriter
+        .pauseFor(1000)
+        .typeString('À ma chère ,')
+        .pauseFor(1000)
+        .callFunction(() => {
+          stopAnimation(typewriter)
+          typewriter = new Typewriter(recepteur, {
+            loop: false,
+            delay: 200,
+            cursorClassName: 'cursor_image'
+          })
+          typewriter
+            .pauseFor(1000)
+            .typeString('<span class="bleu">S</span>')
+            .typeString('<span class="vert">a</span>')
+            .typeString('<span class="jaune">m</span>')
+            .typeString('<span class="rouge">i</span>')
+            .typeString('<span class="bleu">r</span>')
+            .typeString('<span class="vert">a </span>')
+            .typeString('<span class="jaune">B</span>')
+            .typeString('<span class="rouge">d</span>')
+            .typeString('<span class="vert">l</span>')
+            .pauseFor(1000)
+            .callFunction(() => {
+              stopAnimation(typewriter)
+              typewriter = new Typewriter(targetElement, {
                 loop: false,
-                delay: 150,
-                cursorClassName: "cursor_image"
-            });
-            typewriter
+                delay: 50,
+                cursorClassName: 'cursor_image'
+              })
+              typewriter
                 .pauseFor(1000)
-                .typeString("À ma chère ,")
+                .typeString("Aujourd'hui c'est ta journée,<br />")
+                .pauseFor(500)
+                .typeString('Un jour spécial à célébrer,<br />')
+                .pauseFor(500)
+                .typeString('Un an de plus à ton compteur,<br />')
+                .pauseFor(500)
+                .typeString('Et pour moi, un sentiment de bonheur.<br /><br />')
+                .pauseFor(2000)
+                .typeString("Car depuis que j'ai croisé ton chemin,<br />")
+                .pauseFor(500)
+                .typeString('Je suis sous le charme de ta personnalité,<br />')
+                .pauseFor(500)
+                .typeString('Ton sourire, ta détermination et ta bienveillance,<br />')
+                .pauseFor(500)
+                .typeString('Ont su toucher mon cœur avec efficacité.<br /><br />')
+                .pauseFor(2000)
+                .typeString('Alors pour ton anniversaire, je te souhaite,<br />')
+                .pauseFor(500)
+                .typeString('Que cette journée soit remplie de douceur,<br />')
+                .pauseFor(500)
+                .typeString("Et que chaque année qui passe t'apporte,<br />")
+                .pauseFor(500)
+                .typeString('Tout ce que tu souhaites avec ferveur.<br /><br />')
+                .pauseFor(2000)
+                .typeString('Joyeux anniversaire à toi, qui illumines mes journées,<br />')
                 .pauseFor(1000)
                 .callFunction(() => {
-                stopAnimation(typewriter);
-                typewriter = new Typewriter(recepteur, {
+                  stopAnimation(typewriter)
+                  typewriter = new Typewriter(adore, {
                     loop: false,
-                    delay: 200,
-                    cursorClassName: "cursor_image"
-                });
-                typewriter
+                    delay: 50,
+                    cursorClassName: 'cursor_image'
+                  })
+                  typewriter
                     .pauseFor(1000)
-                    .typeString("<span class=\"bleu\">S</span>")
-                    .typeString("<span class=\"vert\">a</span>")
-                    .typeString("<span class=\"jaune\">m</span>")
-                    .typeString("<span class=\"rouge\">i</span>")
-                    .typeString("<span class=\"bleu\">r</span>")
-                    .typeString("<span class=\"vert\">a </span>")
-                    .typeString("<span class=\"jaune\">B</span>")
-                    .typeString("<span class=\"rouge\">d</span>")
-                    .typeString("<span class=\"vert\">l</span>")
+                    .typeString("Je t'adore")
                     .pauseFor(1000)
                     .callFunction(() => {
-                    stopAnimation(typewriter);
-                    typewriter = new Typewriter(targetElement, {
+                      stopAnimation(typewriter)
+                      typewriter = new Typewriter(destinateur, {
                         loop: false,
-                        delay: 150,
-                        cursorClassName: "cursor_image"
-                    });
-                    typewriter
+                        delay: 50,
+                        cursorClassName: 'cursor_image'
+                      })
+                      typewriter
                         .pauseFor(1000)
-                        .typeString("Aujourd'hui c'est ta journée,<br />")
-                        .pauseFor(500)
-                        .typeString("Un jour spécial à célébrer,<br />")
-                        .pauseFor(500)
-                        .typeString("Un an de plus à ton compteur,<br />")
-                        .pauseFor(500)
-                        .typeString("Et pour moi, un sentiment de bonheur.<br /><br />")
-                        .pauseFor(2000)
-                        .typeString("Car depuis que j'ai croisé ton chemin,<br />")
-                        .pauseFor(500)
-                        .typeString("Je suis sous le charme de ta personnalité,<br />")
-                        .pauseFor(500)
-                        .typeString("Ton sourire, ta détermination et ta bienveillance,<br />")
-                        .pauseFor(500)
-                        .typeString("Ont su toucher mon cœur avec efficacité.<br /><br />")
-                        .pauseFor(2000)
-                        .typeString("Alors pour ton anniversaire, je te souhaite,<br />")
-                        .pauseFor(500)
-                        .typeString("Que cette journée soit remplie de douceur,<br />")
-                        .pauseFor(500)
-                        .typeString("Et que chaque année qui passe t'apporte,<br />")
-                        .pauseFor(500)
-                        .typeString("Tout ce que tu souhaites avec ferveur.<br /><br />")
-                        .pauseFor(2000)
-                        .typeString("Joyeux anniversaire à toi, qui illumines mes journées,<br />")
+                        .typeString('<span class="vert">D</span>')
+                        .typeString('<span class="jaune">e</span>')
+                        .typeString('<span class="rouge">s</span>')
+                        .typeString('<span class="bleu">t</span>')
+                        .typeString('<span class="vert">i</span>')
+                        .typeString('<span class="jaune">n</span>')
+                        .typeString('<span class="rouge">y</span>')
+                        .typeString('<span class="vert"> E</span>')
+                        .typeString('<span class="jaune">s</span>')
+                        .typeString('<span class="rouge">p</span>')
+                        .typeString('<span class="lambda"> ,un ami lambda</span>')
                         .pauseFor(1000)
                         .callFunction(() => {
-                        stopAnimation(typewriter);
-                        typewriter = new Typewriter(adore, {
-                            loop: false,
-                            delay: 200,
-                            cursorClassName: "cursor_image"
-                        });
-                        typewriter
-                            .pauseFor(1000)
-                            .typeString("Je t'adore")
-                            .pauseFor(1000)
-                            .callFunction(() => {
-                            stopAnimation(typewriter);
-                            typewriter = new Typewriter(destinateur, {
-                                loop: false,
-                                delay: 250,
-                                cursorClassName: "cursor_image"
-                            });
-                            typewriter
-                                .pauseFor(1000)
-                                .typeString("<span class=\"vert\">D</span>")
-                                .typeString("<span class=\"jaune\">e</span>")
-                                .typeString("<span class=\"rouge\">s</span>")
-                                .typeString("<span class=\"bleu\">t</span>")
-                                .typeString("<span class=\"vert\">i</span>")
-                                .typeString("<span class=\"jaune\">n</span>")
-                                .typeString("<span class=\"rouge\">y</span>")
-                                .typeString("<span class=\"vert\"> E</span>")
-                                .typeString("<span class=\"jaune\">s</span>")
-                                .typeString("<span class=\"rouge\">p</span>")
-                                .typeString("<span class=\"lambda\"> ,un ami lambda</span>")
-                                .pauseFor(1000)
-                                .callFunction(() => {
-                                stopAnimation(typewriter);
-                                showCrayon.value = true;
-                            })
-                                .start();
+                          stopAnimation(typewriter)
+                          showCrayon.value = true
                         })
-                            .start();
+                        .start()
                     })
-                        .start();
+                    .start()
                 })
-                    .start();
+                .start()
             })
-                .start();
-        };
-        const stopAnimation = (n) => {
-            const cursor = document.getElementsByClassName("cursor_image")[0];
-            cursor.classList.remove("cursor_image");
-            cursor.classList.add("after_typed");
-            n.stop();
-        };
-        const imageStyle = ref("");
+            .start()
+        })
+        .start()
+    }
+    const stopAnimation = (n) => {
+      const cursor = document.getElementsByClassName('cursor_image')[0]
+      cursor.classList.remove('cursor_image')
+      cursor.classList.add('after_typed')
+      n.stop()
+    }
+    const imageStyle = ref('')
 
-        const clickButton = () => {
-            const input_file = document.getElementById("file1");
-            input_file.click();
-        };
-        const InputChange = (event) => {
-            const name_file = event.target.files[0];
-            if (name_file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const selectedFile = e.target.result;
-                    imageStyle.value = `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${selectedFile})`;
-                    imageStyle.value += " center/cover";
-                };
-                reader.readAsDataURL(name_file);
-            }
-            else {
-                imageStyle.value = null;
-            }
+    const clickButton = () => {
+      const input_file = document.getElementById('file1')
+      input_file.click()
+    }
+    const InputChange = (event) => {
+      const name_file = event.target.files[0]
+      if (name_file) {
+        const reader = new FileReader()
+        reader.onload = (e) => {
+          const selectedFile = e.target.result
+          imageStyle.value = `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${selectedFile})`
+          imageStyle.value += ' center/cover'
         }
+        reader.readAsDataURL(name_file)
+      } else {
+        imageStyle.value = null
+      }
+    }
 
-        watch(() => props.tigglerAnimation , startAnimationImage) ;
+    watch(() => props.tigglerAnimation, startAnimationImage)
 
-        return {
-            startAnimationImage,
-            showCrayon,
-            downloadImage,
-            imageStyle,
-            clickButton,
-            InputChange
-        };
-    },
-    components: { Download , IconPaper}
+    return {
+      startAnimationImage,
+      showCrayon,
+      downloadImage,
+      imageStyle,
+      clickButton,
+      InputChange
+    }
+  },
+  components: { Download, IconPaper }
 }
 </script>
 
@@ -185,25 +184,23 @@ export default {
       <img src="../assets/crayon_image_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
     <div class="down">
-      <div class="file"  @click="clickButton">
+      <div class="file" @click="clickButton">
         <span class="text">upload</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <Download class="button"  @click="downloadImage('visuelImage')" />
+      <Download class="button" @click="downloadImage('visuelImage')" />
       <input type="file" id="file1" @change="InputChange" accept="image/*" hidden />
     </div>
   </div>
 </template>
 
 <style>
-.container1_download
-{
+.container1_download {
   display: flex;
   flex-direction: column;
   margin-left: 60px;
 }
-.container1_download .down 
-{
+.container1_download .down {
   width: 200px;
   height: 100px;
   display: flex;
@@ -227,8 +224,7 @@ export default {
   height: 20px;
   opacity: 0.5;
 }
-.container1_download .down .file .text
-{
+.container1_download .down .file .text {
   display: inline-block;
   font-weight: bold;
 }
@@ -238,7 +234,7 @@ export default {
   display: flex;
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .container1 .crayon {
@@ -267,6 +263,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  color: black;
 }
 
 .content2 .text {

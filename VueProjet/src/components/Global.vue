@@ -3,6 +3,8 @@ import Lune from './icons/Lune.vue'
 import Solar from './icons/Solar.vue'
 import SemiSolar from './icons/SemiSolar.vue'
 import IconPaper from './icons/IconPaper.vue'
+import { ref } from 'vue'
+import { useTheme } from 'vuetify'
 
 export default {
   components: {
@@ -13,23 +15,24 @@ export default {
   },
 
   setup() {
+    const theme = useTheme()
 
-    const fake = () => {
-      momo.value()
+    const toggleTheme = (fond) => {
+      theme.global.name.value = fond ;
     }
 
     return {
-      fake
-    }
+      toggleTheme
+  }
   }
 }
 </script>
 <template>
   <div class="global">
     <div class="color">
-      <span><Solar /></span>
-      <span><SemiSolar /></span>
-      <span><Lune /></span>
+      <span><Solar @click="toggleTheme('dark')"/></span>
+      <span><Lune  @click="toggleTheme('light')"/></span>
+      <span class="color0"></span>
       <span class="color1"></span>
       <span class="color2"></span>
       <span class="color3"></span>
@@ -71,6 +74,9 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+.global .color .color0 {
+  background-color: pink;
 }
 .global .color .color1 {
   background-color: #16c953;

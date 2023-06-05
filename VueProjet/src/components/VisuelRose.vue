@@ -1,12 +1,12 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref , watch } from 'vue'
+import { ref, watch } from 'vue'
 
 export default {
-  props : {
-    triggerAnimation : Boolean 
-  } ,
+  props: {
+    triggerAnimation: Boolean
+  },
 
   setup(props) {
     const showCrayon = ref(false)
@@ -18,7 +18,7 @@ export default {
 
       var typewriter = new Typewriter(targetElement, {
         loop: false,
-        delay: 100,
+        delay: 50,
         cursorClassName: 'cursor_bouquet'
       })
 
@@ -133,7 +133,7 @@ export default {
   align-items: center;
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   color: #000000;
 }
 .container_visuel_bouquet .text {

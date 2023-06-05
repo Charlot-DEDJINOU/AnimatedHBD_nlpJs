@@ -2,21 +2,26 @@
 import { ref } from 'vue'
 
 export default {
-  props : {
-    devinette : String ,
-    numAnswer : String
-  } ,
-  setup(props , ctx) {
+  props: {
+    devinette: String,
+    numAnswer: String
+  },
+  setup(props, ctx) {
     const reponse = ref('')
 
     async function submit() {
       try {
-        const response = await fetch('http://localhost:3000/api/correctAnswer?numDev='+props.numAnswer+'&userAnswer='+reponse.value);
-        const data = await response.json();
+        const response = await fetch(
+          'http://localhost:3000/api/correctAnswer?numDev=' +
+            props.numAnswer +
+            '&userAnswer=' +
+            reponse.value
+        )
+        const data = await response.json()
         reponse.value = ''
-        ctx.emit('backAnswer' , data)
+        ctx.emit('backAnswer', data)
       } catch (error) {
-        alert(error);
+        alert(error)
       }
     }
 
@@ -51,7 +56,7 @@ export default {
   height: 250px;
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 800;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,6 +102,8 @@ export default {
 .container_devinette form input[type='text'] {
   width: 80%;
   height: 50px;
+  background-color: white;
+  color: black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px 0px 0px 5px;
   border: none;

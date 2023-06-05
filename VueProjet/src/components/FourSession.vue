@@ -9,23 +9,23 @@ export default {
     Devinette,
     VisuelImage,
     EtoileAge
-  } ,
+  },
 
   setup() {
     const showSession = ref(false)
     const startAnimationImage = ref(false)
 
     const nextSession = (payload) => {
-      if(payload.message){
+      if (payload.message) {
         showSession.value = true
         setTimeout(() => {
           startAnimationImage.value = true
-        } , 2000)
+        }, 2000)
       }
     }
     return {
-      nextSession ,
-      showSession ,
+      nextSession,
+      showSession,
       startAnimationImage
     }
   }
@@ -34,10 +34,14 @@ export default {
 <template>
   <div class="session">
     <div class="foursession">
-      <Devinette @backAnswer="nextSession" devinette="Je suis toujours devant tout le monde mais personne ne peut me voir. Qui suis-je" numAnswer="4"/>
+      <Devinette
+        @backAnswer="nextSession"
+        devinette="Je suis toujours devant tout le monde mais personne ne peut me voir. Qui suis-je"
+        numAnswer="4"
+      />
       <div class="visuelimage_age" v-if="showSession">
         <EtoileAge />
-        <VisuelImage :tigglerAnimation="startAnimationImage"/>
+        <VisuelImage :tigglerAnimation="startAnimationImage" />
       </div>
     </div>
   </div>

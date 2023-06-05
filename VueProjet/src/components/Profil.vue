@@ -58,7 +58,7 @@ export default {
   <div class="header_site" @click="startAnimation">
     <img src="../assets/open.jpg" class="image" />
     <div class="welcome">
-      <h1 id="nom"></h1>
+      <div id="nom"></div>
       <p class="bienvenue"></p>
     </div>
   </div>
@@ -72,8 +72,7 @@ export default {
   justify-content: space-around;
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 800;
-  color: black;
+  font-weight: 500;
 }
 .header_site .image {
   width: 250px;
@@ -85,10 +84,11 @@ export default {
 .header_site .welcome {
   width: 275px;
 }
-.header_site .welcome h1 {
-  font-weight: bold;
+.header_site .welcome #nom {
+  font-weight: 500;
+  font-size: 30px;
   padding-bottom: 5px;
-  line-height: 50px;
+  line-height: 30px;
 }
 .cursor_hearder {
   opacity: 0;

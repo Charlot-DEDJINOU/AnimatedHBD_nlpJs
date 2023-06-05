@@ -15,8 +15,8 @@ export default {
     <Etoile class="etoile" />
     <Age class="age" />
     <div class="images">
-        <img src="../assets/image1.png" />
-        <img src="../assets/image1.png" />
+      <img src="../assets/image1.png" />
+      <img src="../assets/image1.png" />
     </div>
   </div>
 </template>
@@ -38,16 +38,14 @@ export default {
 .age {
   display: inline-block;
 }
-.container_etoileAge .images
-{
+.container_etoileAge .images {
   width: 100%;
   height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container_etoileAge .images img 
-{
+.container_etoileAge .images img {
   width: 140px;
   object-fit: contain;
 }

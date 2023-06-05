@@ -1,12 +1,12 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref , watch} from 'vue'
+import { ref, watch } from 'vue'
 
 export default {
-  props : {
-    triggerAnimationRouleau : Boolean
-  } ,
+  props: {
+    triggerAnimationRouleau: Boolean
+  },
   setup(props) {
     const showCrayon = ref(false)
     const showRose = ref(false)
@@ -43,7 +43,7 @@ export default {
 
               typewriter = new Typewriter(targetElement, {
                 loop: false,
-                delay: 100,
+                delay: 50,
                 cursorClassName: 'cursor_rouleau'
               })
 
@@ -151,7 +151,8 @@ export default {
   align-items: center;
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
+  color: black;
 }
 .container_visuel_rouleau .content_image {
   width: 110px;

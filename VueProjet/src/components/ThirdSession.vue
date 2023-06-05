@@ -11,22 +11,22 @@ export default {
     SendEmail,
     Devinette,
     Download
-  } ,
+  },
   setup() {
     const showSession = ref(false)
     const startAnimationRouleau = ref(false)
 
     const nextSession = (payload) => {
-      if(payload.message){
+      if (payload.message) {
         showSession.value = true
         setTimeout(() => {
           startAnimationRouleau.value = true
-        }, 2000);
+        }, 2000)
       }
     }
     return {
-      nextSession ,
-      showSession ,
+      nextSession,
+      showSession,
       startAnimationRouleau
     }
   }
@@ -35,7 +35,11 @@ export default {
 <template>
   <div class="session">
     <div class="thirdsession">
-      <Devinette @backAnswer="nextSession" devinette="Qu'est-ce qui a un cou mais pas de tête ?" numAnswer="2"/>
+      <Devinette
+        @backAnswer="nextSession"
+        devinette="Qu'est-ce qui a un cou mais pas de tête ?"
+        numAnswer="2"
+      />
       <div class="visuelrouleau_email" v-if="showSession">
         <VisuelRouleau :triggerAnimationRouleau="startAnimationRouleau" />
         <div class="images_rouleau">
