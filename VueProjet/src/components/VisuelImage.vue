@@ -1,9 +1,10 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import downloadImage from './untils'
-import { ref, watch } from 'vue'
+import { ref, watch , computed} from 'vue'
 import Download from './icons/Download.vue'
 import IconPaper from './icons/IconPaper.vue'
+import { useStore } from 'vuex'
 
 export default {
   props: {
@@ -157,13 +158,18 @@ export default {
 
     watch(() => props.tigglerAnimation, startAnimationImage)
 
+    const store = useStore()
+
+    const uniColor = ref(computed(() => store.state.uniColor))
+
     return {
       startAnimationImage,
       showCrayon,
       downloadImage,
       imageStyle,
       clickButton,
-      InputChange
+      InputChange ,
+      uniColor
     }
   },
   components: { Download, IconPaper }
@@ -184,7 +190,7 @@ export default {
       <img src="../assets/crayon_image_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
     <div class="down">
-      <div class="file" @click="clickButton">
+      <div class="file" @click="clickButton" :style="{backgroundColor : uniColor}">
         <span class="text">upload</span>
         <span><IconPaper class="paper" /></span>
       </div>

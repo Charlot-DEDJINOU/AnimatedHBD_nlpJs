@@ -9,7 +9,7 @@ export default {
     VisuelLivre
   },
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimation = ref(false)
 
     const nextSession = (payload) => {

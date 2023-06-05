@@ -13,7 +13,7 @@ export default {
     Download
   },
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimationRouleau = ref(false)
 
     const nextSession = (payload) => {

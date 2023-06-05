@@ -12,7 +12,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimationImage = ref(false)
 
     const nextSession = (payload) => {

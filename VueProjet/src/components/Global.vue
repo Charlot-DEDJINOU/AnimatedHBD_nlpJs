@@ -3,8 +3,9 @@ import Lune from './icons/Lune.vue'
 import Solar from './icons/Solar.vue'
 import SemiSolar from './icons/SemiSolar.vue'
 import IconPaper from './icons/IconPaper.vue'
-import { ref } from 'vue'
 import { useTheme } from 'vuetify'
+import { useStore } from 'vuex';
+import { computed , ref } from 'vue';
 
 export default {
   components: {
@@ -16,36 +17,46 @@ export default {
 
   setup() {
     const theme = useTheme()
+    const store = useStore()
+
+    const uniColor = ref(computed(() => store.state.uniColor))
 
     const toggleTheme = (fond) => {
       theme.global.name.value = fond ;
     }
 
+    const toggleColor = (color) => {
+      store.dispatch('Color' , color);
+    }
+
     return {
-      toggleTheme
-  }
+      toggleTheme,
+      uniColor ,
+      toggleColor
+    }
   }
 }
 </script>
+
 <template>
   <div class="global">
     <div class="color">
-      <span><Solar @click="toggleTheme('dark')"/></span>
-      <span><Lune  @click="toggleTheme('light')"/></span>
-      <span class="color0"></span>
-      <span class="color1"></span>
-      <span class="color2"></span>
-      <span class="color3"></span>
-      <span class="color4"></span>
-      <span class="color5"></span>
-      <span class="color6"></span>
+      <span><Solar @click="toggleTheme('light')"/></span>
+      <span><Lune  @click="toggleTheme('dark')"/></span>
+      <span class="color0" @click="toggleColor('pink')"></span>
+      <span class="color1" @click="toggleColor('#16c953')"></span>
+      <span class="color2" @click="toggleColor('#cc1e1e')"></span>
+      <span class="color3" @click="toggleColor('#c916a2')"></span>
+      <span class="color4" @click="toggleColor('#c0da17')"></span>
+      <span class="color5" @click="toggleColor('#b24646')"></span>
+      <span class="color6" @click="toggleColor('#094eff')"></span>
     </div>
     <div class="upload">
       <div class="file">
-        <span class="text">upload</span>
+        <span class="text">un fichier</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <button class="button" @click="fake">Upload</button>
+      <button class="button" :style="{backgroundColor : uniColor}">Upload</button>
     </div>
     <img src="../assets/ballon2.png" class="ballon3" />
   </div>
@@ -58,6 +69,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Marck Script';
+  font-style: normal;
 }
 .global .color {
   width: 230px;
@@ -88,7 +101,7 @@ export default {
   background-color: #c916a2;
 }
 .global .color .color4 {
-  background-color: #dcff07;
+  background-color: #c0da17;
 }
 .global .color .color5 {
   background-color: #b24646;
@@ -107,7 +120,8 @@ export default {
   width: 100%;
   height: 45px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.635);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,10 +139,8 @@ export default {
   width: 100%;
   height: 45px;
   border-radius: 5px;
-  background-color: #16c953;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 25px;
   border: none;
 }
 .global .ballon3 {

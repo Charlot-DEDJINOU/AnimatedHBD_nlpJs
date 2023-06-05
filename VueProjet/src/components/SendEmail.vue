@@ -1,5 +1,6 @@
 <script>
-import { ref } from 'vue'
+import { useStore } from 'vuex';
+import { computed , ref } from 'vue';
 import emailjs from 'emailjs-com'
 import Crayon_email from './icons/Crayon_email.vue'
 
@@ -14,6 +15,9 @@ export default {
       email: '',
       message: ''
     })
+
+    const store = useStore()
+    const uniColor = ref(computed(() => store.state.uniColor))
 
     const showButton = ref(false)
 
@@ -76,7 +80,8 @@ export default {
       showButton,
       submitForm,
       translateButton,
-      position_button
+      position_button ,
+      uniColor
     }
   }
 }
@@ -117,7 +122,7 @@ export default {
     </div>
     <div class="after_email">
       <Crayon_email class="crayon-email" />
-      <button type="submit" class="button_translate button_left" @mouseenter="translateButton">
+      <button type="submit" class="button_translate button_left" @mouseenter="translateButton" :style="{backgroundColor : uniColor}">
         <span>Envoyer</span>
       </button>
     </div>
@@ -136,6 +141,7 @@ export default {
   font-weight: 800;
   font-size: 13px;
   line-height: 18px;
+  color: black;
 }
 .container_email .enveloppe_email {
   width: 375px;
@@ -168,6 +174,7 @@ export default {
   border: none;
   background: none;
   outline: none;
+  color: black;
 }
 .container_email .enveloppe_email .contenu_email textarea {
   width: 100%;
@@ -204,7 +211,6 @@ export default {
   height: 120px;
   border-radius: 5px;
   border: none;
-  background-color: #16c953;
   display: flex;
   justify-content: center;
   align-items: center;

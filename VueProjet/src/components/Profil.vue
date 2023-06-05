@@ -1,6 +1,8 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import { onMounted } from 'vue'
+import { useStore } from 'vuex';
+import { computed , ref } from 'vue';
 
 export default {
   setup() {
@@ -48,17 +50,22 @@ export default {
 
     onMounted(startAnimation)
 
+    const store = useStore()
+
+    const uniColor = ref(computed(() => store.state.uniColor))
+
     return {
-      startAnimation
+      startAnimation ,
+      uniColor
     }
   }
 }
 </script>
 <template>
-  <div class="header_site" @click="startAnimation">
-    <img src="../assets/open.jpg" class="image" />
+  <div class="header_site">
+    <img src="../assets/open.jpg" class="image" :style="{borderColor : uniColor}"/>
     <div class="welcome">
-      <div id="nom"></div>
+      <div id="nom" :style="{color : uniColor}"></div>
       <p class="bienvenue"></p>
     </div>
   </div>
@@ -72,14 +79,14 @@ export default {
   justify-content: space-around;
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 500;
+  font-size: 18px;
 }
 .header_site .image {
   width: 250px;
   height: 100%;
   object-fit: cover;
   border-radius: 30px 0px 30px 0px;
-  border: 10px solid #16c953;
+  border: 10px solid black;
 }
 .header_site .welcome {
   width: 275px;
