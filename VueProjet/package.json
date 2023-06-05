@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "serve": "vite preview",
     "build": "vite build",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "dev": "vite",
@@ -10,13 +11,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "5.9.55",
     "emailjs-com": "^3.2.0",
     "emoji-mart-vue-fast": "^12.0.4",
     "html2canvas": "^1.4.1",
+    "roboto-fontface": "*",
     "typewriter-effect": "^2.19.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
-    "vuex": "^4.0.0"
+    "vuetify": "npm:@vuetify/nightly@next",
+    "vuex": "^4.0.0",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
@@ -27,6 +32,8 @@
     "eslint": "^8.39.0",
     "eslint-plugin-vue": "^9.11.0",
     "prettier": "^2.8.8",
-    "vite": "^4.3.4"
+    "vite": "^4.3.4",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "vue-cli-plugin-vuetify": "~2.5.8"
   }
 }
