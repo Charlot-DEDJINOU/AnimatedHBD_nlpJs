@@ -88,8 +88,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 65%;
   margin-top: 50px;
+  width: 950px;
 }
 .firstsession .global-profil {
   height: 620px;

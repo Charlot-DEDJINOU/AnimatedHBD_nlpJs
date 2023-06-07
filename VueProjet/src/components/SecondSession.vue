@@ -71,7 +71,7 @@ export default {
 </template>
 <style>
 .secondSession {
-  width: 65%;
+  width: 950px;
   display: flex;
   flex-direction: column;
   align-items: center;

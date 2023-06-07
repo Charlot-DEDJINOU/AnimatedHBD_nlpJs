@@ -56,7 +56,7 @@ export default {
 </template>
 <style>
 .foursession {
-  width: 65%;
+  width: 950px;
   display: flex;
   flex-direction: column;
   align-items: center;
