@@ -59,31 +59,33 @@ export default {
               })
               typewriter
                 .pauseFor(1000)
-                .typeString("Aujourd'hui c'est ta journée,<br />")
+                .typeString('Dans le ciel étoilé, ta lumière brille,<br />')
                 .pauseFor(500)
-                .typeString('Un jour spécial à célébrer,<br />')
+                .typeString('En jaune éclatant, ton cœur pétille.<br />')
                 .pauseFor(500)
-                .typeString('Un an de plus à ton compteur,<br />')
+                .typeString('En ce jour spécial, je te souhaite,<br />')
                 .pauseFor(500)
-                .typeString('Et pour moi, un sentiment de bonheur.<br /><br />')
+                .typeString('Un anniversaire magique et parfait.<br /><br />')
                 .pauseFor(2000)
-                .typeString("Car depuis que j'ai croisé ton chemin,<br />")
+                .typeString('Que les étoiles veillent sur tes pas,<br />')
                 .pauseFor(500)
-                .typeString('Je suis sous le charme de ta personnalité,<br />')
+                .typeString('Que le jaune colore tes rêves là-bas.<br />')
                 .pauseFor(500)
-                .typeString('Ton sourire, ta détermination et ta bienveillance,<br />')
+                .typeString('Sous le firmament, que ton sourire étincelle,<br />')
                 .pauseFor(500)
-                .typeString('Ont su toucher mon cœur avec efficacité.<br /><br />')
+                .typeString('Et que ta vie soit douce comme le miel.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Alors pour ton anniversaire, je te souhaite,<br />')
+                .typeString('Fille des étoiles, éblouis-nous de ta grâce,<br />')
                 .pauseFor(500)
-                .typeString('Que cette journée soit remplie de douceur,<br />')
+                .typeString('Que chaque instant soit empli de joie.<br />')
                 .pauseFor(500)
-                .typeString("Et que chaque année qui passe t'apporte,<br />")
+                .typeString("Que les étoiles tissent un chemin d'amour,<br />")
                 .pauseFor(500)
-                .typeString('Tout ce que tu souhaites avec ferveur.<br /><br />')
+                .typeString('Et que le jaune éclaire tes jours les plus courts.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Joyeux anniversaire à toi, qui illumines mes journées,<br />')
+                .typeString('Joyeux anniversaire, Que les etoiles,<br />')
+                .pauseFor(500)
+                .typeString('Et le jaune illuminent ta vie et la comblent de bonheur.')
                 .pauseFor(1000)
                 .callFunction(() => {
                   stopAnimation(typewriter)
@@ -121,7 +123,7 @@ export default {
                           stopAnimation(typewriter)
                           showCrayon.value = true
                           store.commit('setNumberSession', 4)
-                          store.commit('setIdScroll' , 'devinette4')
+                          store.commit('setIdScroll', 'devinette4')
                         })
                         .start()
                     })
@@ -194,7 +196,7 @@ export default {
         <span class="text">upload</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <Download class="button" @click="downloadImage('visuelImage')" id="download4"/>
+      <Download class="button" @click="downloadImage('visuelImage')" id="download4" />
       <input type="file" id="file1" @change="InputChange" accept="image/*" hidden />
     </div>
   </div>

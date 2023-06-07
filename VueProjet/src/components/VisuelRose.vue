@@ -26,30 +26,31 @@ export default {
 
       typewriter
         .pauseFor(1000)
-        .typeString(" En ce jour béni où tu grandis d'un an,<br />")
+        .typeString("Dans le monde de l'art, ton cœur s'émerveille,<br />")
         .pauseFor(500)
-        .typeString('Je veux te dire que tu es si importante, <br />')
+        .typeString('Passion et créativité, une danse qui émerveille.<br />')
         .pauseFor(500)
-        .typeString('Ta présence est une bénédiction pour moi, <br />')
+        .typeString('Le chiffre quatre guide ton chemin avec adresse,<br />')
         .pauseFor(500)
-        .typeString('Et je suis fier de te connaître chaque jour.<br /><br />')
+        .typeString('Symbole de stabilité, source de tendresse.<br /><br />')
         .pauseFor(2000)
-        .typeString(' Joyeux anniversaire à toi, mon amie, <br />')
+        .typeString('Joyeux anniversaire à toi, mon amie,<br />')
         .pauseFor(500)
         .typeString("Que ce jour soit à l'image de ta générosité,<br />")
         .pauseFor(500)
-        .typeString('Et que chaque seconde de cette nouvelle année, <br />')
+        .typeString('Et que chaque seconde de cette nouvelle année,<br />')
         .pauseFor(500)
         .typeString('Soit remplie de bonheur, de paix et de sérénité.<br /><br />')
         .pauseFor(2000)
-        .typeString(' Que tous tes rêves se réalisent, <br />')
+        .typeString('Que tous tes rêves se réalisent,<br />')
         .pauseFor(500)
-        .typeString("Que chaque jour soit un cadeau qui t'enchante, <br />")
+        .typeString("Que chaque jour soit un cadeau qui t'enchante,<br />")
         .pauseFor(500)
-        .typeString(" Et que cette nouvelle année soit emplie d'amour, <br />")
+        .typeString("Et que cette nouvelle année soit emplie d'amour,<br />")
         .pauseFor(500)
         .typeString('Pour que ta vie soit toujours plus belle, toujours plus douce.')
         .pauseFor(1000)
+
         .callFunction(() => {
           stopAnimation(typewriter)
 
@@ -64,7 +65,7 @@ export default {
 
           typewriter
             .pauseFor(1000)
-            .typeString(' Message d’un admirateur secret ')
+            .typeString(" Message d'amitié sincère ")
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -83,7 +84,7 @@ export default {
 
                   showCrayon.value = true
                   store.commit('setNumberSession', 2)
-                  store.commit('setIdScroll' , 'devinette2')
+                  store.commit('setIdScroll', 'devinette2')
                 })
                 .start()
             })

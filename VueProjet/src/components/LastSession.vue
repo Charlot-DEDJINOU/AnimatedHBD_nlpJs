@@ -19,7 +19,7 @@ export default {
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
-        store.commit('setIdScroll' , 'download5')
+        store.commit('setIdScroll', 'download5')
         setTimeout(() => {
           startAnimation.value = true
         }, 2000)

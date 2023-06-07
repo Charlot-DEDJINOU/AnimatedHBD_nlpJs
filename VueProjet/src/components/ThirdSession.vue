@@ -24,7 +24,7 @@ export default {
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
-        store.commit('setIdScroll' , 'download3')
+        store.commit('setIdScroll', 'download3')
         setTimeout(() => {
           startAnimationRouleau.value = true
         }, 2000)
@@ -61,7 +61,7 @@ export default {
         <SendEmail />
       </div>
       <div class="down" v-if="showSession">
-        <Download @click="downloadImage('visuelRouleau')" id="download3"/>
+        <Download @click="downloadImage('visuelRouleau')" id="download3" />
       </div>
     </div>
   </div>

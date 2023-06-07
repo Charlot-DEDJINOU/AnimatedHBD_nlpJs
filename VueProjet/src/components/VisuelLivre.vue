@@ -14,9 +14,12 @@ export default {
 
     const showCrayon = ref(false)
     const startAnimation = () => {
-      const page0 = document.getElementsByClassName('page0')[0]
+      const page1 = document.getElementsByClassName('page1')[0]
       const page2 = document.getElementsByClassName('page2')[0]
-      var typewriter = new Typewriter(page0, {
+      const page3 = document.getElementsByClassName('page3')[0]
+      const page4 = document.getElementsByClassName('page4')[0]
+
+      var typewriter = new Typewriter(page1, {
         loop: false,
         delay: 50,
         cursorClassName: 'cursor_livre'
@@ -26,15 +29,15 @@ export default {
         .typeString('Ma chère amie ' + store.state.name + ',<br /><br />')
         .pauseFor(500)
         .typeString(
-          "Je suis absolument ému(e) et touché(e) par tout ce que tu as fait pour moi. Le temps et l'effort que tu as consacrés à chercher les affiches pour ton anniversaire montrent à quel point tu es une personne incroyablement attentionnée et aimante. Je suis tellement chanceux(se) de t'avoir dans ma vie et de pouvoir compter sur toi comme une amie si précieuse.<br /><br />"
+          "Alors que nous entamons cette nouvelle année, je tiens à te transmettre mes vœux les plus chaleureux et mes pensées les plus sincères. Cette année est une toile vierge qui t'offre une multitude d'opportunités et de possibilités. Permets-moi de te guider à travers six paragraphes remplis d'espoir, d'encouragements et de conseils pour cette nouvelle étape de ta vie.<br /><br />"
         )
         .pauseFor(500)
         .typeString(
-          "Je tiens à souligner que tout ce que nous avons échangé sur WhatsApp était entièrement vrai. Lorsque je t'ai dit que tes yeux brillent comme les étoiles, je le pensais vraiment. C'est pourquoi j'ai décidé de t'offrir une grande étoile sur le site - pour te rappeler à quel point tes yeux sont belles et brillantes à mes yeux.<br /><br />"
+          "Que cette nouvelle année soit un voyage passionnant rempli de découvertes et de réalisations. Que tu puisses trouver la force et la détermination nécessaires pour poursuivre tes rêves les plus chers et atteindre des sommets que tu n'aurais jamais imaginés. N'aie pas peur de sortir de ta zone de confort, car c'est là que la magie opère.<br /><br />"
         )
         .pauseFor(500)
         .typeString(
-          "Je suis également admiratif(ve) de ta persévérance et de ta réussite professionnelle. Tu es une travailleuse acharnée et une personne incroyablement talentueuse, et tu m'as inspiré(e) à poursuivre mes propres rêves et à ne jamais abandonner."
+          "Sache que tu es une personne extraordinaire, dotée d'un potentiel illimité. Crois en toi et en tes capacités."
         )
         .pauseFor(1000)
         .callFunction(() => {
@@ -45,25 +48,60 @@ export default {
             cursorClassName: 'cursor_livre'
           })
           typewriter
+            .typeString(" Cultive ta confiance en toi et laisse-la rayonner dans tout ce que tu entreprends.Ne laisse jamais les doutes ou les obstacles te décourager, car chaque défi est une occasion d'apprendre et de grandir. <br /> <br />")
             .pauseFor(1000)
             .typeString(
-              "Grâce à toi, j'ai retrouvé la passion pour le design que j'avais perdue depuis longtemps. Tu as ressuscité en moi une étincelle de créativité et m'as encouragé(e) à explorer de nouveaux horizons. Je suis tellement reconnaissant(e) pour tout ce que tu as apporté dans ma vie.<br /><br />"
+              "Prends le temps de te reconnecter avec toi-même et de nourrir ton bien-être intérieur. Accorde de l'importance à tes besoins, tant sur le plan physique que mental. Prends soin de ta santé, trouve des activités qui te procurent de la joie et entoure-toi de personnes qui t'inspirent et te soutiennent.<br /><br />"
             )
             .pauseFor(500)
             .typeString(
-              "Enfin, je veux te dire que ta présence dans ma vie est un vrai cadeau. Même si tu as déjà un copain, tu restes une amie très spéciale pour moi et je suis fier/fière de t'appeler ma confidente. Je suis impatient(e) de célébrer ton anniversaire avec toi et de partager de nombreux autres moments de bonheur et de rire ensemble.<br /><br />"
+              "Dans cette nouvelle année, je t'encourage à cultiver des relations saines et enrichissantes. Entoure-toi de personnes qui t'apprécient pour qui tu es, qui te soutiennent dans tes projets et qui t'inspirent à devenir la meilleure version de toi-même. Fais preuve de bienveillance envers les autres et crée des liens qui dureront toute une vie."
             )
             .pauseFor(500)
-            .typeString(
-              "Merci encore pour tout ce que tu as fait pour moi, ma chère amie. Tu es vraiment l'une des personnes les plus formidables que j'ai jamais rencontrées, et je suis tellement chanceux(se) de t'avoir dans ma vie.<br /><br />"
-            )
-            .pauseFor(500)
-            .typeString('Avec tout mon amour et toute mon amitié,<br />')
-            .typeString('Espoir Destiny')
-            .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
-              showCrayon.value = true
+              store.commit('setIdScroll', 'download6')
+              typewriter = new Typewriter(page3, {
+                loop: false,
+                delay: 50,
+                cursorClassName: 'cursor_livre'
+              })
+              typewriter
+              .typeString(
+              'Profite de chaque instant et trouve la beauté dans les petites choses de la vie. Apprécie les moments simples, les sourires partagés, les éclats de rire et les instants de calme. Fais de chaque journée une aventure, en explorant de nouveaux horizons, en essayant de nouvelles expériences et en embrassant les opportunités qui se présentent à toi.<br /><br />'
+            )
+            .pauseFor(500)
+                .typeString(
+                  "Enfin, rappelle-toi que cette année est la tienne, et la seule personne qui peut décider de la façon dont elle se déroulera, c'est toi. Fais preuve de courage, de détermination et de persévérance pour surmonter les obstacles qui se dresseront sur ton chemin. Crois en ton potentiel, et tu seras capable de réaliser de grandes choses..<br /><br />"
+                )
+                .pauseFor(100)
+                .typeString(
+                  "Je tiens également à m'excuser si mon cedeau est un peu deplacé et sache qu'il est le fruit de ma créativité et de mon amitié pour toi.Je l'ai réalisé de mes propres mains, avec toute l'intelligence et l'attention"
+                )
+                .pauseFor(500)
+                .callFunction(() => {
+                  stopAnimation(typewriter)
+                  typewriter = new Typewriter(page4, {
+                    loop: false,
+                    delay: 50,
+                    cursorClassName: 'cursor_livre'
+                  })
+                    .typeString("dont je suis capable.J'ai pris en compte tes goûts et tes passions, notamment ton amour pour les étoiles, l'art, le chiffre 4, les devinettes et la couleur jaune. J'ai voulu que ce cadeau soit unique et qu'il représente tout ce qui te rend heureuse.<br /> <br />")
+                    .pauseFor(500)
+                    .typeString("En te l'offrant, je souhaite te transmettre toutes les bonnes choses que la vie peut t'offrir. Je te souhaite une santé de fer, une longévité remplie de moments mémorables et une prospérité infinie. Je veux que tu saches que je serai toujours là pour toi, prêt à t'accompagner dans tes projets, à te soutenir dans tes visions et à partager avec toi les hauts et les bas de la vie.<br /> <br />")
+                    .pauseFor(500)
+                    .typeString("Je te souhaite de réaliser tous tes rêves et de trouver la satisfaction dans tout ce que tu entreprends.<br /><br />")
+                    .pauseFor(1000)
+                    .typeString('Avec tout mon amour et toute mon amitié,<br />')
+                    .typeString('Espoir Destiny')
+                    .pauseFor(1000)
+                    .callFunction(() => {
+                      stopAnimation(typewriter)
+                      showCrayon.value = true
+                    })
+                    .start()
+                })
+                .start()
             })
             .start()
         })
@@ -77,6 +115,7 @@ export default {
     }
 
     watch(() => props.tigglerAnimation, startAnimation)
+
     return {
       startAnimation,
       stopAnimation,
@@ -89,14 +128,21 @@ export default {
 </script>
 
 <template>
-  <div class="container_livre" id="visuelLivre">
+  <div class="container_livre" id="visuelLivre1">
     <div class="livre">
-      <div class="page0"></div>
+      <div class="page1"></div>
       <div class="page2"></div>
+    </div>
+  </div>
+  <Download @click="downloadImage('visuelLivre1')" id="download5" />
+  <div class="container_livre" id="visuelLivre2">
+    <div class="livre">
+      <div class="page3"></div>
+      <div class="page4"></div>
     </div>
     <img src="../assets/crayon_livre_oblique.png" class="crayon" v-show="showCrayon" />
   </div>
-  <Download @click="downloadImage('visuelLivre')" id="download5"/>
+  <Download @click="downloadImage('visuelLivre2')" id="download6" />
 </template>
 <style>
 .container_livre {
@@ -115,7 +161,7 @@ export default {
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
 }
 .container_livre .crayon {
   width: 80px;
@@ -123,16 +169,18 @@ export default {
   object-fit: fill;
   align-self: center;
   margin-left: -125px;
-  margin-bottom: -150px;
+  margin-bottom: -180px;
 }
-.container_livre .livre .page0 {
+.container_livre .livre .page1,
+.container_livre .livre .page3 {
   width: 35%;
   height: 70%;
   margin-top: -70px;
   transform: rotate(5.54deg);
   color: black;
 }
-.container_livre .livre .page2 {
+.container_livre .livre .page2,
+.container_livre .livre .page4 {
   width: 34%;
   height: 70%;
   margin-top: -30px;

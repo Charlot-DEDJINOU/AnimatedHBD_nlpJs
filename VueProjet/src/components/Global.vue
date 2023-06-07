@@ -15,7 +15,7 @@ export default {
     IconPaper
   },
 
-  setup(ctx) {
+  setup() {
     const theme = useTheme()
     const store = useStore()
 
@@ -38,7 +38,7 @@ export default {
       toggleTheme,
       uniColor,
       toggleColor,
-      declancheClick
+      declancheClick,
     }
   }
 }

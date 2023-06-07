@@ -6,8 +6,8 @@ export default createStore({
     secondColor: '#FFDAA2',
     name: 'Charlotte',
     fullName: 'Charlot DEDJINOU',
-    numberSession: 1 ,
-    idScroll : ''
+    numberSession: 1,
+    idScroll: ''
   },
   getters: {},
   mutations: {
@@ -19,8 +19,8 @@ export default createStore({
     },
     setNumberSession(state, number) {
       state.numberSession = number
-    } ,
-    setIdScroll(state , id) {
+    },
+    setIdScroll(state, id) {
       state.idScroll = id
     }
   },

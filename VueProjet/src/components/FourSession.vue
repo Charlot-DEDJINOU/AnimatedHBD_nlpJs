@@ -22,7 +22,7 @@ export default {
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
-        store.commit('setIdScroll' , 'download4')
+        store.commit('setIdScroll', 'download4')
         setTimeout(() => {
           startAnimationImage.value = true
         }, 2000)
