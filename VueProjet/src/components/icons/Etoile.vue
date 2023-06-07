@@ -1,18 +1,18 @@
 <script>
-import { useStore } from 'vuex';
-import { computed , ref } from 'vue';
+import { useStore } from 'vuex'
+import { computed, ref } from 'vue'
 
 export default {
-    setup() {
-      const store = useStore() ;
-      const uniColor = ref(computed(() => store.state.uniColor ))
-      const secondColor = ref(computed(() => store.state.secondColor ))
+  setup() {
+    const store = useStore()
+    const uniColor = ref(computed(() => store.state.uniColor))
+    const secondColor = ref(computed(() => store.state.secondColor))
 
-      return {
-        uniColor ,
-        secondColor
-      }
+    return {
+      uniColor,
+      secondColor
     }
+  }
 }
 </script>
 
@@ -21,7 +21,7 @@ export default {
     width="275"
     height="300"
     viewBox="0 0 347 364"
-    fill="none"
+    fill="white"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M241 205.5L215 129.5L344 129L241 205.5Z" fill="url(#paint0_linear_91_123)" />
@@ -84,7 +84,7 @@ export default {
         gradientUnits="userSpaceOnUse"
       >
         <stop stop-color="#e9ad00" />
-        <stop offset="0.510417" :stop-color="uniColor"  />
+        <stop offset="0.510417" :stop-color="uniColor" />
         <stop offset="1" :stop-color="uniColor" />
       </linearGradient>
       <linearGradient
