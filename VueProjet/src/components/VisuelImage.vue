@@ -1,7 +1,7 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
-import downloadImage from './untils'
-import { ref, watch , computed} from 'vue'
+import { downloadImage } from './untils'
+import { ref, watch, computed } from 'vue'
 import Download from './icons/Download.vue'
 import IconPaper from './icons/IconPaper.vue'
 import { useStore } from 'vuex'
@@ -12,6 +12,8 @@ export default {
   },
   setup(props) {
     const showCrayon = ref(false)
+    const store = useStore()
+    const uniColor = ref(computed(() => store.state.uniColor))
 
     const startAnimationImage = () => {
       const targetElement = document.getElementById('target_image')
@@ -38,15 +40,15 @@ export default {
           })
           typewriter
             .pauseFor(1000)
-            .typeString('<span class="bleu">S</span>')
-            .typeString('<span class="vert">a</span>')
-            .typeString('<span class="jaune">m</span>')
-            .typeString('<span class="rouge">i</span>')
-            .typeString('<span class="bleu">r</span>')
-            .typeString('<span class="vert">a </span>')
-            .typeString('<span class="jaune">B</span>')
-            .typeString('<span class="rouge">d</span>')
-            .typeString('<span class="vert">l</span>')
+            .typeString('<span class="bleu">C</span>')
+            .typeString('<span class="vert">h</span>')
+            .typeString('<span class="jaune">a</span>')
+            .typeString('<span class="rouge">r</span>')
+            .typeString('<span class="bleu">l</span>')
+            .typeString('<span class="vert">o</span>')
+            .typeString('<span class="jaune">t</span>')
+            .typeString('<span class="rouge">t</span>')
+            .typeString('<span class="vert">e</span>')
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -118,6 +120,8 @@ export default {
                         .callFunction(() => {
                           stopAnimation(typewriter)
                           showCrayon.value = true
+                          store.commit('setNumberSession', 4)
+                          store.commit('setIdScroll' , 'devinette4')
                         })
                         .start()
                     })
@@ -158,17 +162,13 @@ export default {
 
     watch(() => props.tigglerAnimation, startAnimationImage)
 
-    const store = useStore()
-
-    const uniColor = ref(computed(() => store.state.uniColor))
-
     return {
       startAnimationImage,
       showCrayon,
       downloadImage,
       imageStyle,
       clickButton,
-      InputChange ,
+      InputChange,
       uniColor
     }
   },
@@ -190,11 +190,11 @@ export default {
       <img src="../assets/crayon_image_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
     <div class="down">
-      <div class="file" @click="clickButton" :style="{backgroundColor : uniColor}">
+      <div class="file" @click="clickButton" :style="{ backgroundColor: uniColor }">
         <span class="text">upload</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <Download class="button" @click="downloadImage('visuelImage')" />
+      <Download class="button" @click="downloadImage('visuelImage')" id="download4"/>
       <input type="file" id="file1" @change="InputChange" accept="image/*" hidden />
     </div>
   </div>

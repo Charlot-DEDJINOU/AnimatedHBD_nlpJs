@@ -4,8 +4,8 @@ import Solar from './icons/Solar.vue'
 import SemiSolar from './icons/SemiSolar.vue'
 import IconPaper from './icons/IconPaper.vue'
 import { useTheme } from 'vuetify'
-import { useStore } from 'vuex';
-import { computed , ref } from 'vue';
+import { useStore } from 'vuex'
+import { computed, ref } from 'vue'
 
 export default {
   components: {
@@ -15,24 +15,30 @@ export default {
     IconPaper
   },
 
-  setup() {
+  setup(ctx) {
     const theme = useTheme()
     const store = useStore()
 
     const uniColor = ref(computed(() => store.state.uniColor))
 
     const toggleTheme = (fond) => {
-      theme.global.name.value = fond ;
+      theme.global.name.value = fond
     }
 
     const toggleColor = (color) => {
-      store.dispatch('Color' , color);
+      store.dispatch('Color', color)
+    }
+
+    const declancheClick = () => {
+      const input_file = document.getElementById('file2')
+      input_file.click()
     }
 
     return {
       toggleTheme,
-      uniColor ,
-      toggleColor
+      uniColor,
+      toggleColor,
+      declancheClick
     }
   }
 }
@@ -41,8 +47,8 @@ export default {
 <template>
   <div class="global">
     <div class="color">
-      <span><Solar @click="toggleTheme('light')"/></span>
-      <span><Lune  @click="toggleTheme('dark')"/></span>
+      <span><Solar @click="toggleTheme('light')" /></span>
+      <span><Lune @click="toggleTheme('dark')" /></span>
       <span class="color0" @click="toggleColor('pink')"></span>
       <span class="color1" @click="toggleColor('#16c953')"></span>
       <span class="color2" @click="toggleColor('#cc1e1e')"></span>
@@ -52,11 +58,11 @@ export default {
       <span class="color6" @click="toggleColor('#094eff')"></span>
     </div>
     <div class="upload">
-      <div class="file">
+      <div class="file" @click="declancheClick">
         <span class="text">un fichier</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <button class="button" :style="{backgroundColor : uniColor}">Upload</button>
+      <button class="button" :style="{ backgroundColor: uniColor }">Upload</button>
     </div>
     <img src="../assets/ballon2.png" class="ballon3" />
   </div>
@@ -126,6 +132,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+}
+.global .upload .file:hover {
+  cursor: pointer;
 }
 .global .upload .file .text {
   opacity: 0.5;

@@ -1,11 +1,15 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
 import { onMounted } from 'vue'
-import { useStore } from 'vuex';
-import { computed , ref } from 'vue';
+import { useStore } from 'vuex'
+import { computed, ref } from 'vue'
 
 export default {
   setup() {
+    const store = useStore()
+
+    const uniColor = ref(computed(() => store.state.uniColor))
+
     const startAnimation = () => {
       const name = document.getElementById('nom')
       const text = document.getElementsByClassName('bienvenue')[0]
@@ -18,7 +22,7 @@ export default {
 
       typewriter
         .pauseFor(1000)
-        .typeString('Charlot DEDJINOU')
+        .typeString(store.state.fullName)
         .pauseFor(500)
         .callFunction(() => {
           typewriter = new Typewriter(text, {
@@ -48,27 +52,48 @@ export default {
         .start()
     }
 
+    const url_image = ref(null)
+    const InputChange = (event) => {
+      const name_file = event.target.files[0]
+
+      if (name_file) {
+        const reader = new FileReader()
+        reader.onload = (e) => {
+          const selectedFile = e.target.result
+          url_image.value = selectedFile
+        }
+        reader.readAsDataURL(name_file)
+      } else {
+        url_image.value = null
+      }
+    }
+
     onMounted(startAnimation)
 
-    const store = useStore()
-
-    const uniColor = ref(computed(() => store.state.uniColor))
-
     return {
-      startAnimation ,
-      uniColor
+      startAnimation,
+      uniColor,
+      InputChange,
+      url_image
     }
   }
 }
 </script>
 <template>
   <div class="header_site">
-    <img src="../assets/open.jpg" class="image" :style="{borderColor : uniColor}"/>
+    <img :src="url_image" class="image" :style="{ borderColor: uniColor }" v-if="url_image" />
+    <img
+      src="../assets/open.jpg"
+      class="image"
+      :style="{ borderColor: uniColor }"
+      v-if="!url_image"
+    />
     <div class="welcome">
-      <div id="nom" :style="{color : uniColor}"></div>
+      <div id="nom" :style="{ color: uniColor }"></div>
       <p class="bienvenue"></p>
     </div>
   </div>
+  <input type="file" id="file2" @change="InputChange" accept="image/*" hidden />
 </template>
 
 <style>

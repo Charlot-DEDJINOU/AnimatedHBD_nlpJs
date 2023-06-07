@@ -1,7 +1,8 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
-import downloadImage from './untils'
+import { downloadImage } from './untils'
 import { ref, watch } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   props: {
@@ -10,6 +11,7 @@ export default {
   setup(props) {
     const showCrayon = ref(false)
     const showRose = ref(false)
+    const store = useStore()
 
     const startAnimationRouleau = () => {
       const targetElement = document.getElementById('target_rouleau')
@@ -37,7 +39,7 @@ export default {
 
           typewriter
             .pauseFor(1000)
-            .typeString(' À Samira Bdl')
+            .typeString(' À ' + store.state.name)
             .callFunction(() => {
               stopAnimation(typewriter)
 
@@ -90,6 +92,8 @@ export default {
 
                   const rose = document.getElementsByClassName('rose')[0]
                   rose.id = 'scaled_rose'
+                  store.commit('setNumberSession', 3)
+                  store.commit('setIdScroll' , 'devinette3')
                 })
                 .start()
             })

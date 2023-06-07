@@ -2,7 +2,7 @@
 import IconWifi from './icons/IconWifi.vue'
 import IconNetWork from './icons/IconNetWork.vue'
 import IconBaterry from './icons/IconBaterry.vue'
-import downloadImage from './untils'
+import { downloadImage } from './untils'
 import Download from './icons/Download.vue'
 import { ref } from 'vue'
 

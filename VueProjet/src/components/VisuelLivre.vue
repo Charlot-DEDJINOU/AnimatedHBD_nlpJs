@@ -1,26 +1,29 @@
 <script>
 import Typewriter from 'typewriter-effect/dist/core'
-import downloadImage from './untils'
+import { downloadImage } from './untils'
 import { ref, watch } from 'vue'
 import Download from './icons/Download.vue'
+import { useStore } from 'vuex'
 
 export default {
   props: {
     tigglerAnimation: Boolean
   },
   setup(props) {
+    const store = useStore()
+
     const showCrayon = ref(false)
     const startAnimation = () => {
-      const page1 = document.getElementsByClassName('page1')[0]
+      const page0 = document.getElementsByClassName('page0')[0]
       const page2 = document.getElementsByClassName('page2')[0]
-      var typewriter = new Typewriter(page1, {
+      var typewriter = new Typewriter(page0, {
         loop: false,
         delay: 50,
         cursorClassName: 'cursor_livre'
       })
       typewriter
         .pauseFor(1000)
-        .typeString('Ma chère amie Samira Bdl,<br /><br />')
+        .typeString('Ma chère amie ' + store.state.name + ',<br /><br />')
         .pauseFor(500)
         .typeString(
           "Je suis absolument ému(e) et touché(e) par tout ce que tu as fait pour moi. Le temps et l'effort que tu as consacrés à chercher les affiches pour ton anniversaire montrent à quel point tu es une personne incroyablement attentionnée et aimante. Je suis tellement chanceux(se) de t'avoir dans ma vie et de pouvoir compter sur toi comme une amie si précieuse.<br /><br />"
@@ -86,14 +89,14 @@ export default {
 </script>
 
 <template>
-  <div class="container_livre" id="visuelLivre" @click="startAnimation">
+  <div class="container_livre" id="visuelLivre">
     <div class="livre">
-      <div class="page1"></div>
+      <div class="page0"></div>
       <div class="page2"></div>
     </div>
     <img src="../assets/crayon_livre_oblique.png" class="crayon" v-show="showCrayon" />
   </div>
-  <Download @click="downloadImage('visuelLivre')" />
+  <Download @click="downloadImage('visuelLivre')" id="download5"/>
 </template>
 <style>
 .container_livre {
@@ -102,8 +105,8 @@ export default {
   display: flex;
 }
 .container_livre .livre {
-  width: 865px;
-  height: 550px;
+  width: 900px;
+  height: 570px;
   background-image: url(../assets/Livre_ouvert.png);
   background-size: cover;
   display: flex;
@@ -122,19 +125,19 @@ export default {
   margin-left: -125px;
   margin-bottom: -150px;
 }
-.container_livre .livre .page1 {
+.container_livre .livre .page0 {
   width: 35%;
   height: 70%;
   margin-top: -70px;
-  margin-left: 20px;
   transform: rotate(5.54deg);
   color: black;
 }
 .container_livre .livre .page2 {
   width: 34%;
-  height: 68%;
-  margin-top: -60px;
-  margin-left: 45px;
+  height: 70%;
+  margin-top: -30px;
+  margin-left: 40px;
+  margin-right: -20px;
   color: black;
 }
 .cursor_livre {

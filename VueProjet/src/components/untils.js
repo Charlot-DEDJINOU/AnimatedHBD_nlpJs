@@ -1,6 +1,6 @@
 import html2canvas from 'html2canvas'
 
-export default function downloadImage(id) {
+export function downloadImage(id) {
   const element = document.getElementById(id)
   html2canvas(element, {
     backgroundColor: null,

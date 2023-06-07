@@ -1,9 +1,11 @@
 <template>
-  <FirstSession />
-  <SecondSession />
-  <ThirdSession />
-  <FourSession />
-  <LastSession />
+  <main class="allSession">
+    <FirstSession />
+    <SecondSession />
+    <ThirdSession />
+    <FourSession />
+    <LastSession />
+  </main>
 </template>
 
 <script>

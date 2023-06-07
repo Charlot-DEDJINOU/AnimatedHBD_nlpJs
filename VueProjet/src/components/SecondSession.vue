@@ -2,7 +2,9 @@
 import Devinette from './Devinette.vue'
 import VisuelRose from './VisuelRose.vue'
 import Download from './icons/Download.vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { downloadImage } from './untils'
+import { useStore } from 'vuex'
 
 export default {
   components: {
@@ -12,12 +14,15 @@ export default {
   },
 
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const starAnimation = ref(false)
+    const store = useStore()
+    const session = ref(computed(() => store.state.numberSession))
 
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
+        store.commit('setIdScroll' , 'download2')
         setTimeout(() => {
           starAnimation.value = true
         }, 6000)
@@ -27,7 +32,9 @@ export default {
     return {
       nextSession,
       showSession,
-      starAnimation
+      starAnimation,
+      downloadImage,
+      session
     }
   }
 }
@@ -40,8 +47,9 @@ export default {
         @backAnswer="nextSession"
         devinette="Je suis au milieu de la mer et au bout du monde , Qui suis je ?"
         numAnswer="1"
+        v-if="session >= 1"
       />
-      <div class="visuels" v-if="showSession">
+      <div class="visuels" v-if="showSession" @inserted="scrollBottom">
         <div class="art">
           <div class="age">
             <img src="../assets/chiffre1.png" class="first animated" />
@@ -57,7 +65,7 @@ export default {
           <img src="../assets/image1.png" class="ballon3" />
         </div>
       </div>
-      <Download v-if="showSession" />
+      <Download v-if="showSession" @click="downloadImage('visuelRose')" id="download2" />
     </div>
   </div>
 </template>

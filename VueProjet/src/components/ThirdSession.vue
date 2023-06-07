@@ -3,7 +3,9 @@ import VisuelRouleau from './VisuelRouleau.vue'
 import SendEmail from './SendEmail.vue'
 import Devinette from './Devinette.vue'
 import Download from './icons/Download.vue'
-import { ref } from 'vue'
+import { downloadImage } from './untils'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   components: {
@@ -13,12 +15,16 @@ export default {
     Download
   },
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const startAnimationRouleau = ref(false)
+
+    const store = useStore()
+    const session = ref(computed(() => store.state.numberSession))
 
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
+        store.commit('setIdScroll' , 'download3')
         setTimeout(() => {
           startAnimationRouleau.value = true
         }, 2000)
@@ -27,7 +33,9 @@ export default {
     return {
       nextSession,
       showSession,
-      startAnimationRouleau
+      startAnimationRouleau,
+      downloadImage,
+      session
     }
   }
 }
@@ -39,6 +47,8 @@ export default {
         @backAnswer="nextSession"
         devinette="Qu'est-ce qui a un cou mais pas de tête ?"
         numAnswer="2"
+        v-if="session >= 2"
+        id="devinette2"
       />
       <div class="visuelrouleau_email" v-if="showSession">
         <VisuelRouleau :triggerAnimationRouleau="startAnimationRouleau" />
@@ -51,7 +61,7 @@ export default {
         <SendEmail />
       </div>
       <div class="down" v-if="showSession">
-        <Download />
+        <Download @click="downloadImage('visuelRouleau')" id="download3"/>
       </div>
     </div>
   </div>

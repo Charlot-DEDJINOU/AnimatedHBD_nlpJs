@@ -1,6 +1,6 @@
 <script>
-import { useStore } from 'vuex';
-import { computed , ref } from 'vue';
+import { useStore } from 'vuex'
+import { computed, ref } from 'vue'
 
 export default {
   props: {
@@ -12,7 +12,7 @@ export default {
 
     const store = useStore()
 
-    const uniColor = ref(computed(()=> store.state.uniColor))
+    const uniColor = ref(computed(() => store.state.uniColor))
 
     async function submit() {
       try {
@@ -32,7 +32,7 @@ export default {
 
     return {
       reponse,
-      submit , 
+      submit,
       uniColor
     }
   }
@@ -51,7 +51,7 @@ export default {
       </p>
       <div>
         <input type="text" placeholder="Votre réponse" v-model="reponse" />
-        <button :style="{backgroundColor : uniColor}">Envoyer</button>
+        <button :style="{ backgroundColor: uniColor }">Envoyer</button>
       </div>
     </form>
   </div>

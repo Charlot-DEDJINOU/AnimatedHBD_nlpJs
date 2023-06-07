@@ -2,7 +2,8 @@
 import Devinette from './Devinette.vue'
 import EtoileAge from './EtoileAge.vue'
 import VisuelImage from './VisuelImage.vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   components: {
@@ -12,12 +13,16 @@ export default {
   },
 
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const startAnimationImage = ref(false)
+
+    const store = useStore()
+    const session = ref(computed(() => store.state.numberSession))
 
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
+        store.commit('setIdScroll' , 'download4')
         setTimeout(() => {
           startAnimationImage.value = true
         }, 2000)
@@ -26,7 +31,8 @@ export default {
     return {
       nextSession,
       showSession,
-      startAnimationImage
+      startAnimationImage,
+      session
     }
   }
 }
@@ -38,6 +44,8 @@ export default {
         @backAnswer="nextSession"
         devinette="Je suis toujours devant tout le monde mais personne ne peut me voir. Qui suis-je"
         numAnswer="4"
+        v-if="session >= 3"
+        id="devinette3"
       />
       <div class="visuelimage_age" v-if="showSession">
         <EtoileAge />

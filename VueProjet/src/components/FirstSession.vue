@@ -2,7 +2,8 @@
 import Profil from './Profil.vue'
 import Smartphone from './Smartphone.vue'
 import Global from './Global.vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   components: {
@@ -33,6 +34,20 @@ export default {
     }
 
     onMounted(set_ballon1)
+
+    const store = useStore()
+
+    const scrollBottom = () => {
+      setTimeout(() => {
+        const endOfPageElement = document.getElementById(store.state.idScroll)
+        endOfPageElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
+        })
+      }, 1000)
+    }
+
+    watch(() => store.state.idScroll, scrollBottom)
 
     return {
       ballon1,
