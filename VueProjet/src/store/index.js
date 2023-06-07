@@ -2,8 +2,12 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    uniColor: "#16c953",
-    secondColor: "#FFDAA2"
+    uniColor: '#16c953',
+    secondColor: '#FFDAA2',
+    name: 'Charlotte',
+    fullName: 'Charlot DEDJINOU',
+    numberSession: 1 ,
+    idScroll : ''
   },
   getters: {},
   mutations: {
@@ -12,15 +16,21 @@ export default createStore({
     },
     setSecondColor(state, color) {
       state.secondColor = color
+    },
+    setNumberSession(state, number) {
+      state.numberSession = number
+    } ,
+    setIdScroll(state , id) {
+      state.idScroll = id
     }
   },
   actions: {
     Color({ commit }, color) {
       commit('setUniColor', color)
 
-      let newColor = "#FFDAA2"
-      if (['#c0da17', 'pink' , '#16c953'].includes(color)) {
-        newColor = "#8c49b2"
+      let newColor = '#FFDAA2'
+      if (['#c0da17', 'pink', '#16c953'].includes(color)) {
+        newColor = '#8c49b2'
       }
 
       commit('setSecondColor', newColor)
