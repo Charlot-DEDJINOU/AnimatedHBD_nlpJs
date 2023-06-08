@@ -68,7 +68,7 @@ export default {
 </template>
 <style>
 .thirdsession {
-  width: 65%;
+  width: 970px;
   display: flex;
   flex-direction: column;
   align-items: center;

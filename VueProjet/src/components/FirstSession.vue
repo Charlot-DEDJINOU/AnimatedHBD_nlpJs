@@ -97,9 +97,9 @@ export default {
 }
 .firstsession {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  width: 65%;
+  width: 970px;
   margin-top: 30px;
 }
 .firstsession .global-profil {

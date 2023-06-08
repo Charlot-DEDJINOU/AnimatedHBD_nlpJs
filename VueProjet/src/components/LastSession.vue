@@ -51,7 +51,7 @@ export default {
 </template>
 <style>
 .LastSession {
-  width: 65%;
+  width: 970px;
   display: flex;
   flex-direction: column;
   align-items: center;
