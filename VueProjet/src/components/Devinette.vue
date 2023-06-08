@@ -17,10 +17,9 @@ export default {
 
     async function submit() {
       try {
-    
-        const response = await predict(props.numAnswer , reponse.value)
+        const response = await predict(props.numAnswer, reponse.value)
         reponse.value = ''
-  
+
         ctx.emit('backAnswer', response)
       } catch (error) {
         alert(error)

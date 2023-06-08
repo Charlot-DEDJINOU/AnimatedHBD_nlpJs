@@ -1,151 +1,141 @@
 import { getDevinettes } from './getDevinettes.js'
 
 function getAllCombinations(arr) {
-  const combinations = [];
+  const combinations = []
 
   function generateCombinations(currentCombination, remainingElements) {
     if (remainingElements.length === 0) {
-      combinations.push(currentCombination);
+      combinations.push(currentCombination)
     } else {
       for (let i = 0; i < remainingElements.length; i++) {
-        const newCombination = currentCombination.concat(remainingElements[i]);
-        const newRemaining = remainingElements.slice(0, i).concat(remainingElements.slice(i + 1));
-        generateCombinations(newCombination, newRemaining);
+        const newCombination = currentCombination.concat(remainingElements[i])
+        const newRemaining = remainingElements.slice(0, i).concat(remainingElements.slice(i + 1))
+        generateCombinations(newCombination, newRemaining)
       }
     }
   }
 
-  generateCombinations([], arr);
-  return combinations;
+  generateCombinations([], arr)
+  return combinations
 }
 
-function findAnswer(possibleAnswers , answer){
-    return possibleAnswers.includes(answer)
+function findAnswer(possibleAnswers, answer) {
+  return possibleAnswers.includes(answer)
 }
 
-function cleanSentence(sentence){
-    var newSentence = "" ;
-    var lastLetter = " "
+function cleanSentence(sentence) {
+  var newSentence = ''
+  var lastLetter = ' '
 
-    for(let letter of sentence)
-    {
-        if(letter !== " " || lastLetter !== " ")
-            newSentence += letter
-        
-        lastLetter = letter
-    }
+  for (let letter of sentence) {
+    if (letter !== ' ' || lastLetter !== ' ') newSentence += letter
 
-    return newSentence.replace('\r','').replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").toLowerCase() ;
+    lastLetter = letter
+  }
+
+  return newSentence
+    .replace('\r', '')
+    .replace(/[^\w\s]|_/g, '')
+    .replace(/\s+/g, ' ')
+    .toLowerCase()
 }
 
 function findIntersection(phrase1, phrase2) {
+  const mots1 = new Set(phrase1.toLowerCase().split(' '))
+  const mots2 = new Set(phrase2.toLowerCase().split(' '))
 
-    const mots1 = new Set(phrase1.toLowerCase().split(' '));
-    const mots2 = new Set(phrase2.toLowerCase().split(' '));
-  
-    const intersection = [...mots1].filter(mot => mots2.has(mot));
-    
-    return intersection;
-  }
+  const intersection = [...mots1].filter((mot) => mots2.has(mot))
 
-function findDifference(phrase1 , phrase2) {
+  return intersection
+}
 
+function findDifference(phrase1, phrase2) {
   for (const mot of phrase2) {
-    const index = phrase1.indexOf(mot);
+    const index = phrase1.indexOf(mot)
     if (index !== -1) {
-      phrase1.splice(index, 1);
+      phrase1.splice(index, 1)
     }
   }
 
-    return phrase1;
+  return phrase1
 }
 
-function disociateSentence(phrase1 , phrase2 , possibleAnswers) {
+function disociateSentence(phrase1, phrase2, possibleAnswers) {
   var intersection = findIntersection(phrase1, phrase2)
 
-  if(intersection.length === phrase2.split(' ').length) {
-      for(let combinaison of getAllCombinations(intersection)) {
-        combinaison = combinaison.join(' ')
-        if (findAnswer(possibleAnswers , combinaison))
-            return [true, null]
-      }
+  if (intersection.length === phrase2.split(' ').length) {
+    for (let combinaison of getAllCombinations(intersection)) {
+      combinaison = combinaison.join(' ')
+      if (findAnswer(possibleAnswers, combinaison)) return [true, null]
+    }
   }
 
-  return [false ,intersection]
+  return [false, intersection]
 }
 
-function training(possibleAnswers , userAnswer) {
-  var tmp = false , allIntersections = []
-  for(let answer of possibleAnswers) {
-    answer = disociateSentence(answer , userAnswer , possibleAnswers)
-    if(answer[0] == true) {
-      tmp = true ;
-      break ;
-    }
-    else 
-      allIntersections.push(answer[1]) ;
+function training(possibleAnswers, userAnswer) {
+  var tmp = false,
+    allIntersections = []
+  for (let answer of possibleAnswers) {
+    answer = disociateSentence(answer, userAnswer, possibleAnswers)
+    if (answer[0] == true) {
+      tmp = true
+      break
+    } else allIntersections.push(answer[1])
   }
 
-  if(tmp === true)
-    return true ;
+  if (tmp === true) return true
 
   const intersectionSansDoublons = allIntersections.filter(
     (tableau, index, self) =>
       index === self.findIndex((t) => JSON.stringify(t) === JSON.stringify(tableau))
-  );
+  )
 
-  return deepTraining(intersectionSansDoublons , possibleAnswers , userAnswer) ;
+  return deepTraining(intersectionSansDoublons, possibleAnswers, userAnswer)
 }
 
-function deepTraining(allIntersections , possibleAnswers , userAnswer){
-    for(let intersection of  allIntersections) {
-      for(let combinaison of getAllCombinations(intersection)) {
-        combinaison = combinaison.join(' ')
-        if (findAnswer(possibleAnswers , combinaison)) {
-          let difference = findDifference(userAnswer.split(' ') , intersection)
-          difference = pourcentage(difference , possibleAnswers)
-          const moyenne = sum(difference) / difference.length
-          if(moyenne >= 3)
-              return true 
-          else
-              return false
-        }
+function deepTraining(allIntersections, possibleAnswers, userAnswer) {
+  for (let intersection of allIntersections) {
+    for (let combinaison of getAllCombinations(intersection)) {
+      combinaison = combinaison.join(' ')
+      if (findAnswer(possibleAnswers, combinaison)) {
+        let difference = findDifference(userAnswer.split(' '), intersection)
+        difference = pourcentage(difference, possibleAnswers)
+        const moyenne = sum(difference) / difference.length
+        if (moyenne >= 3) return true
+        else return false
       }
     }
-    return false
+  }
+  return false
 }
 
-function pourcentage(difference , possibleAnswers) {
+function pourcentage(difference, possibleAnswers) {
   var pourcentage = []
-  for(var word of difference) {
+  for (var word of difference) {
     var count = 0
-    for(let answer of possibleAnswers) {
-      if(answer.split(' ').includes(word))
-          count ++ ;
+    for (let answer of possibleAnswers) {
+      if (answer.split(' ').includes(word)) count++
     }
     pourcentage.push(count)
   }
-  return pourcentage ;
+  return pourcentage
 }
 
 function sum(tab) {
-  var somme = 0 
-  for(let i of tab)
-    somme +=i
+  var somme = 0
+  for (let i of tab) somme += i
 
-  return somme ;
+  return somme
 }
 
-export async function main(userAnswer="" , numDev , callback) {
+export async function main(userAnswer = '', numDev, callback) {
+  userAnswer = cleanSentence(userAnswer)
+  var possibleAnswers = await getDevinettes(numDev)
 
-  userAnswer = cleanSentence(userAnswer) ;
-  var possibleAnswers = await getDevinettes(numDev);
+  for (let i = 0; i < possibleAnswers.length; i++)
+    possibleAnswers[i] = cleanSentence(possibleAnswers[i])
 
-  for(let i=0 ; i<possibleAnswers.length ; i++) 
-      possibleAnswers[i] = cleanSentence(possibleAnswers[i])
-
-  if(findAnswer(possibleAnswers , userAnswer))
-      callback(true)
-  else
-      callback(training(possibleAnswers , userAnswer))
+  if (findAnswer(possibleAnswers, userAnswer)) callback(true)
+  else callback(training(possibleAnswers, userAnswer))
 }

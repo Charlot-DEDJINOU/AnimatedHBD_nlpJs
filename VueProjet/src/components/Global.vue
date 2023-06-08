@@ -38,7 +38,7 @@ export default {
       toggleTheme,
       uniColor,
       toggleColor,
-      declancheClick,
+      declancheClick
     }
   }
 }

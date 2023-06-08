@@ -48,7 +48,9 @@ export default {
             cursorClassName: 'cursor_livre'
           })
           typewriter
-            .typeString(" Cultive ta confiance en toi et laisse-la rayonner dans tout ce que tu entreprends.Ne laisse jamais les doutes ou les obstacles te décourager, car chaque défi est une occasion d'apprendre et de grandir. <br /> <br />")
+            .typeString(
+              " Cultive ta confiance en toi et laisse-la rayonner dans tout ce que tu entreprends.Ne laisse jamais les doutes ou les obstacles te décourager, car chaque défi est une occasion d'apprendre et de grandir. <br /> <br />"
+            )
             .pauseFor(1000)
             .typeString(
               "Prends le temps de te reconnecter avec toi-même et de nourrir ton bien-être intérieur. Accorde de l'importance à tes besoins, tant sur le plan physique que mental. Prends soin de ta santé, trouve des activités qui te procurent de la joie et entoure-toi de personnes qui t'inspirent et te soutiennent.<br /><br />"
@@ -67,10 +69,10 @@ export default {
                 cursorClassName: 'cursor_livre'
               })
               typewriter
-              .typeString(
-              'Profite de chaque instant et trouve la beauté dans les petites choses de la vie. Apprécie les moments simples, les sourires partagés, les éclats de rire et les instants de calme. Fais de chaque journée une aventure, en explorant de nouveaux horizons, en essayant de nouvelles expériences et en embrassant les opportunités qui se présentent à toi.<br /><br />'
-            )
-            .pauseFor(500)
+                .typeString(
+                  'Profite de chaque instant et trouve la beauté dans les petites choses de la vie. Apprécie les moments simples, les sourires partagés, les éclats de rire et les instants de calme. Fais de chaque journée une aventure, en explorant de nouveaux horizons, en essayant de nouvelles expériences et en embrassant les opportunités qui se présentent à toi.<br /><br />'
+                )
+                .pauseFor(500)
                 .typeString(
                   "Enfin, rappelle-toi que cette année est la tienne, et la seule personne qui peut décider de la façon dont elle se déroulera, c'est toi. Fais preuve de courage, de détermination et de persévérance pour surmonter les obstacles qui se dresseront sur ton chemin. Crois en ton potentiel, et tu seras capable de réaliser de grandes choses..<br /><br />"
                 )
@@ -86,11 +88,17 @@ export default {
                     delay: 50,
                     cursorClassName: 'cursor_livre'
                   })
-                    .typeString("dont je suis capable.J'ai pris en compte tes goûts et tes passions, notamment ton amour pour les étoiles, l'art, le chiffre 4, les devinettes et la couleur jaune. J'ai voulu que ce cadeau soit unique et qu'il représente tout ce qui te rend heureuse.<br /> <br />")
+                    .typeString(
+                      "dont je suis capable.J'ai pris en compte tes goûts et tes passions, notamment ton amour pour les étoiles, l'art, le chiffre 4, les devinettes et la couleur jaune. J'ai voulu que ce cadeau soit unique et qu'il représente tout ce qui te rend heureuse.<br /> <br />"
+                    )
                     .pauseFor(500)
-                    .typeString("En te l'offrant, je souhaite te transmettre toutes les bonnes choses que la vie peut t'offrir. Je te souhaite une santé de fer, une longévité remplie de moments mémorables et une prospérité infinie. Je veux que tu saches que je serai toujours là pour toi, prêt à t'accompagner dans tes projets, à te soutenir dans tes visions et à partager avec toi les hauts et les bas de la vie.<br /> <br />")
+                    .typeString(
+                      "En te l'offrant, je souhaite te transmettre toutes les bonnes choses que la vie peut t'offrir. Je te souhaite une santé de fer, une longévité remplie de moments mémorables et une prospérité infinie. Je veux que tu saches que je serai toujours là pour toi, prêt à t'accompagner dans tes projets, à te soutenir dans tes visions et à partager avec toi les hauts et les bas de la vie.<br /> <br />"
+                    )
                     .pauseFor(500)
-                    .typeString("Je te souhaite de réaliser tous tes rêves et de trouver la satisfaction dans tout ce que tu entreprends.<br /><br />")
+                    .typeString(
+                      'Je te souhaite de réaliser tous tes rêves et de trouver la satisfaction dans tout ce que tu entreprends.<br /><br />'
+                    )
                     .pauseFor(1000)
                     .typeString('Avec tout mon amour et toute mon amitié,<br />')
                     .typeString('Espoir Destiny')
