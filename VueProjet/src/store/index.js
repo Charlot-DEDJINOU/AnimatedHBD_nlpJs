@@ -6,7 +6,7 @@ export default createStore({
     secondColor: '#FFDAA2',
     name: 'Charlotte',
     fullName: 'Charlot DEDJINOU',
-    numberSession: 4,
+    numberSession: 1,
     idScroll: ''
   },
   getters: {},

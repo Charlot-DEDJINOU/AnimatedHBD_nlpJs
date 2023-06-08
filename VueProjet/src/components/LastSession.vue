@@ -10,7 +10,7 @@ export default {
     VisuelLivre
   },
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const startAnimation = ref(false)
 
     const store = useStore()

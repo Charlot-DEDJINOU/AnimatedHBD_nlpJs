@@ -15,7 +15,7 @@ export default {
     Download
   },
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const startAnimationRouleau = ref(false)
 
     const store = useStore()
