@@ -1,13 +1,17 @@
 <template>
-  <main class="allSession">
+  <div class="allSession">
     <FirstSession />
     <SecondSession />
     <ThirdSession />
     <FourSession />
     <LastSession />
-  </main>
+  </div>
 </template>
-
+<style>
+.allSession {
+  zoom: 0.9;
+}
+</style>
 <script>
 import { defineComponent } from 'vue'
 import FirstSession from '../components/FirstSession.vue'

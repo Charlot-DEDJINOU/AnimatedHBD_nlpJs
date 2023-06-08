@@ -14,7 +14,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const starAnimation = ref(false)
     const store = useStore()
     const session = ref(computed(() => store.state.numberSession))
@@ -49,7 +49,7 @@ export default {
         numAnswer="1"
         v-if="session >= 1"
       />
-      <div class="visuels" v-if="showSession" @inserted="scrollBottom">
+      <div class="visuels" v-show="showSession" @inserted="scrollBottom">
         <div class="art">
           <div class="age">
             <img src="../assets/chiffre1.png" class="first animated" />
@@ -65,16 +65,34 @@ export default {
           <img src="../assets/image1.png" class="ballon3" />
         </div>
       </div>
-      <Download v-if="showSession" @click="downloadImage('visuelRose')" id="download2" />
+      <Download v-show="showSession" @click="downloadImage('visuelRose')" id="download2" />
     </div>
   </div>
 </template>
 <style>
 .secondSession {
-  width: 950px;
+  width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 900px) {
+  .secondSession {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  .secondSession .visuels {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly ;
+    align-items: center;
+  }
+  .secondSession .visuels .images_ballon {
+    display: flex;
+    margin-left: 80px;
+    align-self: flex-start;
+  }
 }
 .secondSession .visuels {
   width: 100%;

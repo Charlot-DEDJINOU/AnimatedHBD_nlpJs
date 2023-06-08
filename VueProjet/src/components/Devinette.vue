@@ -54,7 +54,7 @@ export default {
 </template>
 <style scoped>
 .container_devinette {
-  width: 940px;
+  width: 100%;
   height: 250px;
   font-family: 'Marck Script';
   font-style: normal;
@@ -62,6 +62,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1rem;
 }
 .container_devinette .titre {
   width: 90%;
@@ -80,7 +81,7 @@ export default {
 }
 .container_devinette .titre p span {
   display: inline-block;
-  font-size: 50px;
+  font-size: 3rem;
 }
 .container_devinette form {
   width: 100%;
@@ -90,7 +91,7 @@ export default {
   align-items: center;
 }
 .container_devinette form .devinette {
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 20px;
   margin-bottom: 10px;
   width: 95%;
@@ -113,10 +114,10 @@ export default {
   padding-left: 20px;
   font-family: 'Marck Script';
   font-style: normal;
-  font-size: 25px;
+  font-size: 1.2rem;
 }
 .container_devinette form input[type='text']::placeholder {
-  font-size: 20px;
+  font-size: 1rem;
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 500;
@@ -128,7 +129,7 @@ export default {
   border-radius: 0px 5px 5px 0px;
   background-color: #16c953;
   color: white;
-  font-size: 25px;
+  font-size: 1rem;
   border: none;
   outline: none;
   font-family: 'Marck Script';

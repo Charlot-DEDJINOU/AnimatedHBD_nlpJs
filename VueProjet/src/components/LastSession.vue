@@ -10,7 +10,7 @@ export default {
     VisuelLivre
   },
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimation = ref(false)
 
     const store = useStore()
@@ -45,12 +45,13 @@ export default {
         v-if="session >= 4"
         id="devinette4"
       />
-      <VisuelLivre v-if="showSession" :tigglerAnimation="startAnimation" />
+      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession"/>
     </div>
   </div>
 </template>
 <style>
 .LastSession {
+  width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;

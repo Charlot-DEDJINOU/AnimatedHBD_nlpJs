@@ -15,7 +15,7 @@ export default {
     Download
   },
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimationRouleau = ref(false)
 
     const store = useStore()
@@ -68,7 +68,7 @@ export default {
 </template>
 <style>
 .thirdsession {
-  width: 950px;
+  width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@ export default {
   justify-content: space-between;
 }
 .thirdsession .images_rouleau img {
-  width: 100%;
+  width: 65%;
   object-fit: contain;
   animation-name: moveBallon;
   animation-duration: 3s;

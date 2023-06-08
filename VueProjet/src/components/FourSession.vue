@@ -13,7 +13,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimationImage = ref(false)
 
     const store = useStore()
@@ -47,7 +47,7 @@ export default {
         v-if="session >= 3"
         id="devinette3"
       />
-      <div class="visuelimage_age" v-if="showSession">
+      <div class="visuelimage_age" v-show="showSession">
         <EtoileAge />
         <VisuelImage :tigglerAnimation="startAnimationImage" />
       </div>
@@ -56,7 +56,7 @@ export default {
 </template>
 <style>
 .foursession {
-  width: 950px;
+  width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;

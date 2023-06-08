@@ -78,6 +78,17 @@ export default {
 </template>
 
 <style>
+@media (max-width: 900px) {
+  .firstsession {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly ;
+    align-items: center;
+  }
+  .firstsession .smartphone {
+    margin-top: 25px;
+  }
+}
 .session {
   width: 100%;
   display: flex;
@@ -86,10 +97,10 @@ export default {
 }
 .firstsession {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin-top: 50px;
-  width: 950px;
+  width: 65%;
+  margin-top: 30px;
 }
 .firstsession .global-profil {
   height: 620px;
