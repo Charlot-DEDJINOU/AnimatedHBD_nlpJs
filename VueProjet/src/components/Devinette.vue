@@ -1,6 +1,7 @@
 <script>
 import { useStore } from 'vuex'
 import { computed, ref } from 'vue'
+import { predict } from '../Logique/index.js'
 
 export default {
   props: {
@@ -16,15 +17,11 @@ export default {
 
     async function submit() {
       try {
-        const response = await fetch(
-          'http://localhost:3000/api/correctAnswer?numDev=' +
-            props.numAnswer +
-            '&userAnswer=' +
-            reponse.value
-        )
-        const data = await response.json()
+    
+        const response = await predict(props.numAnswer , reponse.value)
         reponse.value = ''
-        ctx.emit('backAnswer', data)
+  
+        ctx.emit('backAnswer', response)
       } catch (error) {
         alert(error)
       }
