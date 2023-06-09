@@ -91,7 +91,7 @@ export default {
   align-items: center;
 }
 .container_devinette form .devinette {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 20px;
   margin-bottom: 10px;
   width: 95%;
@@ -129,7 +129,7 @@ export default {
   border-radius: 0px 5px 5px 0px;
   background-color: #16c953;
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border: none;
   outline: none;
   font-family: 'Marck Script';

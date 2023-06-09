@@ -4,8 +4,8 @@ export default createStore({
   state: {
     uniColor: '#16c953',
     secondColor: '#FFDAA2',
-    name: 'Charlotte',
-    fullName: 'Charlot DEDJINOU',
+    name: 'Samira Bdl',
+    fullName: 'Samira Bandolo',
     numberSession: 1,
     idScroll: ''
   },

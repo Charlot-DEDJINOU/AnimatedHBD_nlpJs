@@ -49,7 +49,7 @@ export default {
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .LastSession {
   width: 970px;
   display: flex;

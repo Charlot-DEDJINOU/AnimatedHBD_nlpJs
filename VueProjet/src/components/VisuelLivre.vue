@@ -136,7 +136,7 @@ export default {
 </script>
 
 <template>
-  <div class="container_livre" id="visuelLivre1">
+  <div class="container_livre" id="visuelLivre1" @click="startAnimation">
     <div class="livre">
       <div class="page1"></div>
       <div class="page2"></div>
@@ -167,7 +167,6 @@ export default {
   align-items: center;
   justify-content: center;
   font-family: 'Marck Script';
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
 }

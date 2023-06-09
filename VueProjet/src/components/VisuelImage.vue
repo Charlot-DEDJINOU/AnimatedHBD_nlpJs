@@ -40,15 +40,15 @@ export default {
           })
           typewriter
             .pauseFor(1000)
-            .typeString('<span class="bleu">C</span>')
-            .typeString('<span class="vert">h</span>')
-            .typeString('<span class="jaune">a</span>')
-            .typeString('<span class="rouge">r</span>')
-            .typeString('<span class="bleu">l</span>')
-            .typeString('<span class="vert">o</span>')
-            .typeString('<span class="jaune">t</span>')
-            .typeString('<span class="rouge">t</span>')
-            .typeString('<span class="vert">e</span>')
+            .typeString('<span class="bleu">S</span>')
+            .typeString('<span class="vert">a</span>')
+            .typeString('<span class="jaune">m</span>')
+            .typeString('<span class="rouge">i</span>')
+            .typeString('<span class="bleu">r</span>')
+            .typeString('<span class="vert">a </span>')
+            .typeString('<span class="jaune">b</span>')
+            .typeString('<span class="rouge">d</span>')
+            .typeString('<span class="vert">l</span>')
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -63,7 +63,7 @@ export default {
                 .pauseFor(500)
                 .typeString('En jaune éclatant, ton cœur pétille.<br />')
                 .pauseFor(500)
-                .typeString('En ce jour spécial, je te souhaite,<br />')
+                .typeString('En cette nouvelle année, je te souhaite,<br />')
                 .pauseFor(500)
                 .typeString('Un anniversaire magique et parfait.<br /><br />')
                 .pauseFor(2000)
@@ -193,7 +193,7 @@ export default {
     </div>
     <div class="down">
       <div class="file" @click="clickButton" :style="{ backgroundColor: uniColor }">
-        <span class="text">upload</span>
+        <span class="text">Changer la photo</span>
         <span><IconPaper class="paper" /></span>
       </div>
       <Download class="button" @click="downloadImage('visuelImage')" id="download4" />
@@ -220,6 +220,8 @@ export default {
   height: 45px;
   border-radius: 5px;
   background-color: #16c953;
+  font-family: 'Marck Script';
+  font-style: normal;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -234,7 +236,7 @@ export default {
 }
 .container1_download .down .file .text {
   display: inline-block;
-  font-weight: bold;
+  font-size: 1.3rem;
 }
 .container1 {
   width: 600px;
@@ -258,8 +260,9 @@ export default {
   width: 200px;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../assets/charlot.jpg);
+    url(../assets/Samira.jpeg);
   background-size: cover;
+  background-position: center;
 }
 
 .content2 {
