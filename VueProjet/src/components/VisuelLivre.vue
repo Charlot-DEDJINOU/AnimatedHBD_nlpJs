@@ -157,6 +157,7 @@ export default {
   width: 900px;
   height: 600px;
   display: flex;
+  zoom: 1.3;
 }
 .container_livre .livre {
   width: 900px;
