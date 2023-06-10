@@ -62,7 +62,9 @@ export default {
         <span class="text">un fichier</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <button class="button" :style="{ backgroundColor: uniColor }" @click="declancheClick">Changer photo</button>
+      <button class="button" :style="{ backgroundColor: uniColor }" @click="declancheClick">
+        Changer photo
+      </button>
     </div>
     <img src="../assets/ballon2.png" class="ballon3" />
   </div>

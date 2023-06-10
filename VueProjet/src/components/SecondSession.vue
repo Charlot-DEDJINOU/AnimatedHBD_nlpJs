@@ -78,14 +78,14 @@ export default {
 }
 @media (max-width: 900px) {
   .secondSession {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .secondSession .visuels {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-evenly ;
+    justify-content: space-evenly;
     align-items: center;
   }
   .secondSession .visuels .images_ballon {

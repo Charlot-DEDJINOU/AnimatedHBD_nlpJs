@@ -11,7 +11,7 @@
 .allSession {
   zoom: 1;
   @media (max-height: 950px) {
-      zoom : 0.9
+    zoom: 0.9;
   }
 }
 </style>

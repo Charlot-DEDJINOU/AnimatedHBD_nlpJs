@@ -45,7 +45,7 @@ export default {
         v-if="session >= 4"
         id="devinette4"
       />
-      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession"/>
+      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession" />
     </div>
   </div>
 </template>
