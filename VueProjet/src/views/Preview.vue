@@ -2,15 +2,6 @@
 import HomeView from './HomeView.vue'
 import { ref } from 'vue'
 import { onMounted } from 'vue'
-import chiffre1 from '../assets/chiffre1.png'
-import chiffre2 from '../assets/chiffre2.png'
-import chiffre3 from '../assets/chiffre3.png'
-import chiffre4 from '../assets/chiffre4.png'
-import chiffre5 from '../assets/chiffre5.png'
-import chiffre6 from '../assets/chiffre6.png'
-import chiffre7 from '../assets/chiffre7.png'
-import chiffre8 from '../assets/chiffre8.png'
-import chiffre9 from '../assets/chiffre9.png'
 
 export default {
   components: {
@@ -19,12 +10,10 @@ export default {
   setup() {
     const reponse = ref('')
     const show = ref(false)
-    const image = ref(chiffre1)
-    const images = [chiffre9, chiffre1, chiffre2 , chiffre3, chiffre4, chiffre5, chiffre6, chiffre7 , chiffre8]
-    var timeOut = ""
+    const count = ref(0)
+    var timeOut = ''
 
     const submitCode = () => {
-
       if (reponse.value === 'Nolan') show.value = true
       else {
         document.getElementsByClassName('code')[0].classList.add('danger')
@@ -32,10 +21,8 @@ export default {
     }
 
     const changeImage = () => {
-      if(!show.value) 
-        image.value = images[(images.indexOf(image.value) + 1 ) % images.length]
-      else 
-        clearInterval(timeOut)
+      if (!show.value) count.value = (count.value + 1) % 9
+      else clearInterval(timeOut)
     }
 
     onMounted(() => {
@@ -46,8 +33,8 @@ export default {
     return {
       reponse,
       submitCode,
-      show ,
-      image
+      show,
+      count
     }
   }
 }
@@ -55,7 +42,15 @@ export default {
 <template>
   <HomeView v-if="show" />
   <div class="preview" v-if="!show">
-    <img :src="image" id="image" />
+    <img src="../assets/chiffre1.png" id="image" v-if="count == 0" />
+    <img src="../assets/chiffre2.png" id="image" v-if="count == 1" />
+    <img src="../assets/chiffre3.png" id="image" v-if="count == 2" />
+    <img src="../assets/chiffre4.png" id="image" v-if="count == 3" />
+    <img src="../assets/chiffre5.png" id="image" v-if="count == 4" />
+    <img src="../assets/chiffre6.png" id="image" v-if="count == 5" />
+    <img src="../assets/chiffre7.png" id="image" v-if="count == 6" />
+    <img src="../assets/chiffre8.png" id="image" v-if="count == 7" />
+    <img src="../assets/chiffre9.png" id="image" v-if="count == 8" />
     <form class="preview_form" @submit.prevent="submitCode">
       <input type="text" placeholder="code secret" v-model="reponse" class="code" />
       <button>Envoyer</button>
