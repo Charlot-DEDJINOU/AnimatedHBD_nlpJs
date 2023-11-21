@@ -57,6 +57,7 @@ export default {
       <span class="color5" @click="toggleColor('#b24646')"></span>
       <span class="color6" @click="toggleColor('#094eff')"></span>
     </div>
+    <img src="../assets/ballon2.png" class="ballon3" />
     <div class="upload">
       <div class="file" @click="declancheClick">
         <span class="text">un fichier</span>
@@ -66,7 +67,6 @@ export default {
         Changer photo
       </button>
     </div>
-    <img src="../assets/ballon2.png" class="ballon3" />
   </div>
 </template>
 
@@ -158,5 +158,18 @@ export default {
   width: 100px;
   height: 200px;
   object-fit: contain;
+}
+@media (max-width: 900px) {
+  .global {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .global .ballon3 {
+    transform: rotate(90deg);
+  }
 }
 </style>

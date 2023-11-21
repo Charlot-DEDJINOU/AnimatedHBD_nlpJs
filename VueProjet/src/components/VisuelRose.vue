@@ -207,7 +207,6 @@ export default {
   margin-left: 2px;
   animation: typing 1s infinite;
 }
-
 @keyframes typing {
   0% {
     transform: translateX(0);

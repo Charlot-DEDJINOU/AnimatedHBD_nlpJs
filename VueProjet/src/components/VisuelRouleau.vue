@@ -3,8 +3,12 @@ import Typewriter from 'typewriter-effect/dist/core'
 import { downloadImage } from './untils'
 import { ref, watch } from 'vue'
 import { useStore } from 'vuex'
+import Download from './icons/Download.vue'
 
 export default {
+  components: {
+    Download
+  },
   props: {
     triggerAnimationRouleau: Boolean
   },
@@ -125,26 +129,35 @@ export default {
 </script>
 
 <template>
-  <div class="container_visuel_rouleau" id="visuelRouleau">
-    <div class="visuel_rouleau">
-      <div class="destinateur_rouleau"></div>
-      <div class="text" id="target_rouleau"></div>
-      <div class="fin">
-        <span class="recepteur_rouleau"></span>
-        <img src="../assets/rose.png" class="rose" v-show="showRose" />
+  <div style="display: flex; flex-direction: column">
+    <div class="container_visuel_rouleau" id="visuelRouleau">
+      <div class="visuel_rouleau">
+        <div class="destinateur_rouleau"></div>
+        <div class="text" id="target_rouleau"></div>
+        <div class="fin">
+          <span class="recepteur_rouleau"></span>
+          <img src="../assets/rose.png" class="rose" v-show="showRose" />
+        </div>
+      </div>
+      <div class="content_image">
+        <img src="../assets/crayon_rouleau_oblique.png" class="crayon" v-show="showCrayon" />
       </div>
     </div>
-    <div class="content_image">
-      <img src="../assets/crayon_rouleau_oblique.png" class="crayon" v-show="showCrayon" />
+    <div class="down">
+      <Download @click="downloadImage('visuelRouleau')" id="download3" />
     </div>
   </div>
 </template>
-
 <style>
 .container_visuel_rouleau {
   width: 450px;
   height: 507px;
   display: flex;
+}
+@media (max-width: 900px) {
+  .container_visuel_rouleau {
+    margin-left: 40px;
+  }
 }
 .container_visuel_rouleau .visuel_rouleau {
   width: 400px;
@@ -227,7 +240,12 @@ export default {
   animation: typing 1s infinite;
   z-index: 10;
 }
-
+.down {
+  width: 480px;
+  margin-top: -30px;
+  display: flex;
+  justify-content: center;
+}
 @keyframes typing {
   0% {
     transform: translateX(0);

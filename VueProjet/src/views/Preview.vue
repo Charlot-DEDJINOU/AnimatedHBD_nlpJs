@@ -9,7 +9,7 @@ export default {
   },
   setup() {
     const reponse = ref('')
-    const show = ref(false)
+    const show = ref(true)
     const count = ref(0)
     var timeOut = ''
 

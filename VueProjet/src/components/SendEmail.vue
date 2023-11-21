@@ -136,7 +136,7 @@ export default {
 
 <style scoped>
 .container_email {
-  width: 500px;
+  width: 100%;
   height: 450px;
   display: flex;
   justify-content: center;
@@ -147,6 +147,7 @@ export default {
   font-size: 13px;
   line-height: 18px;
   color: black;
+  overflow: hidden;
 }
 .container_email .enveloppe_email {
   width: 375px;
@@ -236,5 +237,16 @@ export default {
   color: white;
   font-size: 15px;
   font-weight: bold;
+}
+@media (max-width: 900px) {
+  .container_email .after_email {
+    width: 40px;
+  }
+  .container_email .after_email .crayon-email {
+    width: 100%;
+  }
+  .container_email .after_email .button_translate {
+    width: 40px;
+  }
 }
 </style>

@@ -125,4 +125,25 @@ export default {
 .cursor_hearder {
   opacity: 0;
 }
+@media (max-width: 900px) {
+  .header_site {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header_site .image {
+    margin: 20px 0px;
+  }
+  .header_site .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+  }
+  .header_site .welcome .bienvenue {
+    text-align: center;
+  }
+}
 </style>

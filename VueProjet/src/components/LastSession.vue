@@ -10,7 +10,7 @@ export default {
     VisuelLivre
   },
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimation = ref(false)
 
     const store = useStore()
@@ -55,5 +55,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 900px) {
+  .LastSession {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

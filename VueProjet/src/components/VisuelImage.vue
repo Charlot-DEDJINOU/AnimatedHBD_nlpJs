@@ -40,15 +40,15 @@ export default {
           })
           typewriter
             .pauseFor(1000)
-            .typeString('<span class="bleu">S</span>')
-            .typeString('<span class="vert">a</span>')
-            .typeString('<span class="jaune">m</span>')
-            .typeString('<span class="rouge">i</span>')
-            .typeString('<span class="bleu">r</span>')
-            .typeString('<span class="vert">a </span>')
-            .typeString('<span class="jaune">b</span>')
-            .typeString('<span class="rouge">d</span>')
-            .typeString('<span class="vert">l</span>')
+            .typeString('<span class="bleu">C</span>')
+            .typeString('<span class="vert">h</span>')
+            .typeString('<span class="jaune">a</span>')
+            .typeString('<span class="rouge">r</span>')
+            .typeString('<span class="bleu">l</span>')
+            .typeString('<span class="vert">o</span>')
+            .typeString('<span class="jaune">t</span>')
+            .typeString('<span class="rouge">t</span>')
+            .typeString('<span class="vert">e</span>')
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -83,9 +83,6 @@ export default {
                 .pauseFor(500)
                 .typeString('Et que le jaune éclaire tes jours les plus courts.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Joyeux anniversaire, Que les etoiles,<br />')
-                .pauseFor(500)
-                .typeString('Et le jaune illuminent ta vie et la comblent de bonheur.')
                 .pauseFor(1000)
                 .callFunction(() => {
                   stopAnimation(typewriter)
@@ -201,7 +198,6 @@ export default {
     </div>
   </div>
 </template>
-
 <style>
 .container1_download {
   display: flex;
@@ -214,6 +210,7 @@ export default {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  margin-top: 10px;
 }
 .container1_download .down .file {
   width: 100%;
@@ -323,7 +320,7 @@ export default {
 
 .destinateur {
   margin-top: -15px;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 38px;
   width: 90%;
   height: 38px;
@@ -358,7 +355,19 @@ export default {
   margin-left: 2px;
   animation: typing 1s infinite;
 }
-
+@media (max-width: 900px) {
+  .container1_download {
+    margin-left: 0px;
+  }
+  .container1 {
+    width: 95%;
+    margin: 0px auto;
+  }
+  .container1_download .down {
+    margin-left: 80px;
+    margin-bottom: 18px;
+  }
+}
 @keyframes typing {
   0% {
     transform: translateX(0);

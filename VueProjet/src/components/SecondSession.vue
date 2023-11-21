@@ -14,7 +14,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const starAnimation = ref(false)
     const store = useStore()
     const session = ref(computed(() => store.state.numberSession))
@@ -53,10 +53,10 @@ export default {
         <div class="art">
           <div class="age">
             <img src="../assets/chiffre1.png" class="first animated" />
-            <img src="../assets/chiffre9.png" class="animated" />
+            <img src="../assets/chiffre8.png" class="animated" />
           </div>
           <p>Ans</p>
-          <img src="../assets/chiffre4.png" class="chiffre4 animated" />
+          <img src="../assets/chiffre2.png" class="chiffre4 animated" />
         </div>
         <div class="visuel1"><VisuelRose :triggerAnimation="starAnimation" /></div>
         <div class="images_ballon">
@@ -76,24 +76,6 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 900px) {
-  .secondSession {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .secondSession .visuels {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .secondSession .visuels .images_ballon {
-    display: flex;
-    margin-left: 80px;
-    align-self: flex-start;
-  }
-}
 .secondSession .visuels {
   width: 100%;
   display: flex;
@@ -111,6 +93,7 @@ export default {
 .secondSession .visuels .art .chiffre4 {
   height: 250px;
   object-fit: contain;
+  margin-top: 10px;
 }
 .secondSession .visuels .art .age {
   display: flex;
@@ -133,7 +116,7 @@ export default {
   width: 55%;
   height: 230px;
   object-fit: cover;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .secondSession .visuels .images_ballon {
   width: 200px;
@@ -166,6 +149,29 @@ export default {
 }
 .animated {
   animation: slideFadeIn 10s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .secondSession {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .secondSession .visuels {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .secondSession .visuels .images_ballon {
+    display: flex;
+    align-self: center;
+    width: 90%;
+    margin-left: 40px;
+  }
+  .secondSession .visuels .images_ballon img {
+    width: 85px;
+  }
 }
 @keyframes balloonAnimation {
   0% {

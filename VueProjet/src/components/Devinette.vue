@@ -62,7 +62,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
 }
 .container_devinette .titre {
   width: 90%;
@@ -82,6 +81,12 @@ export default {
 .container_devinette .titre p span {
   display: inline-block;
   font-size: 3rem;
+}
+@media (max-width : 600px) {
+  .container_devinette .titre p span {
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 .container_devinette form {
   width: 100%;
@@ -135,5 +140,21 @@ export default {
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 500;
+}
+@media (max-width: 900px) {
+  .container_devinette {
+    width: 95%;
+    font-size: 12px;
+  }
+  .container_devinette .titre {
+    width: 100%;
+  }
+  .container_devinette .titre img {
+    width: 100px;
+  }
+  .container_devinette form .devinette {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 </style>

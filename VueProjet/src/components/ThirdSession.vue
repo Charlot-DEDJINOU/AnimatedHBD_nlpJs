@@ -2,7 +2,6 @@
 import VisuelRouleau from './VisuelRouleau.vue'
 import SendEmail from './SendEmail.vue'
 import Devinette from './Devinette.vue'
-import Download from './icons/Download.vue'
 import { downloadImage } from './untils'
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
@@ -11,11 +10,10 @@ export default {
   components: {
     VisuelRouleau,
     SendEmail,
-    Devinette,
-    Download
+    Devinette
   },
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimationRouleau = ref(false)
 
     const store = useStore()
@@ -60,9 +58,6 @@ export default {
         </div>
         <SendEmail />
       </div>
-      <div class="down" v-if="showSession">
-        <Download @click="downloadImage('visuelRouleau')" id="download3" />
-      </div>
     </div>
   </div>
 </template>
@@ -86,17 +81,34 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 900px) {
+  .thirdsession {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .thirdsession .visuelrouleau_email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .thirdsession .visuelrouleau_email .images_rouleau {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}
 .thirdsession .images_rouleau img {
-  width: 65%;
+  width: 90px;
   object-fit: contain;
   animation-name: moveBallon;
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-.thirdsession .down {
-  width: 600px;
-  margin-top: -30px;
 }
 @keyframes moveBallon {
   0% {

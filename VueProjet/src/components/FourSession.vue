@@ -13,7 +13,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(false)
+    const showSession = ref(true)
     const startAnimationImage = ref(false)
 
     const store = useStore()
@@ -64,5 +64,21 @@ export default {
 .foursession .visuelimage_age {
   display: flex;
   margin-top: 30px;
+}
+@media (max-width: 900px) {
+  .foursession {
+    width: 100%;
+  }
+  .foursession .visuelimage_age {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .foursession .visuels {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
 </style>

@@ -78,17 +78,6 @@ export default {
 </template>
 
 <style>
-@media (max-width: 900px) {
-  .firstsession {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .firstsession .smartphone {
-    margin-top: 25px;
-  }
-}
 .session {
   width: 100%;
   display: flex;
@@ -96,16 +85,18 @@ export default {
   justify-content: center;
 }
 .firstsession {
+  width: 970px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 970px;
   margin-top: 30px;
 }
 .firstsession .global-profil {
   height: 620px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 .firstsession .global-profil .images {
@@ -119,6 +110,24 @@ export default {
   width: 100px;
   object-fit: cover;
   animation: image_animate 16s ease-in-out infinite;
+}
+@media (max-width: 900px) {
+  .firstsession {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .firstsession .global-profil .images {
+    width: 80%;
+  }
+  .firstsession .smartphone {
+    margin-top: 25px;
+  }
+  .firstsession .global-profil {
+    height: auto;
+  }
 }
 @keyframes image_animate {
   0% {

@@ -15,10 +15,10 @@ export default {
 </script>
 <template>
   <svg
-    width="350"
-    height="200"
+    width="493"
+    height="222"
     viewBox="0 0 493 222"
-    fill="none"
+    :fill="uniColor"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -154,11 +154,15 @@ export default {
       :fill="uniColor"
     />
     <path
-      d="M145.5 54L148.306 62.6373H157.388L150.041 67.9754L152.847 76.6127L145.5 71.2746L138.153 76.6127L140.959 67.9754L133.612 62.6373H142.694L145.5 54Z"
+      d="M149.5 52L152.306 60.6373H161.388L154.041 65.9754L156.847 74.6127L149.5 69.2746L142.153 74.6127L144.959 65.9754L137.612 60.6373H146.694L149.5 52Z"
       :fill="uniColor"
     />
     <path
       d="M120.5 52L123.306 60.6373H132.388L125.041 65.9754L127.847 74.6127L120.5 69.2746L113.153 74.6127L115.959 65.9754L108.612 60.6373H117.694L120.5 52Z"
+      :fill="uniColor"
+    />
+    <path
+      d="M120.5 77L123.306 85.6373H132.388L125.041 90.9754L127.847 99.6127L120.5 94.2746L113.153 99.6127L115.959 90.9754L108.612 85.6373H117.694L120.5 77Z"
       :fill="uniColor"
     />
     <path
@@ -231,7 +235,7 @@ export default {
         gradientUnits="userSpaceOnUse"
       >
         <stop :stop-color="uniColor" />
-        <stop offset="1" :stop-color="uniColor" />
+        <stop offset="1" stop-color="#FFDAA2" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_167_24"
@@ -241,7 +245,7 @@ export default {
         y2="178.9"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-c:olor="uniColor" />
+        <stop :stop-color="uniColor" />
         <stop offset="1" :stop-color="uniColor" />
       </linearGradient>
       <linearGradient
@@ -252,7 +256,7 @@ export default {
         y2="178.9"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="uniColor" />
+        <stop :stop-color="uniColor" />
         <stop offset="1" :stop-color="uniColor" />
       </linearGradient>
     </defs>
