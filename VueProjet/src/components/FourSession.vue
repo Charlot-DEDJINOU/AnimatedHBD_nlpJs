@@ -13,7 +13,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const startAnimationImage = ref(false)
 
     const store = useStore()

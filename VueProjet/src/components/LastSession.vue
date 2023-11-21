@@ -1,17 +1,22 @@
 <script>
 import Devinette from './Devinette.vue'
 import VisuelLivre from './VisuelLivre.vue'
-import { ref, computed } from 'vue'
+import VisuelSimple from './VisuelSimple.vue'
+import { ref, computed , onMounted , onBeforeUnmount} from 'vue'
 import { useStore } from 'vuex'
 
 export default {
   components: {
     Devinette,
-    VisuelLivre
+    VisuelLivre,
+    VisuelSimple
   },
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const startAnimation = ref(false)
+
+    const largeur = ref('')
+    const hauteur = ref('')
 
     const store = useStore()
     const session = ref(computed(() => store.state.numberSession))
@@ -19,19 +24,30 @@ export default {
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
-        store.commit('setIdScroll', 'download5')
+        store.commit('setIdScroll', 'download6')
         setTimeout(() => {
           startAnimation.value = true
         }, 2000)
       }
     }
+
+      const majTailleFenetre = () => {
+        largeur.value = screen.width;
+        hauteur.value = screen.height;
+        console.log('Fenêtre redimensionnée. Nouvelles dimensions :', largeur.value, hauteur.value);
+      }
+
+    onMounted(() => window.addEventListener('resize', majTailleFenetre))
+    onBeforeUnmount(() => window.removeEventListener('resize', majTailleFenetre))
+
     return {
       nextSession,
       showSession,
       startAnimation,
-      session
+      session,
+      largeur
     }
-  }
+  } ,
 }
 </script>
 
@@ -45,7 +61,8 @@ export default {
         v-if="session >= 4"
         id="devinette4"
       />
-      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession" />
+      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession && largeur > 800" />
+      <VisuelSimple :tigglerAnimation="startAnimation" v-if="showSession && largeur <= 800"/>
     </div>
   </div>
 </template>

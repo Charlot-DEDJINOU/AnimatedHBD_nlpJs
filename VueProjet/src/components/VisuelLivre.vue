@@ -136,7 +136,7 @@ export default {
 </script>
 
 <template>
-  <div class="container_livre" id="visuelLivre1" @click="startAnimation">
+  <div class="container_livre" id="visuelLivre1">
     <div class="livre">
       <div class="page1"></div>
       <div class="page2"></div>

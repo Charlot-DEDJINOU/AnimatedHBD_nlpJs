@@ -14,7 +14,7 @@ export default {
   },
 
   setup() {
-    const showSession = ref(true)
+    const showSession = ref(false)
     const starAnimation = ref(false)
     const store = useStore()
     const session = ref(computed(() => store.state.numberSession))
