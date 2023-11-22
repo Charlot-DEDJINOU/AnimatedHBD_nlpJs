@@ -9,13 +9,14 @@ export default {
   },
   setup() {
     const reponse = ref('')
-    const show = ref(true)
+    const show = ref(false)
     const count = ref(0)
     var timeOut = ''
 
     const submitCode = () => {
-      if (reponse.value === 'Nolan') show.value = true
+      if (reponse.value === 'Destiny') show.value = true
       else {
+        reponse.value = ""
         document.getElementsByClassName('code')[0].classList.add('danger')
       }
     }
@@ -52,7 +53,7 @@ export default {
     <img src="../assets/chiffre8.png" id="image" v-if="count == 7" />
     <img src="../assets/chiffre9.png" id="image" v-if="count == 8" />
     <form class="preview_form" @submit.prevent="submitCode">
-      <input type="text" placeholder="code secret" v-model="reponse" class="code" />
+      <input type="password" placeholder="code secret" v-model="reponse" class="code" />
       <button>Envoyer</button>
     </form>
   </div>
