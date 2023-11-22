@@ -42,7 +42,7 @@ export default {
     <div class="foursession">
       <Devinette
         @backAnswer="nextSession"
-        devinette="Je suis toujours devant tout le monde mais personne ne peut me voir. Qui suis-je"
+        devinette="Je suis toujours devant tout le monde mais personne ne peut me voir.Qui suis-je"
         numAnswer="4"
         v-if="session >= 3"
         id="devinette3"

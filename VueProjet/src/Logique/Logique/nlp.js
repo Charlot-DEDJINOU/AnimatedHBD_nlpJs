@@ -66,7 +66,7 @@ function disociateSentence(phrase1, phrase2, possibleAnswers) {
   if (intersection.length === phrase2.split(' ').length) {
     for (let combinaison of getAllCombinations(intersection)) {
       combinaison = combinaison.join(' ')
-      if (findAnswer(possibleAnswers, combinaison)) return [true, null]
+      if (findAnswer(possibleAnswers, combinaison)) return [true,null]
     }
   }
 
