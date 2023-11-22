@@ -36,14 +36,16 @@ export default {
           typewriter
           .pauseFor(500)
             .typeString(
-            "Alors que nous entamons cette nouvelle année, je tiens à te transmettre mes vœux les plus chaleureux et mes pensées les plus sincères. Cette année est une toile vierge qui t'offre une multitude d'opportunités et de possibilités. Permets-moi de te guider à travers six paragraphes remplis d'espoir, d'encouragements et de conseils pour cette nouvelle étape de ta vie.<br /><br />"
+            "En ce jour spécial, je veux te souhaiter un joyeux anniversaire. Les souvenirs des neuf années que nous avons partagées restent gravés dans mon cœur. Peu importe où la vie nous mène, je tiens à te rappeler l'importance que tu as eue dans ma vie.<br /><br />"
             )
             .pauseFor(500)
             .typeString(
-            "Que cette nouvelle année soit un voyage passionnant rempli de découvertes et de réalisations. Que tu puisses trouver la force et la détermination nécessaires pour poursuivre tes rêves les plus chers et atteindre des sommets que tu n'aurais jamais imaginés."
+            "Bien que nos chemins aient pris des directions différentes, je souhaite que cette journée t'apporte la joie et le bonheur que tu mérites. Peu importe les défis que tu traverses, sache que je suis là pour toi, même en tant qu'ami.<br /><br />"
             )
             .pauseFor(500)
-            .pauseFor(500)
+            .typeString(
+            "Que cette nouvelle année t'apporte la paix intérieure et la force nécessaire pour surmonter les obstacles. Joyeux anniversaire à une personne extraordinaire."
+            )
             .callFunction(() => {
               stopAnimation(typewriter)
               typewriter = new Typewriter(destinateur, {
@@ -98,11 +100,12 @@ export default {
     margin-top: 20px;
     padding: 20px;
     width: 95%;
-    height: 700px;
+    height: 810px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-color: white;
+    color: black;
     font-family: 'Marck Script';
     font-style: normal;
     font-weight: 500;

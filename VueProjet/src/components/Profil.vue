@@ -40,13 +40,13 @@ export default {
             .pauseFor(500)
             .typeString('Je te souhaite un joyeux anniversaire.<br /><br />')
             .pauseFor(2000)
-            .typeString('En retard, mais de tout cœur,<br />')
+            .typeString('Chaque pixel résonne de bonheur,<br />')
             .pauseFor(500)
-            .typeString('Je te le souhaite sincèrement.<br />')
+            .typeString('Comme un doux écho de notre cœur.<br />')
             .pauseFor(500)
-            .typeString('Que cette année soit merveilleuse.<br />')
+            .typeString('Que cette journée soit pleine de sourires,<br />')
             .pauseFor(500)
-            .typeString('Profite des moments précieux.<br />')
+            .typeString('À toi, qui mérites les plus beaux souvenirs !<br />')
             .start()
         })
         .start()
@@ -83,7 +83,7 @@ export default {
   <div class="header_site">
     <img :src="url_image" class="image" :style="{ borderColor: uniColor }" v-if="url_image" />
     <img
-      src="../assets/profil.jpeg"
+      src="../assets/saou2_profil.jpg"
       class="image"
       :style="{ borderColor: uniColor }"
       v-if="!url_image"
@@ -140,7 +140,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
+    height: 350px;
+    width: 100%;
   }
   .header_site .welcome .bienvenue {
     text-align: center;

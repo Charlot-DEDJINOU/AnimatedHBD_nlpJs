@@ -22,7 +22,7 @@ export default {
     const nextSession = (payload) => {
       if (payload.message) {
         showSession.value = true
-        store.commit('setIdScroll', 'download2')
+        store.commit('setIdScroll', 'chiffre2')
         setTimeout(() => {
           starAnimation.value = true
         }, 6000)
@@ -56,8 +56,9 @@ export default {
             <img src="../assets/chiffre8.png" class="animated" />
           </div>
           <p>Ans</p>
-          <img src="../assets/chiffre2.png" class="chiffre4 animated" />
+          <img src="../assets/chiffre2.png" class="chiffre4 animated" id="chiffre2"/>
         </div>
+        <Download v-show="showSession" @click="downloadImage('visuelRose')" id="download2" />
         <div class="visuel1"><VisuelRose :triggerAnimation="starAnimation" /></div>
         <div class="images_ballon">
           <img src="../assets/image1.png" class="ballon1" />
@@ -65,7 +66,6 @@ export default {
           <img src="../assets/image1.png" class="ballon3" />
         </div>
       </div>
-      <Download v-show="showSession" @click="downloadImage('visuelRose')" id="download2" />
     </div>
   </div>
 </template>

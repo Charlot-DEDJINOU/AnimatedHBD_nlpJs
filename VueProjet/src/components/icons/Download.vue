@@ -15,7 +15,7 @@
         d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
       />
     </svg>
-    <span class="span">Download</span>
+    <span class="span">Télecharger</span>
   </div>
 </template>
 <style scoped>

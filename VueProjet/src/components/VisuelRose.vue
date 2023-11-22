@@ -30,7 +30,7 @@ export default {
         .pauseFor(500)
         .typeString('Passion et créativité, une danse qui émerveille.<br />')
         .pauseFor(500)
-        .typeString('Le chiffre quatre guide ton chemin avec adresse,<br />')
+        .typeString('Le chiffre deux guide ton chemin avec adresse,<br />')
         .pauseFor(500)
         .typeString('Symbole de stabilité, source de tendresse.<br /><br />')
         .pauseFor(2000)

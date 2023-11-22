@@ -40,15 +40,15 @@ export default {
           })
           typewriter
             .pauseFor(1000)
-            .typeString('<span class="bleu">C</span>')
-            .typeString('<span class="vert">h</span>')
+            .typeString('<span class="bleu">A</span>')
+            .typeString('<span class="vert">l-</span>')
+            .typeString('<span class="jaune">H</span>')
+            .typeString('<span class="rouge">a</span>')
+            .typeString('<span class="bleu">s</span>')
+            .typeString('<span class="vert">s</span>')
             .typeString('<span class="jaune">a</span>')
-            .typeString('<span class="rouge">r</span>')
-            .typeString('<span class="bleu">l</span>')
-            .typeString('<span class="vert">o</span>')
-            .typeString('<span class="jaune">t</span>')
-            .typeString('<span class="rouge">t</span>')
-            .typeString('<span class="vert">e</span>')
+            .typeString('<span class="rouge">o</span>')
+            .typeString('<span class="vert">u</span>')
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -61,7 +61,7 @@ export default {
                 .pauseFor(1000)
                 .typeString('Dans le ciel étoilé, ta lumière brille,<br />')
                 .pauseFor(500)
-                .typeString('En jaune éclatant, ton cœur pétille.<br />')
+                .typeString('En rose éclatant, ton cœur pétille.<br />')
                 .pauseFor(500)
                 .typeString('En cette nouvelle année, je te souhaite,<br />')
                 .pauseFor(500)
@@ -69,7 +69,7 @@ export default {
                 .pauseFor(2000)
                 .typeString('Que les étoiles veillent sur tes pas,<br />')
                 .pauseFor(500)
-                .typeString('Que le jaune colore tes rêves là-bas.<br />')
+                .typeString('Que le rose colore tes rêves là-bas.<br />')
                 .pauseFor(500)
                 .typeString('Sous le firmament, que ton sourire étincelle,<br />')
                 .pauseFor(500)
@@ -81,7 +81,7 @@ export default {
                 .pauseFor(500)
                 .typeString("Que les étoiles tissent un chemin d'amour,<br />")
                 .pauseFor(500)
-                .typeString('Et que le jaune éclaire tes jours les plus courts.<br /><br />')
+                .typeString('Et que le rose éclaire tes jours les plus courts.<br /><br />')
                 .pauseFor(2000)
                 .pauseFor(1000)
                 .callFunction(() => {
@@ -257,7 +257,7 @@ export default {
   width: 200px;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../assets/Samira.jpeg);
+    url(../assets/Saou7.jpeg);
   background-size: cover;
   background-position: center;
 }
