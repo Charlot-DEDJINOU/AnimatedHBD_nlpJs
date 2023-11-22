@@ -62,6 +62,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 .container_devinette .titre {
   width: 90%;
