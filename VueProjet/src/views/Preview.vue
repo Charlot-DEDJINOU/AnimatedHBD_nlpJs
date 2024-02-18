@@ -9,12 +9,12 @@ export default {
   },
   setup() {
     const reponse = ref('')
-    const show = ref(true)
+    const show = ref(false)
     const count = ref(0)
     var timeOut = ''
 
     const submitCode = () => {
-      if (reponse.value === 'Destiny') show.value = true
+      if (reponse.value === 'Nerys') show.value = true
       else {
         reponse.value = ""
         document.getElementsByClassName('code')[0].classList.add('danger')
