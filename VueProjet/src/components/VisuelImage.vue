@@ -40,15 +40,15 @@ export default {
           })
           typewriter
             .pauseFor(1000)
-            .typeString('<span class="bleu">A</span>')
-            .typeString('<span class="vert">l-</span>')
-            .typeString('<span class="jaune">H</span>')
-            .typeString('<span class="rouge">a</span>')
-            .typeString('<span class="bleu">s</span>')
-            .typeString('<span class="vert">s</span>')
+            .typeString('<span class="bleu">C</span>')
+            .typeString('<span class="vert">h</span>')
             .typeString('<span class="jaune">a</span>')
-            .typeString('<span class="rouge">o</span>')
-            .typeString('<span class="vert">u</span>')
+            .typeString('<span class="rouge">r</span>')
+            .typeString('<span class="bleu">l</span>')
+            .typeString('<span class="vert">o</span>')
+            .typeString('<span class="jaune">t</span>')
+            .typeString('<span class="rouge">t</span>')
+            .typeString('<span class="vert">e</span>')
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -257,7 +257,7 @@ export default {
   width: 200px;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../assets/Saou7.jpeg);
+    url(../assets/charlot.jpg);
   background-size: cover;
   background-position: center;
 }

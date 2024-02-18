@@ -197,7 +197,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../assets/saou2.jpg);
+    url(../assets/charlot.jpg);
   background-size: cover;
   border: 5px solid #000000;
   border-radius: 40px;
