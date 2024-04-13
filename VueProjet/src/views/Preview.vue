@@ -16,7 +16,7 @@ export default {
     const submitCode = () => {
       if (reponse.value === 'Nerys') show.value = true
       else {
-        reponse.value = ""
+        reponse.value = ''
         document.getElementsByClassName('code')[0].classList.add('danger')
       }
     }
