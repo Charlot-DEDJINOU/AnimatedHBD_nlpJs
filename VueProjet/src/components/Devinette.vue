@@ -83,7 +83,7 @@ export default {
   display: inline-block;
   font-size: 3rem;
 }
-@media (max-width : 600px) {
+@media (max-width: 600px) {
   .container_devinette .titre p span {
     font-size: 18px;
     font-weight: bold;
