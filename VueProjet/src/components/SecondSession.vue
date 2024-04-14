@@ -56,7 +56,7 @@ export default {
             <img src="../assets/chiffre8.png" class="animated" />
           </div>
           <p>Ans</p>
-          <img src="../assets/chiffre2.png" class="chiffre4 animated" id="chiffre2"/>
+          <img src="../assets/chiffre2.png" class="chiffre4 animated" id="chiffre2" />
         </div>
         <Download v-show="showSession" @click="downloadImage('visuelRose')" id="download2" />
         <div class="visuel1"><VisuelRose :triggerAnimation="starAnimation" /></div>

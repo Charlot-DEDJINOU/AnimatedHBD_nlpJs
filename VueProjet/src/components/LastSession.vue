@@ -2,7 +2,7 @@
 import Devinette from './Devinette.vue'
 import VisuelLivre from './VisuelLivre.vue'
 import VisuelSimple from './VisuelSimple.vue'
-import { ref, computed , onMounted , onBeforeUnmount} from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
@@ -31,11 +31,11 @@ export default {
       }
     }
 
-      const majTailleFenetre = () => {
-        largeur.value = screen.width;
-        hauteur.value = screen.height;
-        console.log('Fenêtre redimensionnée. Nouvelles dimensions :', largeur.value, hauteur.value);
-      }
+    const majTailleFenetre = () => {
+      largeur.value = screen.width
+      hauteur.value = screen.height
+      console.log('Fenêtre redimensionnée. Nouvelles dimensions :', largeur.value, hauteur.value)
+    }
 
     onMounted(() => window.addEventListener('resize', majTailleFenetre))
     onBeforeUnmount(() => window.removeEventListener('resize', majTailleFenetre))
@@ -47,7 +47,7 @@ export default {
       session,
       largeur
     }
-  } ,
+  }
 }
 </script>
 
@@ -62,7 +62,7 @@ export default {
         id="devinette4"
       />
       <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession && largeur > 800" />
-      <VisuelSimple :tigglerAnimation="startAnimation" v-if="showSession && largeur <= 800"/>
+      <VisuelSimple :tigglerAnimation="startAnimation" v-if="showSession && largeur <= 800" />
     </div>
   </div>
 </template>

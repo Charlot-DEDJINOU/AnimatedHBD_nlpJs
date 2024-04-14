@@ -77,14 +77,14 @@ export default {
                 .pauseFor(500)
                 .typeString("Ta décision, une perle dans l'océan des cieux,<br />")
                 .pauseFor(500)
-                .typeString("Acceptation, un jardin de vœux épanouis.<br /><br />")
+                .typeString('Acceptation, un jardin de vœux épanouis.<br /><br />')
                 .pauseFor(2000)
                 .typeString('Que chaque rose symbolise ce consentement,<br />')
                 .pauseFor(500)
                 .typeString('Un amour qui transcende, éternellement.<br />')
                 .pauseFor(500)
                 .typeString('Dans ce rouleau de la vie, je comprends,<br />')
-                .typeString("Ton bonheur réside dans les choix du cœur.<br />")
+                .typeString('Ton bonheur réside dans les choix du cœur.<br />')
                 .pauseFor(2000)
                 .callFunction(() => {
                   showRose.value = true

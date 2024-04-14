@@ -34,17 +34,17 @@ export default {
             cursorClassName: 'cursor_livre'
           })
           typewriter
-          .pauseFor(500)
+            .pauseFor(500)
             .typeString(
-            "En ce jour spécial, je veux te souhaiter un joyeux anniversaire. Les souvenirs des neuf années que nous avons partagées restent gravés dans mon cœur. Peu importe où la vie nous mène, je tiens à te rappeler l'importance que tu as eue dans ma vie.<br /><br />"
+              "En ce jour spécial, je veux te souhaiter un joyeux anniversaire. Les souvenirs des neuf années que nous avons partagées restent gravés dans mon cœur. Peu importe où la vie nous mène, je tiens à te rappeler l'importance que tu as eue dans ma vie.<br /><br />"
             )
             .pauseFor(500)
             .typeString(
-            "Bien que nos chemins aient pris des directions différentes, je souhaite que cette journée t'apporte la joie et le bonheur que tu mérites. Peu importe les défis que tu traverses, sache que je suis là pour toi, même en tant qu'ami.<br /><br />"
+              "Bien que nos chemins aient pris des directions différentes, je souhaite que cette journée t'apporte la joie et le bonheur que tu mérites. Peu importe les défis que tu traverses, sache que je suis là pour toi, même en tant qu'ami.<br /><br />"
             )
             .pauseFor(500)
             .typeString(
-            "Que cette nouvelle année t'apporte la paix intérieure et la force nécessaire pour surmonter les obstacles. Joyeux anniversaire à une personne extraordinaire."
+              "Que cette nouvelle année t'apporte la paix intérieure et la force nécessaire pour surmonter les obstacles. Joyeux anniversaire à une personne extraordinaire."
             )
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -54,14 +54,14 @@ export default {
                 cursorClassName: 'cursor_livre'
               })
               typewriter
-               .typeString('Avec tout mon amour et toute mon amitié,<br />')
-               .pauseFor(500)
-               .typeString('<b>Espoir Destiny</b>')
-               .callFunction(() => {
+                .typeString('Avec tout mon amour et toute mon amitié,<br />')
+                .pauseFor(500)
+                .typeString('<b>Espoir Destiny</b>')
+                .callFunction(() => {
                   stopAnimation(typewriter)
                   store.commit('setIdScroll', 'download6')
                 })
-               .start()
+                .start()
             })
             .start()
         })
@@ -89,43 +89,43 @@ export default {
 
 <template>
   <div id="visuelsimple" class="simple">
-        <div class="recepteur"></div>
-        <div class="corps"></div>
-        <div class="destinateursimple"></div>
+    <div class="recepteur"></div>
+    <div class="corps"></div>
+    <div class="destinateursimple"></div>
   </div>
   <Download @click="downloadImage('visuelsimple')" id="download6" />
 </template>
 <style>
 .simple {
-    margin-top: 20px;
-    padding: 20px;
-    width: 95%;
-    height: 810px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: white;
-    color: black;
-    font-family: 'Marck Script';
-    font-style: normal;
-    font-weight: 500;
-    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  padding: 20px;
+  width: 95%;
+  height: 810px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  color: black;
+  font-family: 'Marck Script';
+  font-style: normal;
+  font-weight: 500;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 .simple .recepteur {
-    width: 100%;
-    height: 5%;
-    font-size: 25px;
+  width: 100%;
+  height: 5%;
+  font-size: 25px;
 }
 .simple .corps {
-    width: 100%;
-    height: 75%;
-    font-size: 20px;
+  width: 100%;
+  height: 75%;
+  font-size: 20px;
 }
 .simple .destinateursimple {
-    width: 100%;
-    height: 10%;
-    font-size: 20px;
-    font-weight: 500;
+  width: 100%;
+  height: 10%;
+  font-size: 20px;
+  font-weight: 500;
 }
 .cursor_livre::after {
   position: absolute;
