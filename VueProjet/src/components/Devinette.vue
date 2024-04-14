@@ -1,7 +1,7 @@
 <script>
 import { useStore } from 'vuex'
 import { computed, ref } from 'vue'
-import { predict } from '../Logique/index.js'
+import { predict } from '../services/devinetteService'
 
 export default {
   props: {
@@ -17,7 +17,10 @@ export default {
 
     async function submit() {
       try {
-        const response = await predict(props.numAnswer, reponse.value)
+        const response = await predict({
+          userAnswer : reponse.value,
+          numDev : props.numAnswer
+        })
         reponse.value = ''
 
         ctx.emit('backAnswer', response)
