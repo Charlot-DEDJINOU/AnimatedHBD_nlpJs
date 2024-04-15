@@ -16,12 +16,12 @@ export default {
     var timeOut = ''
 
     const submitCode = async () => {
-      const response = await login({ password : reponse.value })
-      if (response.status === 200 && response.message === "Authentication successful") show.value = true
+      const response = await login({ password: reponse.value })
+      if (response.status === 200 && response.message === 'Authentication successful')
+        show.value = true
       else {
         reponse.value = ''
         showError.value = true
-        document.getElementsByClassName('code')[0].classList.add('danger')
       }
     }
 
@@ -93,7 +93,7 @@ export default {
   width: 100%;
   height: 45px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 0px 5px;
 }
 .preview form button {
@@ -103,18 +103,13 @@ export default {
   background-color: #16c953;
   color: white;
 }
-.danger {
-  box-shadow: 0px 0px 3px 1px rgba(148, 68, 68, 0.744);
-  outline: rgba(148, 68, 68, 0.744);
-  border: none;
-}
 .alert-danger {
-  background-color: rgba(148, 68, 68, 0.744);
+  background-color: rgb(93, 33, 33);
   border-radius: 5px;
   height: 45px;
   padding: 10px;
   width: 100%;
   margin: 10px 0px;
-  color : rgb(153, 14, 14);
+  color: rgb(226, 97, 97);
 }
 </style>
