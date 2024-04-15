@@ -4,9 +4,9 @@ export default createStore({
   state: {
     uniColor: '#16c953',
     secondColor: '#FFDAA2',
-    name: 'Charlot',
+    name: 'Charlotte',
     fullName: 'Charlot DEDJINOU',
-    numberSession: 5,
+    numberSession: 1,
     idScroll: ''
   },
   getters: {},
