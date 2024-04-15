@@ -1,11 +1,11 @@
 exports.main = async (possibleAnswers, userAnswer = '') => {
-    userAnswer = cleanSentence(userAnswer)
-  
-    for (let i = 0; i < possibleAnswers.length; i++)
-      possibleAnswers[i] = cleanSentence(possibleAnswers[i])
-  
-    if (findAnswer(possibleAnswers, userAnswer)) return true
-    return training(possibleAnswers, userAnswer) 
+  userAnswer = cleanSentence(userAnswer)
+
+  for (let i = 0; i < possibleAnswers.length; i++)
+    possibleAnswers[i] = cleanSentence(possibleAnswers[i])
+
+  if (findAnswer(possibleAnswers, userAnswer)) return true
+  return training(possibleAnswers, userAnswer)
 }
 
 function getAllCombinations(arr) {
@@ -74,7 +74,7 @@ function disociateSentence(phrase1, phrase2, possibleAnswers) {
   if (intersection.length === phrase2.split(' ').length) {
     for (let combinaison of getAllCombinations(intersection)) {
       combinaison = combinaison.join(' ')
-      if (findAnswer(possibleAnswers, combinaison)) return [true,null]
+      if (findAnswer(possibleAnswers, combinaison)) return [true, null]
     }
   }
 
