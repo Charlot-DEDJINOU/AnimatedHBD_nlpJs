@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000/api', 
-});
+  baseURL: 'https://animatedhbd-nlpjsapi.onrender.com/api'
+})
 
-export default api;
+export default api
