@@ -18,8 +18,8 @@ export default {
     async function submit() {
       try {
         const response = await predict({
-          userAnswer : reponse.value,
-          numDev : props.numAnswer
+          userAnswer: reponse.value,
+          numDev: props.numAnswer
         })
         reponse.value = ''
 
