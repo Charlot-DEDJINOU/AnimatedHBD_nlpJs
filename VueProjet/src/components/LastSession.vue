@@ -61,8 +61,8 @@ export default {
         v-if="session >= 4"
         id="devinette4"
       />
-      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession && largeur > 800" />
-      <VisuelSimple :tigglerAnimation="startAnimation" v-if="showSession && largeur <= 800" />
+      <VisuelLivre :tigglerAnimation="startAnimation" v-if="showSession" />
+      <!-- <VisuelSimple :tigglerAnimation="startAnimation" v-if="showSession && largeur <= 700" /> -->
     </div>
   </div>
 </template>

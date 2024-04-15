@@ -78,7 +78,7 @@ export default {
                 )
                 .pauseFor(100)
                 .typeString(
-                  "Je tiens également à m'excuser si mon cedeau est un peu deplacé et sache qu'il est le fruit de ma créativité et de mon amitié pour toi.Je l'ai réalisé de mes propres mains, avec toute l'intelligence et l'attention"
+                  "Je tiens également à m'excuser si mon cedeau est un peu deplacé et sache qu'il est le fruit de ma créativité et de mon amitié pour toi.Je l'ai réalisé de mes propres mains, avec toute l'attention"
                 )
                 .pauseFor(500)
                 .callFunction(() => {
@@ -89,7 +89,7 @@ export default {
                     cursorClassName: 'cursor_livre'
                   })
                     .typeString(
-                      "dont je suis capable.J'ai pris en compte tes goûts et tes passions, notamment ton amour pour les étoiles, l'art, le chiffre 4, les devinettes et la couleur jaune. J'ai voulu que ce cadeau soit unique et qu'il représente tout ce qui te rend heureuse.<br /> <br />"
+                      "dont je suis capable.J'ai pris en compte tes goûts et tes passions, notamment ton amour pour les flags, l'art, le chiffre 7, les devinette, etc. J'ai voulu que ce cadeau soit unique et qu'il représente tout ce qui te rend heureuse.<br /> <br />"
                     )
                     .pauseFor(500)
                     .typeString(
@@ -101,7 +101,7 @@ export default {
                     )
                     .pauseFor(1000)
                     .typeString('Avec tout mon amour et toute mon amitié,<br />')
-                    .typeString('Espoir Destiny')
+                    .typeString('Espoir Destiny, <b>part3-ZXwN-lR1PO</b>')
                     .pauseFor(1000)
                     .callFunction(() => {
                       stopAnimation(typewriter)
@@ -136,21 +136,23 @@ export default {
 </script>
 
 <template>
-  <div class="container_livre" id="visuelLivre1">
-    <div class="livre">
-      <div class="page1"></div>
-      <div class="page2"></div>
+  <div :style="{display: 'flex', flexDirection : 'column', alignItems : 'center' }">
+    <div class="container_livre" id="visuelLivre1">
+      <div class="livre">
+        <div class="page1"></div>
+        <div class="page2"></div>
+      </div>
     </div>
-  </div>
-  <Download @click="downloadImage('visuelLivre1')" id="download5" />
-  <div class="container_livre" id="visuelLivre2">
-    <div class="livre">
-      <div class="page3"></div>
-      <div class="page4"></div>
+    <Download @click="downloadImage('visuelLivre1', 'think')" id="download5" />
+    <div class="container_livre" id="visuelLivre2">
+      <div class="livre">
+        <div class="page3"></div>
+        <div class="page4"></div>
+      </div>
+      <img src="../assets/crayon_livre_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
-    <img src="../assets/crayon_livre_oblique.png" class="crayon" v-show="showCrayon" />
+    <Download @click="downloadImage('visuelLivre2', 'think-suite')" id="download6" />
   </div>
-  <Download @click="downloadImage('visuelLivre2')" id="download6" />
 </template>
 <style>
 .container_livre {

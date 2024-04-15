@@ -59,30 +59,29 @@ export default {
               })
               typewriter
                 .pauseFor(1000)
-                .typeString('Dans le ciel étoilé, ta lumière brille,<br />')
+                .typeString('Dans le doux sillage du temps qui passe,<br />')
                 .pauseFor(500)
-                .typeString('En rose éclatant, ton cœur pétille.<br />')
+                .typeString("Un jour spécial s'éveille, l'éclat en grâce.<br />")
                 .pauseFor(500)
-                .typeString('En cette nouvelle année, je te souhaite,<br />')
+                .typeString('Joyeux anniversaire, douce amie chérie,<br />')
                 .pauseFor(500)
-                .typeString('Un anniversaire magique et parfait.<br /><br />')
+                .typeString('Dans ton cœur, que toujours la joie fleurie.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Que les étoiles veillent sur tes pas,<br />')
+                .typeString('Chaque année, un nouveau chapitre écrit,<br />')
                 .pauseFor(500)
-                .typeString('Que le rose colore tes rêves là-bas.<br />')
+                .typeString('Des rêves, des sourires, des défis accomplis.<br />')
                 .pauseFor(500)
-                .typeString('Sous le firmament, que ton sourire étincelle,<br />')
+                .typeString('Que cette journée te comble de bonheur,<br />')
                 .pauseFor(500)
-                .typeString('Et que ta vie soit douce comme le miel.<br /><br />')
+                .typeString('Et que chaque instant soit un doux cadeau de cœur.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Fille des étoiles, éblouis-nous de ta grâce,<br />')
+                .typeString('Ton amitié est un trésor précieux,<br />')
                 .pauseFor(500)
-                .typeString('Que chaque instant soit empli de joie.<br />')
+                .typeString('Étincelle qui illumine nos cieux.<br />')
                 .pauseFor(500)
-                .typeString("Que les étoiles tissent un chemin d'amour,<br />")
+                .typeString('En ce jour béni, je te souhaite le meilleur,<br />')
                 .pauseFor(500)
-                .typeString('Et que le rose éclaire tes jours les plus courts.<br /><br />')
-                .pauseFor(2000)
+                .typeString("Et que la vie t'offre un avenir en couleur.")
                 .pauseFor(1000)
                 .callFunction(() => {
                   stopAnimation(typewriter)
@@ -193,7 +192,7 @@ export default {
         <span class="text">Changer la photo</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <Download class="button" @click="downloadImage('visuelImage')" id="download4" />
+      <Download class="button" @click="downloadImage('visuelImage', 'part2-PnWCe48C')" id="download4" />
       <input type="file" id="file1" @change="InputChange" accept="image/*" hidden />
     </div>
   </div>

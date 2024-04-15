@@ -55,36 +55,38 @@ export default {
 
               typewriter
                 .pauseFor(1000)
-                .typeString('Sur ce rouleau de la vie défilant,<br />')
+                .typeString('Dans la douce lueur de ce jour si spécial,<br />')
                 .pauseFor(500)
-                .typeString('Comme une rose, choix délicat, charmant.<br />')
+                .typeString('Je célèbre ton anniversaire,ma belle étoile.<br />')
                 .pauseFor(500)
-                .typeString('Les pétales caressent la douce décision,<br />')
+                .typeString('Amie chère, complice de mes joies et peines,<br />')
                 .pauseFor(500)
-                .typeString('Accord harmonieux, symphonie de la passion.<br /><br />')
+                .typeString('En ce jour béni, mes pensées te sont sereines.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Ta famille guide comme une étoile brillante,<br />')
+                .typeString("Bien que nos chemins ne puissent s'entrelacer,<br />")
                 .pauseFor(500)
-                .typeString('Dans le ciel des choix, une voie prédominante.<br />')
+                .typeString('Ton amitié brille sans faiblir.<br />')
                 .pauseFor(500)
-                .typeString("Je m'incline devant l'acceptation sincère,<br />")
+                .typeString('Joyeux anniversaire, mille bonheurs pour toi !<br />')
                 .pauseFor(500)
-                .typeString("Respectant le chemin qu'il faut parcourir.<br /><br />")
+                .typeString('À toi, source de chaleur dans mon cœur.<br /><br />')
                 .pauseFor(2000)
-                .typeString('Chère amie, que ce poème soit un écho,<br />')
+                .typeString(
+                  'Que le temps nous garde proches, dans une <br /> amitié sincère, sans limites ni défenses.<br />'
+                )
                 .pauseFor(500)
-                .typeString('De compréhension profonde, un doux flambeau.<br />')
                 .pauseFor(500)
-                .typeString("Ta décision, une perle dans l'océan des cieux,<br />")
+                .typeString('À toi, beauté et bonté rayonnantes,<br />')
                 .pauseFor(500)
-                .typeString('Acceptation, un jardin de vœux épanouis.<br /><br />')
+                .typeString('Joyeux anniversaire, avec toute ma sincérité.<br /><br />')
                 .pauseFor(2000)
                 .typeString('Que chaque rose symbolise ce consentement,<br />')
                 .pauseFor(500)
                 .typeString('Un amour qui transcende, éternellement.<br />')
                 .pauseFor(500)
                 .typeString('Dans ce rouleau de la vie, je comprends,<br />')
-                .typeString('Ton bonheur réside dans les choix du cœur.<br />')
+                .pauseFor(500)
+                .typeString('Ton bonheur réside dans les choix du cœur')
                 .pauseFor(2000)
                 .callFunction(() => {
                   showRose.value = true
@@ -143,7 +145,7 @@ export default {
       </div>
     </div>
     <div class="down">
-      <Download @click="downloadImage('visuelRouleau')" id="download3" />
+      <Download @click="downloadImage('visuelRouleau', 'part4-DPwA4J4kqp')" id="download3" />
     </div>
   </div>
 </template>

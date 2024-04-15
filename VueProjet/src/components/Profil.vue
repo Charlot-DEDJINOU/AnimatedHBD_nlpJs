@@ -36,17 +36,17 @@ export default {
             .pauseFor(500)
             .typeString("Où l'on célèbre ta venue,<br />")
             .pauseFor(500)
-            .typeString("Où l'amitié est célébrée,<br />")
+            .typeString("Où l'amitié rayonne,<br />")
             .pauseFor(500)
             .typeString('Je te souhaite un joyeux anniversaire.<br /><br />')
             .pauseFor(2000)
-            .typeString('Chaque pixel résonne de bonheur,<br />')
+            .typeString('Chaque pixel exprime notre bonheur,<br />')
             .pauseFor(500)
-            .typeString('Comme un doux écho de notre cœur.<br />')
+            .typeString('Résonnant comme un écho de nos cœurs.<br />')
             .pauseFor(500)
             .typeString('Que cette journée soit pleine de sourires,<br />')
             .pauseFor(500)
-            .typeString('À toi, qui mérites les plus beaux souvenirs !<br />')
+            .typeString('Et les plus beaux souvenirs!<br />')
             .start()
         })
         .start()
@@ -83,7 +83,7 @@ export default {
   <div class="header_site">
     <img :src="url_image" class="image" :style="{ borderColor: uniColor }" v-if="url_image" />
     <img
-      src="../assets/charlot_profil.jpg"
+      src="../assets/charlot_profil.png"
       class="image"
       :style="{ borderColor: uniColor }"
       v-if="!url_image"
@@ -92,8 +92,8 @@ export default {
       <div id="nom" :style="{ color: uniColor }"></div>
       <p class="bienvenue"></p>
     </div>
+    <input type="file" id="file2" @change="InputChange" accept="image/*" hidden />
   </div>
-  <input type="file" id="file2" @change="InputChange" accept="image/*" hidden />
 </template>
 
 <style>
@@ -114,7 +114,7 @@ export default {
   border: 10px solid black;
 }
 .header_site .welcome {
-  width: 275px;
+  width: 300px;
 }
 .header_site .welcome #nom {
   font-weight: 500;

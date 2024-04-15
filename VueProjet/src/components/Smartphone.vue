@@ -67,58 +67,60 @@ export default {
 </script>
 
 <template>
-  <div class="big-container" id="smartphone">
-    <div class="before-container">
-      <span class="first-trait"></span>
-      <span class="second-trait"></span>
-    </div>
-    <div class="container">
-      <div class="first"></div>
-      <div class="header-body-footer" :style="backgroundStyle && { background: backgroundStyle }">
-        <div class="head">
-          <span class="date-coin">{{ formatTime(currentDate) }}</span>
-          <div class="header">
-            <span class="header-rond"></span>
-            <div class="beauty">
-              <span class="beauty-rond"></span>
-              <span class="beauty-trait"></span>
-            </div>
-          </div>
-          <div class="after-header">
-            <div class="icone">
-              <IconWifi />
-            </div>
-            <div class="icone">
-              <IconNetWork />
-            </div>
-            <div class="icone">
-              <IconBaterry />
-            </div>
-          </div>
-        </div>
-        <div class="body">
-          <div class="heure-date">
-            <div class="heure">{{ currentDate.toLocaleTimeString() }}</div>
-            <span class="date">{{
-              currentDate.toLocaleDateString('fr-FR', {
-                weekday: 'long',
-                day: 'numeric',
-                month: 'long'
-              })
-            }}</span>
-          </div>
-        </div>
-        <div class="footer">
-          <span class="footer-rond" @click="handleCustomFileInputClick"
-            ><input type="file" id="file" @change="handleFileInputChange" accept="image/*"
-          /></span>
-          <span>Cliquer pour changer la photo</span>
-        </div>
+  <div :style="{ display: 'flex', flexDirection: 'column', alignItems: 'center' }">
+    <div class="big-container" id="smartphone">
+      <div class="before-container">
+        <span class="first-trait"></span>
+        <span class="second-trait"></span>
       </div>
-      <div class="end"></div>
+      <div class="container">
+        <div class="first"></div>
+        <div class="header-body-footer" :style="backgroundStyle && { background: backgroundStyle }">
+          <div class="head">
+            <span class="date-coin">{{ formatTime(currentDate) }}</span>
+            <div class="header">
+              <span class="header-rond"></span>
+              <div class="beauty">
+                <span class="beauty-rond"></span>
+                <span class="beauty-trait"></span>
+              </div>
+            </div>
+            <div class="after-header">
+              <div class="icone">
+                <IconWifi />
+              </div>
+              <div class="icone">
+                <IconNetWork />
+              </div>
+              <div class="icone">
+                <IconBaterry />
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="heure-date">
+              <div class="heure">{{ currentDate.toLocaleTimeString() }}</div>
+              <span class="date">{{
+                currentDate.toLocaleDateString('fr-FR', {
+                  weekday: 'long',
+                  day: 'numeric',
+                  month: 'long'
+                })
+              }}</span>
+            </div>
+          </div>
+          <div class="footer">
+            <span class="footer-rond" @click="handleCustomFileInputClick"
+              ><input type="file" id="file" @change="handleFileInputChange" accept="image/*"
+            /></span>
+            <span>Cliquer pour changer la photo</span>
+          </div>
+        </div>
+        <div class="end"></div>
+      </div>
     </div>
+    <Download @click="downloadImage('smartphone', 'part5-Ea9hVyXg=')" />
   </div>
-  <Download @click="downloadImage('smartphone')" />
 </template>
 
 <style scoped>

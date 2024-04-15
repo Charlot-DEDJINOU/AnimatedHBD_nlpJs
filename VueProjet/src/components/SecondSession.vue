@@ -53,13 +53,20 @@ export default {
         <div class="art">
           <div class="age">
             <img src="../assets/chiffre1.png" class="first animated" />
-            <img src="../assets/chiffre8.png" class="animated" />
+            <img src="../assets/chiffre3.png" class="first animated" />
           </div>
-          <p>Ans</p>
-          <img src="../assets/chiffre2.png" class="chiffre4 animated" id="chiffre2" />
+          <p>+</p>
+          <img src="../assets/chiffre7.png" class="chiffre4 animated" id="chiffre2" />
+          <p :style="{ marginTop: '10px' }">Ans</p>
         </div>
-        <Download v-show="showSession" @click="downloadImage('visuelRose')" id="download2" />
-        <div class="visuel1"><VisuelRose :triggerAnimation="starAnimation" /></div>
+        <div class="visuel1">
+          <VisuelRose :triggerAnimation="starAnimation" />
+          <Download
+            v-show="showSession"
+            @click="downloadImage('visuelRose', 'part1-RtxhwJi')"
+            id="download2"
+          />
+        </div>
         <div class="images_ballon">
           <img src="../assets/image1.png" class="ballon1" />
           <img src="../assets/image1.png" class="ballon2" />
@@ -72,6 +79,7 @@ export default {
 <style>
 .secondSession {
   width: 970px;
+  margin: 20px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,10 +90,16 @@ export default {
   align-items: center;
   margin-top: 15px;
 }
+.secondSession .visuels .visuel1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .secondSession .visuels .art {
   margin-left: -30px;
   width: 370px;
-  height: 500px;
+  min-height: 500px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -100,9 +114,9 @@ export default {
   align-items: flex-start;
 }
 .secondSession .visuels .art .age img {
-  width: 45%;
   height: 200px;
   object-fit: cover;
+  margin-left: 0px;
 }
 .secondSession .visuels .art p {
   font-size: 50px;
@@ -111,12 +125,6 @@ export default {
   font-weight: 800;
   line-height: 25px;
   align-self: center;
-}
-.secondSession .visuels .art .age .first {
-  width: 55%;
-  height: 230px;
-  object-fit: cover;
-  margin-left: 0px;
 }
 .secondSession .visuels .images_ballon {
   width: 200px;
