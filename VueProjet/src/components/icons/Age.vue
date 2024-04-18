@@ -1,17 +1,17 @@
 <script>
-import { useStore } from "vuex";
-import { computed, ref } from "vue";
+import { useStore } from 'vuex'
+import { computed, ref } from 'vue'
 
 export default {
   setup() {
-    const store = useStore();
-    const uniColor = ref(computed(() => store.state.uniColor));
+    const store = useStore()
+    const uniColor = ref(computed(() => store.state.uniColor))
 
     return {
-      uniColor,
-    };
-  },
-};
+      uniColor
+    }
+  }
+}
 </script>
 <template>
   <svg
@@ -230,14 +230,8 @@ export default {
       :fill="uniColor"
     />
     <rect x="24" y="142" width="445" height="74" fill="url(#paint0_linear_981_2)" />
-    <path
-      d="M95 178.9L23.75 216.052V141.748L95 178.9Z"
-      fill="url(#paint1_linear_981_2)"
-    />
-    <path
-      d="M398 178.9L469.25 141.748V216.053L398 178.9Z"
-      fill="url(#paint2_linear_981_2)"
-    />
+    <path d="M95 178.9L23.75 216.052V141.748L95 178.9Z" fill="url(#paint1_linear_981_2)" />
+    <path d="M398 178.9L469.25 141.748V216.053L398 178.9Z" fill="url(#paint2_linear_981_2)" />
     <rect x="95" y="178" width="303" height="2" fill="white" />
     <defs>
       <linearGradient

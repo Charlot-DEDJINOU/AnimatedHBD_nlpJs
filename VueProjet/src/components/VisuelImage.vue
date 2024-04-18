@@ -192,7 +192,11 @@ export default {
         <span class="text">Changer la photo</span>
         <span><IconPaper class="paper" /></span>
       </div>
-      <Download class="button" @click="downloadImage('visuelImage', 'part2-PnWCe48C')" id="download4" />
+      <Download
+        class="button"
+        @click="downloadImage('visuelImage', 'part2-PnWCe48C')"
+        id="download4"
+      />
       <input type="file" id="file1" @change="InputChange" accept="image/*" hidden />
     </div>
   </div>

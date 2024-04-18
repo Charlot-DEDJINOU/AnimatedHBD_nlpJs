@@ -136,7 +136,7 @@ export default {
 </script>
 
 <template>
-  <div :style="{display: 'flex', flexDirection : 'column', alignItems : 'center' }">
+  <div :style="{ display: 'flex', flexDirection: 'column', alignItems: 'center' }">
     <div class="container_livre" id="visuelLivre1">
       <div class="livre">
         <div class="page1"></div>
