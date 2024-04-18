@@ -2,14 +2,19 @@
 import { useStore } from 'vuex'
 import { computed, ref } from 'vue'
 import { predict } from '../services/devinetteService'
+import Loading from './icons/Loading.vue'
 
 export default {
+  components: {
+    Loading
+  },
   props: {
     devinette: String,
     numAnswer: String
   },
   setup(props, ctx) {
     const reponse = ref('')
+    const loading = ref(false)
 
     const store = useStore()
 
@@ -17,10 +22,12 @@ export default {
 
     async function submit() {
       try {
+        loading.value = true
         const response = await predict({
           userAnswer: reponse.value,
           numDev: props.numAnswer
         })
+        loading.value = false
         reponse.value = ''
 
         ctx.emit('backAnswer', response)
@@ -32,7 +39,8 @@ export default {
     return {
       reponse,
       submit,
-      uniColor
+      uniColor,
+      loading
     }
   }
 }
@@ -50,7 +58,13 @@ export default {
       </p>
       <div>
         <input type="text" placeholder="Votre réponse" v-model="reponse" />
-        <button :style="{ backgroundColor: uniColor }">Envoyer</button>
+        <button :style="{ backgroundColor: uniColor }">
+          <div v-if="loading">
+            <Loading />
+            <span>Loading...</span>
+          </div>
+          <span v-else>Envoyer</span>
+        </button>
       </div>
     </form>
   </div>
@@ -144,6 +158,14 @@ export default {
   font-family: 'Marck Script';
   font-style: normal;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container_devinette form button div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 900px) {
   .container_devinette {
