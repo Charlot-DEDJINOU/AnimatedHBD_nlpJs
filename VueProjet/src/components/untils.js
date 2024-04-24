@@ -1,15 +1,16 @@
-import html2canvas from 'html2canvas'
+import { toPng } from 'html-to-image'
 
-export function downloadImage(id, name) {
-  const element = document.getElementById(id)
+export const downloadImage = async (id, name) => {
+  const visuel = document.getElementById(id)
 
-  html2canvas(element, {
-    backgroundColor: null,
-    removeContainer: true
-  }).then((canvas) => {
-    const link = document.createElement('a')
-    link.download = name
-    link.href = canvas.toDataURL('image/png')
-    link.click()
-  })
+  await toPng(visuel, { quality: 1 })
+    .then(function (dataUrl) {
+      var link = document.createElement('a')
+      link.download = name
+      link.href = dataUrl
+      link.click()
+    })
+    .catch(function (error) {
+      console.error("Erreur lors du téléchargement de l'image :", error)
+    })
 }
