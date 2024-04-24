@@ -199,8 +199,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../assets/charlot.jpg);
+    url(../assets/charlot_nerys.jpg);
   background-size: cover;
+  background-position: center;
   border: 5px solid #000000;
   border-radius: 40px;
 }
