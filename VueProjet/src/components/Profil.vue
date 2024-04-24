@@ -83,7 +83,7 @@ export default {
   <div class="header_site">
     <img :src="url_image" class="image" :style="{ borderColor: uniColor }" v-if="url_image" />
     <img
-      src="../assets/charlot_profil.png"
+      src="../assets/nerys.jpg"
       class="image"
       :style="{ borderColor: uniColor }"
       v-if="!url_image"

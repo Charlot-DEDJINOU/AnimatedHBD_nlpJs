@@ -97,7 +97,7 @@ export default {
             v-model="formData.name"
             type="text"
             id="name"
-            placeholder="object du message"
+            placeholder="object"
             @input="position_button"
             required
           />
