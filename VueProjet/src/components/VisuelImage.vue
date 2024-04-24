@@ -40,15 +40,11 @@ export default {
           })
           typewriter
             .pauseFor(1000)
-            .typeString('<span class="bleu">C</span>')
-            .typeString('<span class="vert">h</span>')
-            .typeString('<span class="jaune">a</span>')
-            .typeString('<span class="rouge">r</span>')
-            .typeString('<span class="bleu">l</span>')
-            .typeString('<span class="vert">o</span>')
-            .typeString('<span class="jaune">t</span>')
-            .typeString('<span class="rouge">t</span>')
-            .typeString('<span class="vert">e</span>')
+            .typeString('<span class="bleu">N</span>')
+            .typeString('<span class="vert">é</span>')
+            .typeString('<span class="jaune">r</span>')
+            .typeString('<span class="rouge">y</span>')
+            .typeString('<span class="bleu">s</span>')
             .pauseFor(1000)
             .callFunction(() => {
               stopAnimation(typewriter)
@@ -113,7 +109,7 @@ export default {
                         .typeString('<span class="vert"> E</span>')
                         .typeString('<span class="jaune">s</span>')
                         .typeString('<span class="rouge">p</span>')
-                        .typeString('<span class="lambda"> ,un ami lambda</span>')
+                        .typeString('<span class="lambda"> , un ami lambda</span>')
                         .pauseFor(1000)
                         .callFunction(() => {
                           stopAnimation(typewriter)
@@ -178,14 +174,16 @@ export default {
   <div class="container1_download">
     <div class="container1" id="visuelImage">
       <div class="content1" :style="imageStyle && { background: imageStyle }"></div>
-      <div class="content2">
-        <p class="salutation"></p>
-        <div class="samira"></div>
-        <p class="text" id="target_image"></p>
-        <p class="adore"></p>
-        <p class="destinateur"></p>
+      <div class="container2">
+        <div class="content2">
+          <p class="salutation"></p>
+          <div class="samira"></div>
+          <p class="text" id="target_image"></p>
+          <p class="adore"></p>
+          <p class="destinateur"></p>
+        </div>
+        <img src="../assets/crayon_image_oblique.png" class="crayon" v-show="showCrayon" />
       </div>
-      <img src="../assets/crayon_image_oblique.png" class="crayon" v-show="showCrayon" />
     </div>
     <div class="down">
       <div class="file" @click="clickButton" :style="{ backgroundColor: uniColor }">
@@ -246,7 +244,12 @@ export default {
   font-style: normal;
   font-weight: 500;
 }
-
+.container1 .container2 {
+  width: 400px;
+  display: flex;
+  background-image: url(../assets/roseblanche.png);
+  background-size: cover;
+}
 .container1 .crayon {
   width: 80px;
   height: 120px;
@@ -255,21 +258,17 @@ export default {
   margin-left: -25px;
   margin-bottom: 25px;
 }
-
 .content1 {
   width: 200px;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../assets/charlot.jpg);
+    url(../assets/nerys2.jpg);
   background-size: cover;
   background-position: center;
 }
-
 .content2 {
   width: 320px;
   height: 100%;
-  background-image: url(../assets/roseblanche.png);
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
