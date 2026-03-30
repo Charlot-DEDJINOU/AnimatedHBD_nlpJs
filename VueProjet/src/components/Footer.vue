@@ -11,7 +11,7 @@
       <div>
         Created by
         <a
-          href="https://charlot-dedjinou.vercel.app"
+          href="https://charlotdedjinou.com"
           class="font-bold text-white text-decoration-none"
         >
           Charlot DEDJINOU</a
